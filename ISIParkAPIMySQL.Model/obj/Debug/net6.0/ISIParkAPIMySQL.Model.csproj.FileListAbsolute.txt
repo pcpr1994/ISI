@@ -1,0 +1,12 @@
+C:\Users\jocau\source\repos\ISIParkAPIMySQL.Model\bin\Debug\net6.0\ISIParkAPIMySQL.Model.deps.json
+C:\Users\jocau\source\repos\ISIParkAPIMySQL.Model\bin\Debug\net6.0\ISIParkAPIMySQL.Model.dll
+C:\Users\jocau\source\repos\ISIParkAPIMySQL.Model\bin\Debug\net6.0\ISIParkAPIMySQL.Model.pdb
+C:\Users\jocau\source\repos\ISIParkAPIMySQL.Model\obj\Debug\net6.0\ISIParkAPIMySQL.Model.csproj.AssemblyReference.cache
+C:\Users\jocau\source\repos\ISIParkAPIMySQL.Model\obj\Debug\net6.0\ISIParkAPIMySQL.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jocau\source\repos\ISIParkAPIMySQL.Model\obj\Debug\net6.0\ISIParkAPIMySQL.Model.AssemblyInfoInputs.cache
+C:\Users\jocau\source\repos\ISIParkAPIMySQL.Model\obj\Debug\net6.0\ISIParkAPIMySQL.Model.AssemblyInfo.cs
+C:\Users\jocau\source\repos\ISIParkAPIMySQL.Model\obj\Debug\net6.0\ISIParkAPIMySQL.Model.csproj.CoreCompileInputs.cache
+C:\Users\jocau\source\repos\ISIParkAPIMySQL.Model\obj\Debug\net6.0\ISIParkAPIMySQL.Model.dll
+C:\Users\jocau\source\repos\ISIParkAPIMySQL.Model\obj\Debug\net6.0\refint\ISIParkAPIMySQL.Model.dll
+C:\Users\jocau\source\repos\ISIParkAPIMySQL.Model\obj\Debug\net6.0\ISIParkAPIMySQL.Model.pdb
+C:\Users\jocau\source\repos\ISIParkAPIMySQL.Model\obj\Debug\net6.0\ref\ISIParkAPIMySQL.Model.dll
