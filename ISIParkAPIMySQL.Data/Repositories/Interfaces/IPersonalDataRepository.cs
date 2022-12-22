@@ -1,6 +1,6 @@
 ﻿using ISIParkAPIMySQL.Model;
 
-namespace ISIParkAPIMySQL.Data.Repositories
+namespace ISIParkAPIMySQL.Data.Repositories.Interfaces
 {
     public interface IPersonalDataRepository
     {

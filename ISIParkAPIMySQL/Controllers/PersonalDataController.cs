@@ -1,6 +1,5 @@
-﻿using ISIParkAPIMySQL.Data.Repositories;
+﻿using ISIParkAPIMySQL.Data.Repositories.Interfaces;
 using ISIParkAPIMySQL.Model;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ISIParkAPIMySQL.Controllers
@@ -17,6 +16,7 @@ namespace ISIParkAPIMySQL.Controllers
         }
 
         [HttpGet]
+        [Route("getAll")]
         public async Task<IActionResult> GetAllPersonalData()
         {
             return Ok(await _personalDataRepository.GetAllPersonalData());

@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using ISIParkAPIMySQL.Data.Repositories.Interfaces;
 using ISIParkAPIMySQL.Model;
 using MySql.Data.MySqlClient;
 

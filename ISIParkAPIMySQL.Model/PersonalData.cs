@@ -15,6 +15,5 @@
         public string Genero { get; set; }
         public string TipoUtilizador { get; set; }
         public bool Pagamento { get; set; }
-
     }
 }

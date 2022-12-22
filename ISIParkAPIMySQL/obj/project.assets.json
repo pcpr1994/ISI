@@ -1387,11 +1387,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jocau\\source\\repos\\ISIParkAPIMySQL\\ISIParkAPIMySQL.csproj",
+      "projectUniqueName": "C:\\Users\\jocau\\ISI\\ISIParkAPIMySQL\\ISIParkAPIMySQL.csproj",
       "projectName": "ISIParkAPIMySQL",
-      "projectPath": "C:\\Users\\jocau\\source\\repos\\ISIParkAPIMySQL\\ISIParkAPIMySQL.csproj",
+      "projectPath": "C:\\Users\\jocau\\ISI\\ISIParkAPIMySQL\\ISIParkAPIMySQL.csproj",
       "packagesPath": "C:\\Users\\jocau\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jocau\\source\\repos\\ISIParkAPIMySQL\\obj\\",
+      "outputPath": "C:\\Users\\jocau\\ISI\\ISIParkAPIMySQL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jocau\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1408,11 +1408,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\jocau\\source\\repos\\ISIParkAPIMySQL.Data\\ISIParkAPIMySQL.Data.csproj": {
-              "projectPath": "C:\\Users\\jocau\\source\\repos\\ISIParkAPIMySQL.Data\\ISIParkAPIMySQL.Data.csproj"
+            "C:\\Users\\jocau\\ISI\\ISIParkAPIMySQL.Data\\ISIParkAPIMySQL.Data.csproj": {
+              "projectPath": "C:\\Users\\jocau\\ISI\\ISIParkAPIMySQL.Data\\ISIParkAPIMySQL.Data.csproj"
             },
-            "C:\\Users\\jocau\\source\\repos\\ISIParkAPIMySQL.Model\\ISIParkAPIMySQL.Model.csproj": {
-              "projectPath": "C:\\Users\\jocau\\source\\repos\\ISIParkAPIMySQL.Model\\ISIParkAPIMySQL.Model.csproj"
+            "C:\\Users\\jocau\\ISI\\ISIParkAPIMySQL.Model\\ISIParkAPIMySQL.Model.csproj": {
+              "projectPath": "C:\\Users\\jocau\\ISI\\ISIParkAPIMySQL.Model\\ISIParkAPIMySQL.Model.csproj"
             }
           }
         }
