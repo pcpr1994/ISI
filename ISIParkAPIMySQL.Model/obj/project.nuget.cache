@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "+CTR6kMI68pr0ZVzbY1BaYIb7Tt6LkyLSslVzp1oURB6sOzMQW1ropax8zlxxmSnGHYJE1ppy4A5FLm9YzdAmQ==",
+  "dgSpecHash": "1rZDu0qckfD7nH4wQR3UzQz5Nqj22gk3/7sTHlsXIMijmvnX13uMs1UxWXKuf3zJ1yCJFe7kBZHfB4YnS+0vuA==",
   "success": true,
   "projectFilePath": "C:\\Users\\jocau\\source\\repos\\ISIParkAPIMySQL.Model\\ISIParkAPIMySQL.Model.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\jocau\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\jocau\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\jocau\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "C:\\Users\\jocau\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "C:\\Users\\jocau\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "C:\\Users\\jocau\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+  ],
   "logs": []
 }

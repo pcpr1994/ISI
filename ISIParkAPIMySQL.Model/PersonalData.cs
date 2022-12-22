@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ISIParkAPIMySQL.Model
+﻿namespace ISIParkAPIMySQL.Model
 {
     public class PersonalData
     {
