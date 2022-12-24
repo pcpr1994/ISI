@@ -25,6 +25,7 @@ namespace ISIParkAPI
             var mySQLConnectionConfig = new MySQLConfiguration(Configuration.GetConnectionString("MySqlConnection"));
             services.AddSingleton(mySQLConnectionConfig);
 
+            services.AddScoped<IPersonalDataRepository, PersonalDataRepository>();
             services.AddScoped<IHistoryRepository, HistoryRepository>();
             services.AddScoped<IUserTypeRepository, UserTypeRepository>();
 

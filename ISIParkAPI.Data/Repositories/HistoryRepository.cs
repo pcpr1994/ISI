@@ -58,7 +58,7 @@ namespace ISIParkAPI.Data.Repositories
             var sql = @"UPDATE Historico
                         SET dia = @Dia, hora_entrada = @Hora_entrada, hora_saida = @Hora_saida, 
                             lugarnumero_lugar = @Lugarnumero_lugar
-                        WHERE ID = id";
+                        WHERE id = ID";
 
             var result = await db.ExecuteAsync(sql, new
             {

@@ -59,7 +59,7 @@ namespace ISIParkAPI.Data.Repositories
                         SET nome = @Nome, cp4 = @CP4, cp3 = @CP3, rua = @Rua, contacto = @Contacto, nif = @NIF, 
                         email = @Email, password = @Password, dataNasc = @DataNasc, genero = @Genero,
                         tipo_utilizador = @Tipo_Utilizador, pagamento = @Pagamento
-                        WHERE Numero = numero";
+                        WHERE numero = Numero";
 
             var result = await db.ExecuteAsync(sql, new { personalData.Nome, personalData.CP4, personalData.CP3,
                 personalData.Rua, personalData.Contacto, personalData.NIF, personalData.Email, personalData.Password,
