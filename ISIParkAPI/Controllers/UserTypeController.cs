@@ -56,7 +56,7 @@ namespace ISIParkAPI.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePersonalData(int id)
+        public async Task<IActionResult> DeleteUserType(int id)
         {
             await _userTypeRepository.DeleteUserType(new UserType { ID = id });
 
