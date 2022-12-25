@@ -56,7 +56,7 @@ namespace ISIParkAPI.Data.Repositories
             var db = dbConnection();
             var sql = @"UPDATE Tipo_contacto
                         SET descricao = @Descricao
-                        WHERE ID = id";
+                        WHERE ID = @id";
 
             var result = await db.ExecuteAsync(sql, new
             {
