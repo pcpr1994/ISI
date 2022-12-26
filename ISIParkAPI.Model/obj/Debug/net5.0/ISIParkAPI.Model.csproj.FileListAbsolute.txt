@@ -34,3 +34,15 @@ C:\Users\Sérgio\Desktop\LESI\3_Ano\1_semestre\ISI\TP2\ISI\ISIParkAPI.Model\obj\
 C:\Users\Sérgio\Desktop\LESI\3_Ano\1_semestre\ISI\TP2\ISI\ISIParkAPI.Model\obj\Debug\net5.0\ISIParkAPI.Model.dll
 C:\Users\Sérgio\Desktop\LESI\3_Ano\1_semestre\ISI\TP2\ISI\ISIParkAPI.Model\obj\Debug\net5.0\ref\ISIParkAPI.Model.dll
 C:\Users\Sérgio\Desktop\LESI\3_Ano\1_semestre\ISI\TP2\ISI\ISIParkAPI.Model\obj\Debug\net5.0\ISIParkAPI.Model.pdb
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI.Model\bin\Debug\net5.0\ISIParkAPI.Model.deps.json
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI.Model\bin\Debug\net5.0\ISIParkAPI.Model.dll
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI.Model\bin\Debug\net5.0\ISIParkAPI.Model.pdb
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI.Model\obj\Debug\net5.0\ISIParkAPI.Model.csproj.AssemblyReference.cache
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI.Model\obj\Debug\net5.0\ISIParkAPI.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI.Model\obj\Debug\net5.0\ISIParkAPI.Model.AssemblyInfoInputs.cache
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI.Model\obj\Debug\net5.0\ISIParkAPI.Model.AssemblyInfo.cs
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI.Model\obj\Debug\net5.0\ISIParkAPI.Model.csproj.CoreCompileInputs.cache
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI.Model\obj\Debug\net5.0\ISIParkAPI.Model.dll
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI.Model\obj\Debug\net5.0\refint\ISIParkAPI.Model.dll
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI.Model\obj\Debug\net5.0\ISIParkAPI.Model.pdb
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI.Model\obj\Debug\net5.0\ref\ISIParkAPI.Model.dll
