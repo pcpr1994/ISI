@@ -43,7 +43,7 @@ namespace ISIParkAPI.Data.Repositories
 
             var result = await db.ExecuteAsync(sql, new
             {
-                history.Dia,
+                //history.Dia,
                 history.Hora_entrada,
                 history.Hora_saida,
                 history.Lugarnumero_lugar
@@ -62,7 +62,7 @@ namespace ISIParkAPI.Data.Repositories
 
             var result = await db.ExecuteAsync(sql, new
             {
-                history.Dia,
+                //history.Dia,
                 history.Hora_entrada,
                 history.Hora_saida,         
                 history.ID

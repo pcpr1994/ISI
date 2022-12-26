@@ -66,12 +66,12 @@ VALUES (1,2,1,"10-AE-25");
 INSERT INTO lugar (setorid_setor, tipo_lugarn_tipo, estado)
 VALUES (2,2,0);
 
+INSERT INTO Historico (hora_entrada, hora_saida, lugarnumero_lugar)
+VALUES ('2022-05-12 12:00:00','2022-05-12 12:30:00',1);
 INSERT INTO Historico (dia, hora_entrada, hora_saida, lugarnumero_lugar)
-VALUES ('2022-05-12','12:00:00','12:30:00',1);
+VALUES ('2022-06-01 09:00:00','2022-06-01 13:30:00',2);
 INSERT INTO Historico (dia, hora_entrada, hora_saida, lugarnumero_lugar)
-VALUES ('2022-06-01','09:00:00','13:30:00',2);
-INSERT INTO Historico (dia, hora_entrada, hora_saida, lugarnumero_lugar)
-VALUES ('2022-10-22','12:00:00','18:30:00',2);
+VALUES ('2022-10-22 12:00:00','2022-10-22 18:30:00',2);
 
 INSERT INTO utilizador_Historico (utilizadorid, Historicoid)
 VALUES (1,1);
