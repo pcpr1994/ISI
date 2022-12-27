@@ -39,6 +39,7 @@ namespace ISIParkAPI
             services.AddScoped<IUserVechicleTypeRepository, UserVechicleTypeRepository>();
             services.AddScoped<IUserContactTypeRepository, UserContactTypeRepository>();
             services.AddScoped<IUserMessageRepository, UserMessageRepository>();
+            services.AddScoped<IAddressRepository, AddressRepository>();
 
 
             services.AddControllers();
