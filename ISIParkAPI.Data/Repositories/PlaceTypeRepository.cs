@@ -35,7 +35,7 @@ namespace ISIParkAPI.Data.Repositories
             var sql = @"SELECT n_tipo, descricao
                         FROM tipo_lugar
                         WHERE n_tipo = @N_Tipo";
-            return await db.QueryFirstOrDefaultAsync<PlaceType>(sql, new { ID = id });
+            return await db.QueryFirstOrDefaultAsync<PlaceType>(sql, new { N_Tipo = id });
         }
         public async Task<bool> InsertPlaceType(PlaceType placeType)
         {

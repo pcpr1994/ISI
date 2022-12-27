@@ -70,7 +70,8 @@ namespace ISIParkAPI.Data.Repositories
                 place.Setorid_setor,
                 place.Tipo_lugarn_tipo,
                 place.Estado,
-                place.Utilizador_Tipo_veiculosmatricula
+                place.Utilizador_Tipo_veiculosmatricula,
+                place.Numero_lugar
 
             });
 
@@ -84,7 +85,7 @@ namespace ISIParkAPI.Data.Repositories
             var sql = @"DELETE
                         FROM lugar
                         WHERE numero_lugar = @Numero_lugar";
-            var result = await db.ExecuteAsync(sql, new { ID = place.Numero_lugar });
+            var result = await db.ExecuteAsync(sql, new { Numero_lugar = place.Numero_lugar });
             return result > 0;
         }
 
