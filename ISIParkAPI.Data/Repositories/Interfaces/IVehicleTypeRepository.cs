@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 
 namespace ISIParkAPI.Data.Repositories.Interfaces
 {
+    /// <summary>
+    /// This interface it will be consumed by the class VehicleTypeRepository
+    /// </summary>
     public interface IVehicleTypeRepository
     {
         Task<IEnumerable<VehicleType>> GetAllVehicleType();

@@ -5,17 +5,31 @@ using System.Threading.Tasks;
 
 namespace ISIParkAPI.Controllers
 {
+    /// <summary>
+    /// Class controller of Sector, this class have all routes of SectorRepository methods's
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class SetorController : ControllerBase
     {
+        /// <summary>
+        /// Create a instance of Interface Sector
+        /// </summary>
         private readonly ISectorRepository _sectorRepository;
 
+        /// <summary>
+        /// Give a value to the instance
+        /// </summary>
+        /// <param name="sectorRepository"></param>
         public SetorController(ISectorRepository sectorRepository)
         {
             _sectorRepository = sectorRepository;
         }
 
+        /// <summary>
+        /// Route to give all sectors from database, this method uses a http get
+        /// </summary>
+        /// <returns>All sectors</returns>
         [HttpGet]
         [Route("getAll")]
         public async Task<IActionResult> GetAllSector()
@@ -23,12 +37,22 @@ namespace ISIParkAPI.Controllers
             return Ok(await _sectorRepository.GetAllSector());
         }
 
+        /// <summary>
+        /// Route to give only one sector from database, this method uses a http get
+        /// </summary>
+        /// <param name="id">Id of the sector that we want</param>
+        /// <returns>The sector that corresponds the id entered</returns>
         [HttpGet("{id}")]
         public async Task<IActionResult> GetSectorDetails(int id)
         {
             return Ok(await _sectorRepository.GetSectorDetails(id));
         }
 
+        /// <summary>
+        /// Route to insert a new sector, this method uses a http post
+        /// </summary>
+        /// <param name="sector">An object to represent Sector</param>
+        /// <returns>Bad or not result depending on the result</returns>
         [HttpPost]
         [Route("insert")]
         public async Task<IActionResult> InsertSector([FromBody] Sector sector)
@@ -42,6 +66,11 @@ namespace ISIParkAPI.Controllers
             return Created("created", inserted);
         }
 
+        /// <summary>
+        /// Route to update a sector, this method uses a http post
+        /// </summary>
+        /// <param name="sector">An object to represent Sector</param>
+        /// <returns>Bad or not result depending on the result</returns>
         [HttpPut]
         [Route("update")]
         public async Task<IActionResult> UpdateSector([FromBody] Sector sector)
@@ -55,6 +84,11 @@ namespace ISIParkAPI.Controllers
             return NoContent();
         }
 
+        /// <summary>
+        /// Route to delete a sector from database, this method uses a http delete
+        /// </summary>
+        /// <param name="id">Id of the sector that we want to delete</param>
+        /// <returns>Nothing</returns>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteSector(int id)
         {
