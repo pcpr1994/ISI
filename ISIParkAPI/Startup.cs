@@ -34,6 +34,7 @@ namespace ISIParkAPI
             services.AddScoped<IPlaceTypeRepository, PlaceTypeRepository>();
             services.AddScoped<IAdminMessageRepository, AdminMessageRepository>();
             services.AddScoped<IPlaceRepository, PlaceRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
