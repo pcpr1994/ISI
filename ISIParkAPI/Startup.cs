@@ -1,3 +1,12 @@
+/*
+ * Grupo 4
+ * Trabalho II de ISI
+ * Alunos
+ *  Carlos Pereira nº6498
+ *  Paula Rodrigues nº21133
+ *  Sérgio Gonçalves nº20343
+ *  
+ */
 using ISIParkAPI.Data;
 using ISIParkAPI.Data.Repositories;
 using ISIParkAPI.Data.Repositories.Interfaces;
@@ -45,11 +54,17 @@ namespace ISIParkAPI
             services.AddScoped<IAddressRepository, AddressRepository>();
             services.AddScoped<IReportRepository, ReportRepository>();
 
-
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ISIParkAPI", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "ISIParkAPI",
+                    Version = "v1",
+                    Description = "ISIPark Swagger Documentation, this API it will be used by an Android application ISIPark",
+                    Contact = new OpenApiContact() { Name = "Sérgio Rodrigues Pereira", Email = "isipark@gmail.com"},
+                });
+                    
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);

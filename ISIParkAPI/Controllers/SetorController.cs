@@ -1,4 +1,13 @@
-﻿using ISIParkAPI.Data.Repositories.Interfaces;
+﻿/*
+ * Grupo 4
+ * Trabalho II de ISI
+ * Alunos
+ *  Carlos Pereira nº6498
+ *  Paula Rodrigues nº21133
+ *  Sérgio Gonçalves nº20343
+ *  
+ */
+using ISIParkAPI.Data.Repositories.Interfaces;
 using ISIParkAPI.Model;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
