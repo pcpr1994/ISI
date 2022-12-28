@@ -1,0 +1,358 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ISIParkAPI</name>
+    </assembly>
+    <members>
+        <member name="T:ISIParkAPI.Controllers.AddressController">
+            <summary>
+            Class controller of Address, this class have all routes of AddressRepository methods's
+            </summary>
+        </member>
+        <member name="F:ISIParkAPI.Controllers.AddressController._addressRepository">
+            <summary>
+            Create a instance of Interface Address
+            </summary>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.AddressController.#ctor(ISIParkAPI.Data.Repositories.Interfaces.IAddressRepository)">
+            <summary>
+            Give a value to the instance
+            </summary>
+            <param name="addressRepository"></param>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.AddressController.GetAllAddress">
+            <summary>
+            Route to give all addresses from database, this method uses a http get
+            </summary>
+            <returns>All addresses</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.AddressController.GetAddressDetails(System.Int32)">
+            <summary>
+            Route to give only one address from database, this method uses a http get
+            </summary>
+            <param name="id">Id of the address that we want</param>
+            <returns>The address that corresponds the id entered</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.AddressController.InsertAddressHistory(ISIParkAPI.Model.Address)">
+            <summary>
+            Route to insert a new address, this method uses a http post
+            </summary>
+            <param name="address">An object to represent Address</param>
+            <returns>Bad or not result depending on the result</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.AddressController.UpdateAddress(ISIParkAPI.Model.Address)">
+            <summary>
+            Route to update an address from database, this method uses a http put
+            </summary>
+            <param name="address">An object to represent Address</param>
+            <returns>Bad or not result depending on the result</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.AddressController.DeleteAddress(System.Int32)">
+            <summary>
+            Route to delete an address from database, this method uses a http delete
+            </summary>
+            <param name="id">Id of the address that we want to delete</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="T:ISIParkAPI.Controllers.AdminMessageController">
+            <summary>
+            Class controller of AdminMessage, this class have all routes of AdminMessageRepository methods's
+            </summary>
+        </member>
+        <member name="F:ISIParkAPI.Controllers.AdminMessageController._adminMessageRepository">
+            <summary>
+            Create a instance of Interface AdminMessage
+            </summary>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.AdminMessageController.#ctor(ISIParkAPI.Data.Repositories.Interfaces.IAdminMessageRepository)">
+            <summary>
+            Give a value to the instance
+            </summary>
+            <param name="adminMessageRepository"></param>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.AdminMessageController.GetAllAdminMessage">
+            <summary>
+            Route to give all messages from database, this method uses a http get
+            </summary>
+            <returns>All addresses</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.AdminMessageController.GetAdminMessageDetails(System.Int32)">
+            <summary>
+            Route to give only one message from database, this method uses a http get
+            </summary>
+            <param name="id">Id of the message that we want</param>
+            <returns>The message that corresponds the id entered</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.AdminMessageController.InsertAdminMessageHistory(ISIParkAPI.Model.AdminMessage)">
+            <summary>
+            Route to insert a new message, this method uses a http post
+            </summary>
+            <param name="adminMessage">An object to represent AdminMessage</param>
+            <returns>Bad or not result depending on the result</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.AdminMessageController.UpdateAdminMessage(ISIParkAPI.Model.AdminMessage)">
+            <summary>
+            Route to update a message from database, this method uses a http put
+            </summary>
+            <param name="adminMessage">An objetc to represent AdminMessage</param>
+            <returns>Bad or not result depending on the result</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.AdminMessageController.DeleteAdminMessage(System.Int32)">
+            <summary>
+            Route to delete a message from database, this method uses a http delete
+            </summary>
+            <param name="id">Id of the message that we want to delete</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="T:ISIParkAPI.Controllers.ContactTypeController">
+            <summary>
+            Class controller of ContactType, this class have all routes of ContactTypeRepository methods's
+            </summary>
+        </member>
+        <member name="F:ISIParkAPI.Controllers.ContactTypeController._contactTypeRepository">
+            <summary>
+            Create a instance of Interface ContactType
+            </summary>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.ContactTypeController.#ctor(ISIParkAPI.Data.Repositories.Interfaces.IContactTypeRepository)">
+            <summary>
+            Give a value to the instance
+            </summary>
+            <param name="contactTypeRepository"></param>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.ContactTypeController.GetAllContactType">
+            <summary>
+            Route to give all contact types from database, this method uses a http get
+            </summary>
+            <returns>All types</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.ContactTypeController.GetContactTypeDetails(System.Int32)">
+            <summary>
+            Route to give only one type from database, this method uses a http get
+            </summary>
+            <param name="id">Id of the type that we want</param>
+            <returns>The type that corresponds the id entered</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.ContactTypeController.InsertContactType(ISIParkAPI.Model.ContactType)">
+            <summary>
+            Route to insert a new type, this method uses a http post
+            </summary>
+            <param name="contactType">An object to represent ContactType</param>
+            <returns>Bad or not result depending on the result</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.ContactTypeController.UpdateContactType(ISIParkAPI.Model.ContactType)">
+            <summary>
+            Route to update a type, this method uses a http post
+            </summary>
+            <param name="contactType">An object to represent ContactType</param>
+            <returns>Bad or not result depending on the result</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.ContactTypeController.DeleteContactType(System.Int32)">
+            <summary>
+            Route to delete a type from database, this method uses a http delete
+            </summary>
+            <param name="id">Id of the type that we want to delete</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="T:ISIParkAPI.Controllers.PlaceTypeController">
+            <summary>
+            Class controller of PlaceType, this class have all routes of PlaceTypeRepository methods's
+            </summary>
+        </member>
+        <member name="F:ISIParkAPI.Controllers.PlaceTypeController._placeTypeRepository">
+            <summary>
+            Create a instance of Interface PlaceType
+            </summary>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.PlaceTypeController.#ctor(ISIParkAPI.Data.Repositories.Interfaces.IPlaceTypeRepository)">
+            <summary>
+            Give a value to the instance
+            </summary>
+            <param name="placeTypeRepository"></param>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.PlaceTypeController.GetAllPlaceType">
+            <summary>
+            Route to give all types from database, this method uses a http get
+            </summary>
+            <returns>All types</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.PlaceTypeController.GetPlaceTypeDetails(System.Int32)">
+            <summary>
+            Route to give only one atype from database, this method uses a http get
+            </summary>
+            <param name="id">Id of the type that we want</param>
+            <returns>The type that corresponds the id entered</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.PlaceTypeController.InsertPlaceType(ISIParkAPI.Model.PlaceType)">
+            <summary>
+            Route to insert a new type from database, this method uses a http put
+            </summary>
+            <param name="placeType">An object to represent PlaceType</param>
+            <returns>Bad or not result depending on the result</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.PlaceTypeController.UpdatePlaceType(ISIParkAPI.Model.PlaceType)">
+            <summary>
+            Route to update a type from database, this method uses a http put
+            </summary>
+            <param name="placeType">An object to represent PlaceType</param>
+            <returns>Bad or not result depending on the result</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.PlaceTypeController.DeletePlaceType(System.Int32)">
+            <summary>
+            Route to delete a type from database, this method uses a http delete
+            </summary>
+            <param name="id">Id of the type that we want to delete</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="T:ISIParkAPI.Controllers.ReportController">
+            <summary>
+            Class controller of Report, this class have all routes of ReportRepository methods
+            </summary>
+        </member>
+        <member name="F:ISIParkAPI.Controllers.ReportController._reportRepository">
+            <summary>
+            Create a instance of Interface Report
+            </summary>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.ReportController.#ctor(ISIParkAPI.Data.Repositories.Interfaces.IReportRepository)">
+            <summary>
+            Give a value to the instance
+            </summary>
+            <param name="reportRepository"></param>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.ReportController.GetAllReport">
+            <summary>
+            Route to give all reports from database, this method uses a http get
+            </summary>
+            <returns>All reports</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.ReportController.GetReportDetails(System.Int32)">
+            <summary>
+            Route to give only one report from database, this method uses a http get
+            </summary>
+            <param name="id">Id of the report that we want</param>
+            <returns>The report that corresponds the id entered</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.ReportController.InsertReport(ISIParkAPI.Model.Report)">
+            <summary>
+            Route to insert a new report, this method uses a http post
+            </summary>
+            <param name="report">An object to represent Report</param>
+            <returns>Bad or not result depending on the result</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.ReportController.UpdateReport(ISIParkAPI.Model.Report)">
+            <summary>
+            Route to update a report from database, this method uses a http put
+            </summary>
+            <param name="report">An object to represent Report</param>
+            <returns>Bad or not result depending on the result</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.ReportController.DeleteReport(System.Int32)">
+            <summary>
+            Route to delete a report from database, this method uses a http delete
+            </summary>
+            <param name="id">Id of the report that we want to delete</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="T:ISIParkAPI.Controllers.SetorController">
+            <summary>
+            Class controller of Sector, this class have all routes of SectorRepository methods's
+            </summary>
+        </member>
+        <member name="F:ISIParkAPI.Controllers.SetorController._sectorRepository">
+            <summary>
+            Create a instance of Interface Sector
+            </summary>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.SetorController.#ctor(ISIParkAPI.Data.Repositories.Interfaces.ISectorRepository)">
+            <summary>
+            Give a value to the instance
+            </summary>
+            <param name="sectorRepository"></param>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.SetorController.GetAllSector">
+            <summary>
+            Route to give all sectors from database, this method uses a http get
+            </summary>
+            <returns>All sectors</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.SetorController.GetSectorDetails(System.Int32)">
+            <summary>
+            Route to give only one sector from database, this method uses a http get
+            </summary>
+            <param name="id">Id of the sector that we want</param>
+            <returns>The sector that corresponds the id entered</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.SetorController.InsertSector(ISIParkAPI.Model.Sector)">
+            <summary>
+            Route to insert a new sector, this method uses a http post
+            </summary>
+            <param name="sector">An object to represent Sector</param>
+            <returns>Bad or not result depending on the result</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.SetorController.UpdateSector(ISIParkAPI.Model.Sector)">
+            <summary>
+            Route to update a sector, this method uses a http post
+            </summary>
+            <param name="sector">An object to represent Sector</param>
+            <returns>Bad or not result depending on the result</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.SetorController.DeleteSector(System.Int32)">
+            <summary>
+            Route to delete a sector from database, this method uses a http delete
+            </summary>
+            <param name="id">Id of the sector that we want to delete</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="T:ISIParkAPI.Controllers.VehicleTypeController">
+            <summary>
+            Class controller of VehicleType, this class have all routes of VehicleTypeRepository methods's
+            </summary>
+        </member>
+        <member name="F:ISIParkAPI.Controllers.VehicleTypeController._vehicleTypeRepository">
+            <summary>
+            Create a instance of Interface VehicleType
+            </summary>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.VehicleTypeController.#ctor(ISIParkAPI.Data.Repositories.Interfaces.IVehicleTypeRepository)">
+            <summary>
+            Give a value to the instance
+            </summary>
+            <param name="vehicleTypeRepository"></param>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.VehicleTypeController.GetAllVehickeType">
+            <summary>
+            Route to give all types from database, this method uses a http get
+            </summary>
+            <returns>All types</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.VehicleTypeController.GetVehicleTypeDetails(System.Int32)">
+            <summary>
+            Route to give only one type from database, this method uses a http get
+            </summary>
+            <param name="id">Id of the type that we want</param>
+            <returns>The type that corresponds the id entered</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.VehicleTypeController.InsertVehicleType(ISIParkAPI.Model.VehicleType)">
+            <summary>
+            Route to insert a new type from database, this method uses a http put
+            </summary>
+            <param name="vehicleType">An object to represent VehicleType</param>
+            <returns>Bad or not result depending on the result</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.VehicleTypeController.UpdateVehicletType(ISIParkAPI.Model.VehicleType)">
+            <summary>
+            Route to update a type from database, this method uses a http put
+            </summary>
+            <param name="vehicleType">An object to represent VehicleType</param>
+            <returns>Bad or not result depending on the result</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.VehicleTypeController.DeleteVehicleType(System.Int32)">
+            <summary>
+            Route to delete a type from database, this method uses a http delete
+            </summary>
+            <param name="id">Id of the type that we want to delete</param>
+            <returns>Nothing</returns>
+        </member>
+    </members>
+</doc>

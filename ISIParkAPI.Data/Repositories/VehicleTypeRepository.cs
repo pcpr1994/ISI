@@ -65,7 +65,7 @@ namespace ISIParkAPI.Data.Repositories
         /// <summary>
         /// This method insert a new type on database
         /// </summary>
-        /// <param name="address">Instance of VehicleType</param>
+        /// <param name="vehicleType">Instance of VehicleType</param>
         /// <returns>True inserted or false</returns>
         public async Task<bool> InsertVehicleType(VehicleType vehicleType)
         {
@@ -84,7 +84,7 @@ namespace ISIParkAPI.Data.Repositories
         /// <summary>
         /// This method changes data of a type
         /// </summary>
-        /// <param name="address">Instance of VehicleType</param>
+        /// <param name="vehicleType">Instance of VehicleType</param>
         /// <returns>True Updated or false</returns>
         public async Task<bool> UpdateVehicleType(VehicleType vehicleType)
         {
@@ -105,7 +105,7 @@ namespace ISIParkAPI.Data.Repositories
         /// <summary>
         /// This method delete a type of database 
         /// </summary>
-        /// <param name="address">Instance of VehicleType</param>
+        /// <param name="vehicleType">Instance of VehicleType</param>
         /// <returns>True deleted or false</returns>
         public async Task<bool> DeleteVehicleType(VehicleType vehicleType)
         {

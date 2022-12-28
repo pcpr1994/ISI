@@ -1,6 +1,4 @@
-﻿
-
-namespace ISIParkAPI.Model
+﻿namespace ISIParkAPI.Model
 {
     /// <summary>
     /// This class contains all information of Sector

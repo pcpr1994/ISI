@@ -172,3 +172,7 @@ C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\obj\Debug\net5.0\refint\ISIParkAPI
 C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\obj\Debug\net5.0\ISIParkAPI.pdb
 C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\obj\Debug\net5.0\ISIParkAPI.genruntimeconfig.cache
 C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\obj\Debug\net5.0\ref\ISIParkAPI.dll
+C:\Users\jocau\ISI\ISIParkAPI\bin\Debug\net5.0\ISIParkAPI.StaticWebAssets.xml
+C:\Users\jocau\ISI\ISIParkAPI\bin\Debug\net5.0\ISIParkAPI.xml
+C:\Users\jocau\ISI\ISIParkAPI\obj\Debug\net5.0\ISIParkAPI.xml
+C:\Users\jocau\ISI\ISIParkAPI\obj\Debug\net5.0\ISIParkAPI.csproj.ResolveComReference.cache

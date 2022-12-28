@@ -78,7 +78,6 @@ namespace ISIParkAPI.Data.Repositories
             return result > 0;
         }
 
-
         public async Task<bool> DeletePlace(Place place)
         {
             var db = dbConnection();
@@ -88,9 +87,6 @@ namespace ISIParkAPI.Data.Repositories
             var result = await db.ExecuteAsync(sql, new { Numero_lugar = place.Numero_lugar });
             return result > 0;
         }
-
-
-
 
     }
 }

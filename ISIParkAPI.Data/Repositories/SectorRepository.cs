@@ -65,7 +65,7 @@ namespace ISIParkAPI.Data.Repositories
         /// <summary>
         /// This method insert a new sector on database
         /// </summary>
-        /// <param name="address">Instance of Sector</param>
+        /// <param name="setor">Instance of Sector</param>
         /// <returns>True inserted or false</returns>
         public async Task<bool> InsertSector(Sector setor)
         {
@@ -85,7 +85,7 @@ namespace ISIParkAPI.Data.Repositories
         /// <summary>
         /// This method changes data of a sector
         /// </summary>
-        /// <param name="address">Instance of Sector</param>
+        /// <param name="setor">Instance of Sector</param>
         /// <returns>True Updated or false</returns>
         public async Task<bool> UpdateSector(Sector setor)
         {
@@ -107,7 +107,7 @@ namespace ISIParkAPI.Data.Repositories
         /// <summary>
         /// This method delete a sector of database 
         /// </summary>
-        /// <param name="address">Instance of Sector</param>
+        /// <param name="setor">Instance of Sector</param>
         /// <returns>True deleted or false</returns>
         public async Task<bool> DeleteSector(Sector setor)
         {
