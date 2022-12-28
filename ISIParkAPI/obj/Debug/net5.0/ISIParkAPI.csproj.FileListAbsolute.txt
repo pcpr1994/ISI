@@ -176,3 +176,6 @@ C:\Users\jocau\ISI\ISIParkAPI\bin\Debug\net5.0\ISIParkAPI.StaticWebAssets.xml
 C:\Users\jocau\ISI\ISIParkAPI\bin\Debug\net5.0\ISIParkAPI.xml
 C:\Users\jocau\ISI\ISIParkAPI\obj\Debug\net5.0\ISIParkAPI.xml
 C:\Users\jocau\ISI\ISIParkAPI\obj\Debug\net5.0\ISIParkAPI.csproj.ResolveComReference.cache
+C:\Users\Sérgio\Desktop\LESI\3_Ano\1_semestre\ISI\TP2\ISI\ISIParkAPI\bin\Debug\net5.0\ISIParkAPI.xml
+C:\Users\Sérgio\Desktop\LESI\3_Ano\1_semestre\ISI\TP2\ISI\ISIParkAPI\obj\Debug\net5.0\ISIParkAPI.csproj.ResolveComReference.cache
+C:\Users\Sérgio\Desktop\LESI\3_Ano\1_semestre\ISI\TP2\ISI\ISIParkAPI\obj\Debug\net5.0\ISIParkAPI.xml
