@@ -29,23 +29,23 @@ namespace ISIParkAPI.Data.Repositories
             return new MySqlConnection(_connectionString.ConnectionString);
         }
 
-        public async Task<IEnumerable<User>> GetAllUser()
+        public async Task<IEnumerable<UserDTO>> GetAllUser()
         {
             var db = dbConnection();
             var sql = @"SELECT id, nome, nif, DataNasc, genero, tipo_utilizadorid, Moradaid_morada, email, password
                         FROM utilizador";
-            return await db.QueryAsync<User>(sql, new { });
+            return await db.QueryAsync<UserDTO>(sql, new { });
         }
        
-        public async Task<User> GetUserById(int numero)
+        public async Task<UserDTO> GetUserById(int numero)
         {
             var db = dbConnection();
             var sql = @"SELECT nome, nif, DataNasc, genero, tipo_utilizadorid, Moradaid_morada, email, password
                         FROM utilizador
                         WHERE id = @Id";
-            return await db.QueryFirstOrDefaultAsync<User>(sql, new { Id = numero });
+            return await db.QueryFirstOrDefaultAsync<UserDTO>(sql, new { Id = numero });
         }
-        public async Task<bool> InsertUser(User user)
+        public async Task<bool> InsertUser(UserDTO user)
         {
             var db = dbConnection();
             var sql = @"INSERT INTO utilizador (nome, nif, DataNasc, genero, tipo_utilizadorid, 
@@ -69,7 +69,7 @@ namespace ISIParkAPI.Data.Repositories
             return result > 0;
         }
 
-        public async Task<bool> UpdateUser(User user)
+        public async Task<bool> UpdateUser(UserDTO user)
         {
             var db = dbConnection();
             var sql = @"UPDATE utilizador
@@ -94,7 +94,7 @@ namespace ISIParkAPI.Data.Repositories
 
             return result > 0;
         }
-        public async Task<bool> DeleteUser(User user)
+        public async Task<bool> DeleteUser(UserDTO user)
         {
             var db = dbConnection();
             var sql = @"DELETE

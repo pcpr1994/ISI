@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/*
+ * Grupo 4
+ * Trabalho II de ISI
+ * Alunos
+ *  Carlos Pereira nº6498
+ *  Paula Rodrigues nº21133
+ *  Sérgio Gonçalves nº20343
+ *  
+ */
+using System;
 
 namespace ISIParkAPI.Model
 {
-    public class User
+    public class UserDTO
     {
         public int Id { get; set; }
         public string Nome { get; set; }
@@ -16,8 +21,6 @@ namespace ISIParkAPI.Model
         public int Tipo_utilizadorid { get; set; }
         public int Moradaid_morada { get; set; }
         public string Email { get; set; }
-        public byte[] PasswordHash { get; set; }
-        public byte[] PasswordSalt { get; set; }
+        public string Password { get; set; }
     }
 }
-

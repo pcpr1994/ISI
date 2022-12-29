@@ -179,3 +179,8 @@ C:\Users\jocau\ISI\ISIParkAPI\obj\Debug\net5.0\ISIParkAPI.csproj.ResolveComRefer
 C:\Users\Sérgio\Desktop\LESI\3_Ano\1_semestre\ISI\TP2\ISI\ISIParkAPI\bin\Debug\net5.0\ISIParkAPI.xml
 C:\Users\Sérgio\Desktop\LESI\3_Ano\1_semestre\ISI\TP2\ISI\ISIParkAPI\obj\Debug\net5.0\ISIParkAPI.csproj.ResolveComReference.cache
 C:\Users\Sérgio\Desktop\LESI\3_Ano\1_semestre\ISI\TP2\ISI\ISIParkAPI\obj\Debug\net5.0\ISIParkAPI.xml
+C:\Users\jocau\ISI\ISIParkAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\jocau\ISI\ISIParkAPI\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\jocau\ISI\ISIParkAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\jocau\ISI\ISIParkAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\jocau\ISI\ISIParkAPI\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll

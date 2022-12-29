@@ -15,10 +15,10 @@ namespace ISIParkAPI.Data.Repositories.Interfaces
 {
     public interface IUserRepository
     {
-        Task<IEnumerable<User>> GetAllUser();
-        Task<User> GetUserById(int id);
-        Task<bool> InsertUser(User user);
-        Task<bool> UpdateUser(User user);
-        Task<bool> DeleteUser(User user);
+        Task<IEnumerable<UserDTO>> GetAllUser();
+        Task<UserDTO> GetUserById(int id);
+        Task<bool> InsertUser(UserDTO user);
+        Task<bool> UpdateUser(UserDTO user);
+        Task<bool> DeleteUser(UserDTO user);
     }
 }

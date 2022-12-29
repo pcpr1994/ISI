@@ -40,7 +40,7 @@ namespace ISIParkAPI.Controllers
 
         [HttpPost]
         [Route("insert")]
-        public async Task<IActionResult> InsertUser([FromBody] User user)
+        public async Task<IActionResult> InsertUser([FromBody] UserDTO user)
         {
             if (user == null)
                 return BadRequest();
@@ -53,7 +53,7 @@ namespace ISIParkAPI.Controllers
 
         [HttpPut]
         [Route("update")]
-        public async Task<IActionResult> UpdateUser([FromBody] User user)
+        public async Task<IActionResult> UpdateUser([FromBody] UserDTO user)
         {
             if (user == null)
                 return BadRequest();
@@ -67,7 +67,7 @@ namespace ISIParkAPI.Controllers
         [HttpDelete("{numero}")]
         public async Task<IActionResult> DeleteUser(int numero)
         {
-            await _userRepository.DeleteUser(new User { Id = numero });
+            await _userRepository.DeleteUser(new UserDTO { Id = numero });
 
             return NoContent();
         }
