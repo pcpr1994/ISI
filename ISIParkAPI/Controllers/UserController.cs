@@ -9,11 +9,13 @@
  */
 using ISIParkAPI.Data.Repositories.Interfaces;
 using ISIParkAPI.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace ISIParkAPI.Controllers
 {
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
@@ -36,19 +38,6 @@ namespace ISIParkAPI.Controllers
         public async Task<IActionResult> GetUserById(int numero)
         {
             return Ok(await _userRepository.GetUserById(numero));
-        }
-
-        [HttpPost]
-        [Route("insert")]
-        public async Task<IActionResult> InsertUser([FromBody] UserDTO user)
-        {
-            if (user == null)
-                return BadRequest();
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            var inserted = await _userRepository.InsertUser(user);
-            return Created("created", inserted);
         }
 
         [HttpPut]

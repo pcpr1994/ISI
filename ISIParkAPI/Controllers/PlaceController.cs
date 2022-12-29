@@ -9,11 +9,13 @@
  */
 using ISIParkAPI.Data.Repositories.Interfaces;
 using ISIParkAPI.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace ISIParkAPI.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class PlaceController : ControllerBase

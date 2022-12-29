@@ -9,6 +9,7 @@
  */
 using ISIParkAPI.Data.Repositories.Interfaces;
 using ISIParkAPI.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -17,6 +18,7 @@ namespace ISIParkAPI.Controllers
     /// <summary>
     /// Class controller of Sector, this class have all routes of SectorRepository methods's
     /// </summary>
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class SetorController : ControllerBase

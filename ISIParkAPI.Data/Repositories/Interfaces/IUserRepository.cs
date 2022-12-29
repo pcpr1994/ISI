@@ -16,6 +16,7 @@ namespace ISIParkAPI.Data.Repositories.Interfaces
     public interface IUserRepository
     {
         Task<IEnumerable<UserDTO>> GetAllUser();
+        Task<UserLogin> GetUserByEmail(string email);
         Task<UserDTO> GetUserById(int id);
         Task<bool> InsertUser(UserDTO user);
         Task<bool> UpdateUser(UserDTO user);

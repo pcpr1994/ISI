@@ -36,7 +36,16 @@ namespace ISIParkAPI.Data.Repositories
                         FROM utilizador";
             return await db.QueryAsync<UserDTO>(sql, new { });
         }
-       
+
+        public async Task<UserLogin> GetUserByEmail(string email)
+        {
+            var db = dbConnection();
+            var sql = @"SELECT nome, nif, DataNasc, genero, tipo_utilizadorid, Moradaid_morada, email, password
+                        FROM utilizador
+                        WHERE email = @Email";
+            return await db.QueryFirstOrDefaultAsync<UserLogin>(sql, new { Email = email });
+        }
+
         public async Task<UserDTO> GetUserById(int numero)
         {
             var db = dbConnection();

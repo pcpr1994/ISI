@@ -1,8 +1,8 @@
-﻿using ISIParkAPI.Model;
+﻿using ISIParkAPI.Data.Repositories.Interfaces;
+using ISIParkAPI.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using Org.BouncyCastle.Crypto.Agreement.Kdf;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -19,31 +19,41 @@ namespace ISIParkAPI.Controllers
     {
         public static User user = new User();
         private readonly IConfiguration _configuration;
+        private readonly IUserRepository _userRepository;
 
-        public AuthController(IConfiguration configuration)
+        public AuthController(IConfiguration configuration, IUserRepository userRepository)
         {
             _configuration = configuration;
+            _userRepository = userRepository;
         }
 
         [HttpPost("register")]
-        public async Task<ActionResult<User>> Register(UserDTO request)
+        public async Task<ActionResult> InsertUser([FromBody]UserDTO request)
         {
             CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
             user.Email = request.Email;
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
 
-            return Ok(user);
+            if (user == null)
+                return BadRequest();
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var inserted = await _userRepository.InsertUser(request);
+            return Created("created", inserted);
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<string>> Login(UserLogin request)
+        public async Task<ActionResult> GetUserByEmail(UserLogin request)
         {
             if (user.Email != request.Email)
                 return BadRequest("User not found!");
 
             if (!VerifyPasswordHash(request.Password, user.PasswordHash, user.PasswordSalt))
                 return BadRequest("Wrong Password!");
+
+            Ok(await _userRepository.GetUserByEmail(request.Email));
 
             string token = CreateToken(user);
             return Ok(token);
