@@ -3,6 +3,7 @@ using ISIParkAPI.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -45,15 +46,13 @@ namespace ISIParkAPI.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult> GetUserByEmail(UserLogin request)
+        public async Task<ActionResult> Login(UserLogin request)
         {
             if (user.Email != request.Email)
                 return BadRequest("User not found!");
 
             if (!VerifyPasswordHash(request.Password, user.PasswordHash, user.PasswordSalt))
                 return BadRequest("Wrong Password!");
-
-            Ok(await _userRepository.GetUserByEmail(request.Email));
 
             string token = CreateToken(user);
             return Ok(token);

@@ -32,18 +32,18 @@ namespace ISIParkAPI.Data.Repositories
         public async Task<IEnumerable<UserDTO>> GetAllUser()
         {
             var db = dbConnection();
-            var sql = @"SELECT id, nome, nif, DataNasc, genero, tipo_utilizadorid, Moradaid_morada, email, password
+            var sql = @"SELECT id, nome, nif, DataNasc, genero, tipo_utilizadorid, Moradaid_morada, email
                         FROM utilizador";
             return await db.QueryAsync<UserDTO>(sql, new { });
         }
 
-        public async Task<UserLogin> GetUserByEmail(string email)
+        public async Task<UserDTO> GetUserByEmail(string email)
         {
             var db = dbConnection();
-            var sql = @"SELECT nome, nif, DataNasc, genero, tipo_utilizadorid, Moradaid_morada, email, password
+            var sql = @"SELECT email, password
                         FROM utilizador
                         WHERE email = @Email";
-            return await db.QueryFirstOrDefaultAsync<UserLogin>(sql, new { Email = email });
+            return await db.QueryFirstOrDefaultAsync<UserDTO>(sql, new { Email = email });
         }
 
         public async Task<UserDTO> GetUserById(int numero)
@@ -61,7 +61,6 @@ namespace ISIParkAPI.Data.Repositories
                                     Moradaid_morada, email, password)
                          VALUES (@nome, @nif, @DataNasc, @genero, @tipo_utilizadorid, @Moradaid_morada, @email, @password)";  
                        
-
             var result = await db.ExecuteAsync(sql, new
             {
                 user.Nome,
@@ -72,7 +71,6 @@ namespace ISIParkAPI.Data.Repositories
                 user.Moradaid_morada,
                 user.Email,
                 user.Password
-
             });
 
             return result > 0;
@@ -96,9 +94,7 @@ namespace ISIParkAPI.Data.Repositories
                 user.Tipo_utilizadorid,
                 user.Moradaid_morada,
                 user.Email,
-                user.Password
-
-                
+                user.Password              
             });
 
             return result > 0;
@@ -112,6 +108,5 @@ namespace ISIParkAPI.Data.Repositories
             var result = await db.ExecuteAsync(sql, new { Id = user.Id });
             return result > 0;
         }
-
     }
 }

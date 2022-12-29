@@ -8,6 +8,7 @@
  *  
  */
 using System;
+using System.Text.Json.Serialization;
 
 namespace ISIParkAPI.Model
 {
@@ -21,6 +22,7 @@ namespace ISIParkAPI.Model
         public int Tipo_utilizadorid { get; set; }
         public int Moradaid_morada { get; set; }
         public string Email { get; set; }
+        [JsonIgnore]
         public string Password { get; set; }
     }
 }

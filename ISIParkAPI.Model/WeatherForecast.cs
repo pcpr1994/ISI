@@ -1,6 +1,6 @@
 using System;
 
-namespace ISIParkAPI
+namespace ISIParkAPI.Model
 {
     public class WeatherForecast
     {
