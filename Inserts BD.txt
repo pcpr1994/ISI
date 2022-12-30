@@ -51,7 +51,6 @@ INSERT INTO utilizador_Tipo_contacto (utilizadorid, Tipo_contacton_contacto, con
 INSERT INTO utilizador_Tipo_contacto (utilizadorid, Tipo_contacton_contacto, contacto) VALUES (3,1,"nome@email.com");
 INSERT INTO utilizador_Tipo_contacto (utilizadorid, Tipo_contacton_contacto, contacto) VALUES (2,2,"912345678");
 
-
 INSERT INTO utilizador_Tipo_veiculos (utilizadorid, Tipo_veiculosid_veiculo, matricula) 
 VALUES (2,1,"10-AE-25");
 INSERT INTO utilizador_Tipo_veiculos (utilizadorid, Tipo_veiculosid_veiculo, matricula) 
@@ -80,9 +79,10 @@ VALUES (1,2);
 INSERT INTO utilizador_Historico (utilizadorid, Historicoid)
 VALUES (2,2);
 
+INSERT INTO perfil_especial(nome,matricula, contacto, Tipo_veiculosid_veiculo) VALUES ("Maria Pires", "65-TE-85", 965874123, 1);
+INSERT INTO perfil_especial(nome,matricula, contacto, Tipo_veiculosid_veiculo) VALUES ("Andreia Pires", "QW-52FR", "andreia@email.com", 2);
 
 
-/*
 /* PARA APAGAR AS TABELAS E FAZER RESET OS ID's*/ 
 DELETE FROM utilizador_Historico;
 DELETE FROM Historico;
@@ -99,6 +99,7 @@ DELETE FROM Tipo_contacto;
 DELETE FROM utilizador;
 DELETE FROM Morada;
 DELETE FROM tipo_utilizador;
+DELETE FROM perfil_especial;
 
 ALTER TABLE Tipo_contacto AUTO_INCREMENT = 1;
 ALTER TABLE utilizador_Historico AUTO_INCREMENT = 1;
@@ -115,6 +116,5 @@ ALTER TABLE Tipo_veiculos AUTO_INCREMENT = 1;
 ALTER TABLE utilizador AUTO_INCREMENT = 1;
 ALTER TABLE Morada AUTO_INCREMENT = 1;
 ALTER TABLE tipo_utilizador AUTO_INCREMENT = 1;
+ALTER TABLE perfil_especial AUTO_INCREMENT = 1;
 */
-
-

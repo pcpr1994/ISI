@@ -74,6 +74,7 @@ namespace ISIParkAPI
             services.AddScoped<IUserMessageRepository, UserMessageRepository>();
             services.AddScoped<IAddressRepository, AddressRepository>();
             services.AddScoped<IReportRepository, ReportRepository>();
+            services.AddScoped<ISpecialUsersRepository, SpecialUsersRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

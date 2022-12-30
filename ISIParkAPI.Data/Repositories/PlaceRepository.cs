@@ -30,7 +30,7 @@ namespace ISIParkAPI.Data.Repositories
             return new MySqlConnection(_connectionString.ConnectionString);
         }
 
-            public async Task<IEnumerable<Place>> GetAllPlace()
+        public async Task<IEnumerable<Place>> GetAllPlace()
         {
             var db = dbConnection();
             var sql = @"SELECT *
