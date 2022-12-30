@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jocau\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj": {}
+    "C:\\Users\\paula\\Desktop\\TP2_ISI\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jocau\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj": {
+    "C:\\Users\\paula\\Desktop\\TP2_ISI\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jocau\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj",
+        "projectUniqueName": "C:\\Users\\paula\\Desktop\\TP2_ISI\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj",
         "projectName": "ISIParkAPI.Model",
-        "projectPath": "C:\\Users\\jocau\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj",
-        "packagesPath": "C:\\Users\\jocau\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jocau\\ISI\\ISIParkAPI.Model\\obj\\",
+        "projectPath": "C:\\Users\\paula\\Desktop\\TP2_ISI\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj",
+        "packagesPath": "C:\\Users\\paula\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\paula\\Desktop\\TP2_ISI\\ISI\\ISIParkAPI.Model\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\jocau\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\paula\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -45,8 +49,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -55,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.307\\RuntimeIdentifierGraph.json"
         }
       }
     }

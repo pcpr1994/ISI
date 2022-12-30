@@ -187,3 +187,14 @@ C:\Users\jocau\ISI\ISIParkAPI\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.d
 C:\Users\jocau\ISI\ISIParkAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\jocau\ISI\ISIParkAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\jocau\ISI\ISIParkAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\bin\Debug\net5.0\ISIParkAPI.xml
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\obj\Debug\net5.0\ISIParkAPI.csproj.ResolveComReference.cache
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\obj\Debug\net5.0\ISIParkAPI.xml
