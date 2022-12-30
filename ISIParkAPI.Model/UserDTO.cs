@@ -23,5 +23,11 @@ namespace ISIParkAPI.Model
         public int Moradaid_morada { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        [JsonIgnore]
+        public byte[] PasswordHash { get; set; }
+        [JsonIgnore]
+        public byte[] PasswordSalt { get; set; }
+        [JsonIgnore]
+        public string Token { get; set; }
     }
 }

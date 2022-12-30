@@ -12,6 +12,7 @@ using ISIParkAPI.Data.Repositories.Interfaces;
 using ISIParkAPI.Model;
 using MySql.Data.MySqlClient;
 using System.Collections.Generic;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace ISIParkAPI.Data.Repositories
@@ -29,6 +30,41 @@ namespace ISIParkAPI.Data.Repositories
             return new MySqlConnection(_connectionString.ConnectionString);
         }
 
+        public bool GetUserByEm(string email)
+        {
+            var db = dbConnection();
+            var sql = @"SELECT email
+                        FROM utilizador
+                        WHERE email = @Email";
+            var x = db.QueryFirstOrDefaultAsync<UserDTO>(sql, new { Email = email });
+
+            if (x != null)
+                return true;
+            else
+                return false;
+        }
+        public byte[] GetUserByPasswordh(string email)
+        {
+            var db = dbConnection();
+            var sql = @"SELECT passwordHash
+                        FROM utilizador
+                        WHERE email = @Email";
+            var x = db.QueryFirstOrDefaultAsync<UserDTO>(sql, new { Email = email }).ToString();
+            byte[] ph = Encoding.ASCII.GetBytes(x);
+
+            return ph;
+        }
+        public byte[] GetUserByPasswords(string email)
+        {
+            var db = dbConnection();
+            var sql = @"SELECT passwordSalt
+                        FROM utilizador
+                        WHERE email = @Email";
+            var x = db.QueryFirstOrDefaultAsync<UserDTO>(sql, new { Email = email }).ToString();
+            byte[] ps = Encoding.ASCII.GetBytes(x);
+
+            return ps;
+        }
         public async Task<IEnumerable<UserDTO>> GetAllUser()
         {
             var db = dbConnection();
@@ -36,16 +72,14 @@ namespace ISIParkAPI.Data.Repositories
                         FROM utilizador";
             return await db.QueryAsync<UserDTO>(sql, new { });
         }
-
         public async Task<UserDTO> GetUserByEmail(string email)
         {
             var db = dbConnection();
-            var sql = @"SELECT email, password
+            var sql = @"SELECT *
                         FROM utilizador
                         WHERE email = @Email";
             return await db.QueryFirstOrDefaultAsync<UserDTO>(sql, new { Email = email });
         }
-
         public async Task<UserDTO> GetUserById(int numero)
         {
             var db = dbConnection();
@@ -58,8 +92,8 @@ namespace ISIParkAPI.Data.Repositories
         {
             var db = dbConnection();
             var sql = @"INSERT INTO utilizador (nome, nif, DataNasc, genero, tipo_utilizadorid, 
-                                    Moradaid_morada, email, password)
-                         VALUES (@nome, @nif, @DataNasc, @genero, @tipo_utilizadorid, @Moradaid_morada, @email, @password)";  
+                                    Moradaid_morada, email, password, passwordHash, passwordSalt, token)
+                         VALUES (@nome, @nif, @DataNasc, @genero, @tipo_utilizadorid, @Moradaid_morada, @email, @password, @passwordHash, @passwordSalt, @token)";  
                        
             var result = await db.ExecuteAsync(sql, new
             {
@@ -70,7 +104,10 @@ namespace ISIParkAPI.Data.Repositories
                 user.Tipo_utilizadorid,
                 user.Moradaid_morada,
                 user.Email,
-                user.Password
+                user.Password,
+                user.PasswordHash,
+                user.PasswordSalt,
+                user.Token
             });
 
             return result > 0;

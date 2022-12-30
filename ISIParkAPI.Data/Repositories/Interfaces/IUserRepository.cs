@@ -21,5 +21,8 @@ namespace ISIParkAPI.Data.Repositories.Interfaces
         Task<bool> InsertUser(UserDTO user);
         Task<bool> UpdateUser(UserDTO user);
         Task<bool> DeleteUser(UserDTO user);
+        bool GetUserByEm(string email);
+        public byte[] GetUserByPasswordh(string email);
+        byte[] GetUserByPasswords(string email);
     }
 }

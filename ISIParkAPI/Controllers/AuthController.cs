@@ -1,4 +1,6 @@
-﻿using ISIParkAPI.Data.Repositories.Interfaces;
+﻿using Dapper;
+using ISIParkAPI.Data;
+using ISIParkAPI.Data.Repositories.Interfaces;
 using ISIParkAPI.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -10,6 +12,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Security.Cryptography;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace ISIParkAPI.Controllers
@@ -18,28 +21,33 @@ namespace ISIParkAPI.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        public static User user = new User();
         private readonly IConfiguration _configuration;
         private readonly IUserRepository _userRepository;
+        private MySQLConfiguration _connectionString;
+        UserDTO user = new UserDTO();
 
-        public AuthController(IConfiguration configuration, IUserRepository userRepository)
+        public AuthController(IConfiguration configuration, IUserRepository userRepository, MySQLConfiguration connectionString)
         {
             _configuration = configuration;
             _userRepository = userRepository;
+            _connectionString = connectionString;
+        }
+        protected MySqlConnection dbConnection()
+        {
+            return new MySqlConnection(_connectionString.ConnectionString);
         }
 
         [HttpPost("register")]
         public async Task<ActionResult> InsertUser([FromBody]UserDTO request)
         {
-            CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
-            user.Email = request.Email;
-            user.PasswordHash = passwordHash;
-            user.PasswordSalt = passwordSalt;
-
-            if (user == null)
+            if (request == null)
                 return BadRequest();
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
+
+            CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
+            request.PasswordHash = passwordHash;
+            request.PasswordSalt = passwordSalt;
 
             var inserted = await _userRepository.InsertUser(request);
             return Created("created", inserted);
@@ -48,24 +56,29 @@ namespace ISIParkAPI.Controllers
         [HttpPost("login")]
         public async Task<ActionResult> Login(UserLogin request)
         {
-            if (user.Email != request.Email)
+            if (!_userRepository.GetUserByEm(request.Email))
                 return BadRequest("User not found!");
 
-            if (!VerifyPasswordHash(request.Password, user.PasswordHash, user.PasswordSalt))
+            byte[] ph = _userRepository.GetUserByPasswordh(request.Email);
+            byte[] ps = _userRepository.GetUserByPasswords(request.Email);
+
+            if (!VerifyPasswordHash(request.Password, ph, ps))
                 return BadRequest("Wrong Password!");
+
+            user = await _userRepository.GetUserByEmail(request.Email);
 
             string token = CreateToken(user);
             return Ok(token);
         }
 
-        private string CreateToken(User user)
+        private string CreateToken(UserDTO user)
         {
             List<Claim> claims = new List<Claim>
             {
                 new Claim(ClaimTypes.Email, user.Email)
             };
 
-            var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
                 _configuration.GetSection("AppSettings:Token").Value));
 
             var cred = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
@@ -76,6 +89,7 @@ namespace ISIParkAPI.Controllers
                 signingCredentials: cred);
 
             var jwt = new JwtSecurityTokenHandler().WriteToken(token);
+            user.Token = jwt;
             return jwt;
         }
 
@@ -84,15 +98,14 @@ namespace ISIParkAPI.Controllers
             using (var hmac = new HMACSHA512())
             {
                 passwordSalt = hmac.Key;
-                passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+                passwordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
             }
         }
-
         private bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)
         {
             using (var hmac = new HMACSHA512(passwordSalt))
             {
-                var computedHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+                var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
                 return computedHash.SequenceEqual(passwordHash);
             }
         }
