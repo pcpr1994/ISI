@@ -59,8 +59,9 @@ namespace ISIParkAPI.Controllers
             if (!_userRepository.GetUserByEm(request.Email))
                 return BadRequest("User not found!");
 
-            byte[] ph = _userRepository.GetUserByPasswordh(request.Email);
-            byte[] ps = _userRepository.GetUserByPasswords(request.Email);
+            var ph = _userRepository.GetUserByPasswordh(request.Email);
+            var ps = _userRepository.GetUserByPasswords(request.Email);
+            Console.WriteLine(ph);
 
             if (!VerifyPasswordHash(request.Password, ph, ps))
                 return BadRequest("Wrong Password!");

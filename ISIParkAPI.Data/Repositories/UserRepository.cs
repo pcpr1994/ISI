@@ -11,6 +11,7 @@ using Dapper;
 using ISIParkAPI.Data.Repositories.Interfaces;
 using ISIParkAPI.Model;
 using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,11 +38,12 @@ namespace ISIParkAPI.Data.Repositories
                         FROM utilizador
                         WHERE email = @Email";
             var x = db.QueryFirstOrDefaultAsync<UserDTO>(sql, new { Email = email });
-
-            if (x != null)
-                return true;
-            else
+            var em = x.Result;
+           
+            if (em == null)
                 return false;
+            else
+                return true;
         }
         public byte[] GetUserByPasswordh(string email)
         {
@@ -49,10 +51,9 @@ namespace ISIParkAPI.Data.Repositories
             var sql = @"SELECT passwordHash
                         FROM utilizador
                         WHERE email = @Email";
-            var x = db.QueryFirstOrDefaultAsync<UserDTO>(sql, new { Email = email }).ToString();
-            byte[] ph = Encoding.ASCII.GetBytes(x);
-
-            return ph;
+            var x = db.QueryFirstOrDefaultAsync<UserDTO>(sql, new { Email = email });
+            var ph = x.Result;
+            return ph.PasswordHash;
         }
         public byte[] GetUserByPasswords(string email)
         {
@@ -60,10 +61,10 @@ namespace ISIParkAPI.Data.Repositories
             var sql = @"SELECT passwordSalt
                         FROM utilizador
                         WHERE email = @Email";
-            var x = db.QueryFirstOrDefaultAsync<UserDTO>(sql, new { Email = email }).ToString();
-            byte[] ps = Encoding.ASCII.GetBytes(x);
+            var x = db.QueryFirstOrDefaultAsync<UserDTO>(sql, new { Email = email });
+            var ps = x.Result;
 
-            return ps;
+            return ps.PasswordSalt;
         }
         public async Task<IEnumerable<UserDTO>> GetAllUser()
         {
