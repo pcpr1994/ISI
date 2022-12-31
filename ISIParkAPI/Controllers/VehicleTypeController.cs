@@ -18,7 +18,7 @@ namespace ISIParkAPI.Controllers
     /// <summary>
     /// Class controller of VehicleType, this class have all routes of VehicleTypeRepository methods's
     /// </summary>
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class VehicleTypeController : ControllerBase

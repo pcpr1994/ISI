@@ -41,6 +41,7 @@ namespace ISIParkAPI.Controllers
         /// Route to give all reports from database, this method uses a http get
         /// </summary>
         /// <returns>All reports</returns>
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         [Route("getAll")]
         public async Task<IActionResult> GetAllReport()
@@ -53,6 +54,7 @@ namespace ISIParkAPI.Controllers
         /// </summary>
         /// <param name="id">Id of the report that we want</param>
         /// <returns>The report that corresponds the id entered</returns>
+        [Authorize(Roles = "Admin")]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetReportDetails(int id)
         {
@@ -82,6 +84,7 @@ namespace ISIParkAPI.Controllers
         /// </summary>
         /// <param name="report">An object to represent Report</param>
         /// <returns>Bad or not result depending on the result</returns>
+        [Authorize(Roles = "Admin")]
         [HttpPut]
         [Route("update")]
         public async Task<IActionResult> UpdateReport([FromBody] Report report)
@@ -100,6 +103,7 @@ namespace ISIParkAPI.Controllers
         /// </summary>
         /// <param name="id">Id of the report that we want to delete</param>
         /// <returns>Nothing</returns>
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteReport(int id)
         {

@@ -16,9 +16,9 @@ using System.Threading.Tasks;
 namespace ISIParkAPI.Controllers
 {
     /// <summary>
-    /// Class controller of Sector, this class have all routes of SectorRepository methods's
+    /// Class controller of Sector, this class have all routes of SectorRepository methods
     /// </summary>
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class SetorController : ControllerBase

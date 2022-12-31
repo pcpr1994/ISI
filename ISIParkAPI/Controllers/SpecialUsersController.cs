@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace ISIParkAPI.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class SpecialUsersController : ControllerBase

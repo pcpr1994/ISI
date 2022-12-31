@@ -18,7 +18,7 @@ namespace ISIParkAPI.Controllers
     /// <summary>
     /// Class controller of Address, this class have all routes of AddressRepository methods's
     /// </summary>
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class AddressController : ControllerBase

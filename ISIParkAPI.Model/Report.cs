@@ -37,7 +37,7 @@ namespace ISIParkAPI.Model
         public DateTime Data { get; set; }
 
         /// <summary>
-        /// Data is a variable that saves the imagem attached to a report
+        /// Imagem is a variable that saves the imagem attached to a report
         /// </summary>
         public string Imagem { get; set; }
     }

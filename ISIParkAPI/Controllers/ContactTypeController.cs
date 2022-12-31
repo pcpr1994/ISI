@@ -18,7 +18,7 @@ namespace ISIParkAPI.Controllers
     /// <summary>
     /// Class controller of ContactType, this class have all routes of ContactTypeRepository methods's
     /// </summary>
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class ContactTypeController : ControllerBase

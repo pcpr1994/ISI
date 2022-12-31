@@ -154,6 +154,101 @@
             <param name="id">Id of the type that we want to delete</param>
             <returns>Nothing</returns>
         </member>
+        <member name="T:ISIParkAPI.Controllers.LicensePlateSensorController">
+            <summary>
+            Class controller of LicensePlateSensor, this class have all routes of LicensePlateSensorRepository methods
+            </summary>
+        </member>
+        <member name="F:ISIParkAPI.Controllers.LicensePlateSensorController._licensePlateSensorRepository">
+            <summary>
+            Create a instance of Interface LicensePlateSensor
+            </summary>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.LicensePlateSensorController.#ctor(ISIParkAPI.Data.Repositories.Interfaces.ILicensePlateSensorRepository)">
+            <summary>
+            Give a value to the instance
+            </summary>
+            <param name="licensePlateSensorRepository"></param>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.LicensePlateSensorController.GetAllPlateSensor">
+            <summary>
+            Route to give all vehicles that was read from license plate sensor, this method uses a http get
+            </summary>
+            <returns>All vehicles</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.LicensePlateSensorController.GetPlateSensorDetails(System.Int32)">
+            <summary>
+            Route to give only one user's vehicle from database, this method uses a http get
+            </summary>
+            <param name="nif">NIF of the user that we want</param>
+            <returns>The user's vehicle that corresponds the nif entered</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.LicensePlateSensorController.InsertVehicleSensor(ISIParkAPI.Model.LicensePlateSensor)">
+            <summary>
+            Route to insert a new user's vehicle that passes on license plate sensor, this method uses a http post
+            </summary>
+            <param name="licensePlateSensor">An object to represent LicensePlateSensor</param>
+            <returns>Bad or not result depending on the result</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.LicensePlateSensorController.UpdateVehicleSensor(ISIParkAPI.Model.LicensePlateSensor)">
+            <summary>
+            Route to update a user's vehicle that passes on license plate sensor, this method uses a http post
+            </summary>
+            <param name="licensePlateSensor">An object to represent LicensePlateSensor</param>
+            <returns>Bad or not result depending on the result</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.LicensePlateSensorController.DeleteVehicleSensor(System.Int32)">
+            <summary>
+            Route to delete a user's vehicle that passes on license plate sensor from database, this method uses a http delete
+            </summary>
+            <param name="nif">Nif of the user's vehicle that we want to delete</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="F:ISIParkAPI.Controllers.ParkingSensorController._parkingSensorRepository">
+            <summary>
+            Create a instance of Interface Address
+            </summary>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.ParkingSensorController.#ctor(ISIParkAPI.Data.Repositories.Interfaces.IParkingSensorRepository)">
+            <summary>
+            Give a value to the instance
+            </summary>
+            <param name="parkingSensorRepository"></param>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.ParkingSensorController.GetAllParkingSensor">
+            <summary>
+            Route to give all parking sensors from database, this method uses a http get
+            </summary>
+            <returns>All parking sensors</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.ParkingSensorController.GetParkingSensorDetails(System.Int32)">
+            <summary>
+            Route to give only one parking sensor from database, this method uses a http get
+            </summary>
+            <param name="lugar">Sensor that we want</param>
+            <returns>The sensor that corresponds the place entered</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.ParkingSensorController.InsertParkingSensor(ISIParkAPI.Model.ParkingSensor)">
+            <summary>
+            Route to insert a new parking sensor, this method uses a http post
+            </summary>
+            <param name="parkingSensor">An object to represent Parking Sensor</param>
+            <returns>Bad or not result depending on the result</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.ParkingSensorController.UpdateParkingSensor(ISIParkAPI.Model.ParkingSensor)">
+            <summary>
+            Route to update parking sensor from database, this method uses a http put
+            </summary>
+            <param name="parkingSensor">An object to represent Parking Sensor</param>
+            <returns>Bad or not result depending on the result</returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.ParkingSensorController.DeleteParkingSensor(System.Int32)">
+            <summary>
+            Route to delete a parking sensor from database, this method uses a http delete
+            </summary>
+            <param name="lugar">Parking Sensor that we want to delete</param>
+            <returns>Nothing</returns>
+        </member>
         <member name="T:ISIParkAPI.Controllers.PlaceTypeController">
             <summary>
             Class controller of PlaceType, this class have all routes of PlaceTypeRepository methods's
@@ -256,7 +351,7 @@
         </member>
         <member name="T:ISIParkAPI.Controllers.SetorController">
             <summary>
-            Class controller of Sector, this class have all routes of SectorRepository methods's
+            Class controller of Sector, this class have all routes of SectorRepository methods
             </summary>
         </member>
         <member name="F:ISIParkAPI.Controllers.SetorController._sectorRepository">

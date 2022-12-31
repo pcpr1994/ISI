@@ -1,5 +1,4 @@
-﻿using Dapper;
-using ISIParkAPI.Data;
+﻿using ISIParkAPI.Data;
 using ISIParkAPI.Data.Repositories.Interfaces;
 using ISIParkAPI.Model;
 using Microsoft.AspNetCore.Mvc;
@@ -75,7 +74,6 @@ namespace ISIParkAPI.Controllers
             }
 
             string token = CreateToken(user);
-            //await _userRepository.UpdateUserToken(user, token);
             return Ok(token);
         }
         private string CreateTokenAdmin(UserDTO user)

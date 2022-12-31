@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xD0JScp/GswsQ/bhMtpK1rwG+kplxHMBG3aBtsSuKcN40g6WD93w5Ahm1XmQKOPLdvURwGDiUbn/5P1gaiB+fw==",
+  "dgSpecHash": "Z6lt/eeU+Py8d5cGM95TznaYWTuNzYzk6fYgxSdKOXb5LiqqGVhj4/hCWuueDQBXj5BjV6i7BoaPdnesQh/0wA==",
   "success": true,
   "projectFilePath": "C:\\Users\\jocau\\ISI\\ISIParkAPI\\ISIParkAPI.csproj",
   "expectedPackageFiles": [
@@ -49,14 +49,8 @@
     "C:\\Users\\jocau\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
     "C:\\Users\\jocau\\.nuget\\packages\\system.text.encoding.codepages\\4.4.0\\system.text.encoding.codepages.4.4.0.nupkg.sha512",
     "C:\\Users\\jocau\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
+    "C:\\Users\\jocau\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\jocau\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache C:\\Users\\jocau\\ISI\\ISIParkAPI\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

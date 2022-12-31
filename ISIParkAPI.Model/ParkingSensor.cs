@@ -1,4 +1,15 @@
-﻿namespace ISIParkAPI.Model
+﻿/*
+ * Grupo 4
+ * Trabalho II de ISI
+ * Alunos
+ *  Carlos Pereira nº6498
+ *  Paula Rodrigues nº21133
+ *  Sérgio Gonçalves nº20343  
+ */
+
+using System;
+
+namespace ISIParkAPI.Model
 {
     /// <summary>
     /// This class contains all information of parking sensors 
@@ -6,38 +17,53 @@
     public class ParkingSensor
     {
         /// <summary>
-        /// ID_Morada is a variable that saves the id
+        /// Brand is a variable that saves the vehicle's brand
         /// </summary>
-        public int ID_Morada { get; set; }
+        public string Brand { get; set; }
 
         /// <summary>
-        /// Rua is a variable that saves the road
+        /// Model is a variable that saves the vehicle's model
         /// </summary>
-        public string Rua { get; set; }
+        public string Model { get; set; }
 
         /// <summary>
-        /// NPorta is a variable that saves the door number for each house
+        /// Type is a variable that saves the type of the vehicle
         /// </summary>
-        public int NPorta { get; set; }
+        public string Type { get; set; }
 
         /// <summary>
-        /// CP4 ia a variable that saves the first four numbers of postal code
+        /// Setor ia a variable that saves the parking's sector
         /// </summary>
-        public int CP4 { get; set; }
+        public int Setor { get; set; }
 
         /// <summary>
-        /// CP3 ia a variable that saves the seconds three numbers of postal code
+        /// Lugar ia a variable that saves the parking's place
         /// </summary>
-        public int CP3 { get; set; }
+        public int Lugar { get; set; }
 
         /// <summary>
-        /// Localidade is a variable that saves the name of location
+        /// Estado is a variable that saves the place's state, if occupied or free
         /// </summary>
-        public string Localidade { get; set; }
+        public bool Estado { get; set; }
 
         /// <summary>
-        /// Cidade is a variable that saves the name of each city
+        /// Dia is a variable that saves the day the vehicle was parked
         /// </summary>
-        public string Cidade { get; set; }
+        public DateTime Dia { get; set; }
+
+        /// <summary>
+        /// Hora is a variable that saves the hour the vehicle was parked
+        /// </summary>
+        public DateTime Hora { get; set; }
+
+        /// <summary>
+        /// Matricula is a variable that saves the license plate of the vehicle that was parked
+        /// </summary>
+        public string Matricula { get; set; }
+
+        /// <summary>
+        /// Result_image is a variable that saves the result image 
+        /// </summary>
+        public string Result_image { get; set; }
     }
 }

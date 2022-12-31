@@ -18,7 +18,7 @@ namespace ISIParkAPI.Controllers
     /// <summary>
     /// Class controller of PlaceType, this class have all routes of PlaceTypeRepository methods's
     /// </summary>
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class PlaceTypeController : ControllerBase

@@ -74,6 +74,8 @@ namespace ISIParkAPI
             services.AddScoped<IAddressRepository, AddressRepository>();
             services.AddScoped<IReportRepository, ReportRepository>();
             services.AddScoped<ISpecialUsersRepository, SpecialUsersRepository>();
+            services.AddScoped<IParkingSensorRepository, ParkingSensorRepository>();
+            services.AddScoped<ILicensePlateSensorRepository, LicensePlateSensorRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
