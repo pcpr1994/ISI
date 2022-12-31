@@ -24,7 +24,7 @@ namespace ISIParkAPI.Controllers
         private readonly IConfiguration _configuration;
         private readonly IUserRepository _userRepository;
         private MySQLConfiguration _connectionString;
-        UserDTO user = new UserDTO();
+        static UserDTO user = new UserDTO();
 
         public AuthController(IConfiguration configuration, IUserRepository userRepository, MySQLConfiguration connectionString)
         {
@@ -68,15 +68,22 @@ namespace ISIParkAPI.Controllers
 
             user = await _userRepository.GetUserByEmail(request.Email);
 
+            if((user.Email == "admin") && (user.Password == "admin"))
+            {
+                string tokenA = CreateTokenAdmin(user);
+                return Ok(tokenA);
+            }
+
             string token = CreateToken(user);
+            //await _userRepository.UpdateUserToken(user, token);
             return Ok(token);
         }
-
-        private string CreateToken(UserDTO user)
+        private string CreateTokenAdmin(UserDTO user)
         {
             List<Claim> claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Email, user.Email)
+                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.Role, "Admin")
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
@@ -90,10 +97,29 @@ namespace ISIParkAPI.Controllers
                 signingCredentials: cred);
 
             var jwt = new JwtSecurityTokenHandler().WriteToken(token);
-            user.Token = jwt;
             return jwt;
         }
+        private string CreateToken(UserDTO user)
+        {
+            List<Claim> claims = new List<Claim>
+            {         
+                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.Role, "User")
+            };
 
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
+                _configuration.GetSection("AppSettings:Token").Value));
+
+            var cred = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
+
+            var token = new JwtSecurityToken(
+                claims: claims,
+                expires: DateTime.Now.AddDays(1),
+                signingCredentials: cred);
+
+            var jwt = new JwtSecurityTokenHandler().WriteToken(token);
+            return jwt;
+        }
         private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
             using (var hmac = new HMACSHA512())

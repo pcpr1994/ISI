@@ -26,13 +26,10 @@ namespace ISIParkAPI.Data.Repositories
         {
             _connectionString = connectionString;
         }
-
         protected MySqlConnection dbConnection()
         {
             return new MySqlConnection(_connectionString.ConnectionString);
         }
-
-
         public async Task<IEnumerable<SpecialUser>> GetAllSpecialUser()
         {
             var db = dbConnection();
@@ -40,8 +37,6 @@ namespace ISIParkAPI.Data.Repositories
                         FROM perfil_especial";
             return await db.QueryAsync<SpecialUser>(sql, new { });
         }
-
-
         public async Task<SpecialUser> GetSpecialUserByID(int id)
         {
             var db = dbConnection();
@@ -51,7 +46,6 @@ namespace ISIParkAPI.Data.Repositories
 
             return await db.QueryFirstOrDefaultAsync<SpecialUser>(sql, new { ID = id });
         }
-
         public async Task<bool> InsertSpecialUser(SpecialUser specialUser)
         {
             var db = dbConnection();
@@ -70,7 +64,6 @@ namespace ISIParkAPI.Data.Repositories
 
             return result > 0;
         }
-
         public async Task<bool> UpdateSpecialUser(SpecialUser specialUser)
         {
             var db = dbConnection();
@@ -90,7 +83,6 @@ namespace ISIParkAPI.Data.Repositories
 
             return result > 0;
         }
-
         public async Task<bool> DeleteSpecialUser(SpecialUser specialUser)
         {
             var db = dbConnection();
@@ -100,9 +92,5 @@ namespace ISIParkAPI.Data.Repositories
             var result = await db.ExecuteAsync(sql, new { Id = specialUser.Id });
             return result > 0;
         }
-
-
-
-
     }
 }

@@ -19,15 +19,13 @@ namespace ISIParkAPI.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class SpecialUsersController : ControllerBase
-    {
-       
+    {    
         private readonly ISpecialUsersRepository _specialUsersRepository;
 
         public SpecialUsersController(ISpecialUsersRepository specialUsersRepository)
         {
             _specialUsersRepository = specialUsersRepository;
         }
-
 
         [HttpGet]
         [Route("getAll")]
@@ -75,8 +73,5 @@ namespace ISIParkAPI.Controllers
 
             return NoContent();
         }
-
-
-
     }
 }

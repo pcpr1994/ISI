@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hSrD3h4xpiFpaYz9tHRAYs6tuJtRoUX0FZWky3bQHA9gMoEVGXhu5AyPLoEEdShGqK5DE1+Rcs9RKO44ZkDe+Q==",
+  "dgSpecHash": "CM+mT9u9lXxXCKu4MT1zDtka8U7FmCKIWFEHy23q5uYS7DqK1uE8t2H0Y001QtA4/6JMc5Gw3zm/rwR86forfw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\paula\\Desktop\\TP2_ISI\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj",
+  "projectFilePath": "C:\\Users\\jocau\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

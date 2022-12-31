@@ -24,5 +24,6 @@ namespace ISIParkAPI.Data.Repositories.Interfaces
         bool GetUserByEm(string email);
         byte[] GetUserByPasswordh(string email);
         byte[] GetUserByPasswords(string email);
+        Task<bool> UpdateUserToken(UserDTO user, string token);
     }
 }

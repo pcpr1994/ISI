@@ -137,6 +137,29 @@ namespace ISIParkAPI.Data.Repositories
 
             return result > 0;
         }
+        public async Task<bool> UpdateUserToken(UserDTO user, string token)
+        {
+            var db = dbConnection();
+            var sql = @"UPDATE utilizador
+                        SET token = @Token
+                        WHERE @email = Email";
+
+            var result = await db.ExecuteAsync(sql, new
+            {
+                user.Id,
+                user.Nome,
+                user.Nif,
+                user.DataNasc,
+                user.Genero,
+                user.Tipo_utilizadorid,
+                user.Moradaid_morada,
+                user.Email,
+                user.Password,
+                user.Token
+            });
+
+            return result > 0;
+        }
         public async Task<bool> DeleteUser(UserDTO user)
         {
             var db = dbConnection();

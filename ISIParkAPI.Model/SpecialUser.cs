@@ -7,8 +7,6 @@
  *  Sérgio Gonçalves nº20343
  *  
  */
-using System;
-using System.Text.Json.Serialization;
 namespace ISIParkAPI.Model
 {
     public class SpecialUser

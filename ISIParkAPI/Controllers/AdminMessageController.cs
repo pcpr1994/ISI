@@ -19,7 +19,7 @@ namespace ISIParkAPI.Controllers
     /// <summary>
     /// Class controller of AdminMessage, this class have all routes of AdminMessageRepository methods's
     /// </summary>
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class AdminMessageController : ControllerBase
