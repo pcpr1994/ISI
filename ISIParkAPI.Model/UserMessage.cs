@@ -7,17 +7,20 @@
  *  Sérgio Gonçalves nº20343
  *  
  */
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace ISIParkAPI.Model
 {
+    /// <summary>
+    /// This class contains all information of UserMessage
+    /// </summary>
     public class UserMessage
     {
+        /// <summary>
+        /// Utilizadorid is a variable that saves the user's id
+        /// </summary>
         public int Utilizadorid { get; set; }
+        /// <summary>
+        /// Mensagemid_mensagem is a variable that holds the message id
+        /// </summary>
         public int Mensagemid_mensagem { get; set; }
     }
 }

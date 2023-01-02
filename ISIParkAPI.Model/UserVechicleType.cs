@@ -7,18 +7,24 @@
  *  Sérgio Gonçalves nº20343
  *  
  */
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace ISIParkAPI.Model
 {
+    /// <summary>
+    /// This class contains all information of UserVechicleType
+    /// </summary>
     public class UserVechicleType
     {
+        /// <summary>
+        /// Utilizadorid is a variable that holds the user id
+        /// </summary>
         public int Utilizadorid { get; set; }
+        /// <summary>
+        /// Tipo_veiculosid_veiculo is a variable that holds the id of the vehicle type
+        /// </summary>
         public int Tipo_veiculosid_veiculo { get; set; }
+        /// <summary>
+        /// Matricula is a variable that holds the license plate
+        /// </summary>
         public string Matricula { get; set; }
     }
 }
