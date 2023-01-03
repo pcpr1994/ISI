@@ -36,9 +36,9 @@ namespace ISIParkAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetUserContactTypeID(int utilizadorid)
+        public async Task<IActionResult> GetUserContactTypeID(int id)
         {
-            return Ok(await _userContactTypeRepository.GetUserContactTypeID(utilizadorid));
+            return Ok(await _userContactTypeRepository.GetUserContactTypeID(id));
         }
 
         [HttpPost]

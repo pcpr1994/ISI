@@ -42,7 +42,7 @@ namespace ISIParkAPI.Data.Repositories
         public async Task<UserHistory> GetUserHistoryID(int utilizadorid)
         {
             var db = dbConnection();
-            var sql = @"SELECT utilizadorid, Historicoid
+            var sql = @"SELECT *
                         FROM utilizador_Historico
                         WHERE utilizadorid = @Utilizadorid";
             return await db.QueryFirstOrDefaultAsync<UserHistory>(sql, new { Utilizadorid = utilizadorid });

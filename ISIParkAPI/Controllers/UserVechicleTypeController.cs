@@ -35,9 +35,9 @@ namespace ISIParkAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetUserVechicleTypeID(int utilizadorid)
+        public async Task<IActionResult> GetUserVechicleTypeID(int id)
         {
-            return Ok(await _userVechicleTypeRepository.GetUserVechicleTypeID(utilizadorid));
+            return Ok(await _userVechicleTypeRepository.GetUserVechicleTypeID(id));
         }
 
         [HttpPost]
