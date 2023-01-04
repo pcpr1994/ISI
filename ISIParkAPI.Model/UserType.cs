@@ -9,9 +9,18 @@
  */
 namespace ISIParkAPI.Model
 {
+    /// <summary>
+    /// This class contains all information of UserType
+    /// </summary>
     public class UserType
     {
+        /// <summary>
+        /// ID is a variable that saves the id
+        /// </summary>
         public int ID { get; set; }
+        /// <summary>
+        /// Nome_tipo is a variable that saves the type user
+        /// </summary>
         public string Nome_tipo { get; set; }
     }
 }
