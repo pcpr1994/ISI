@@ -16,21 +16,38 @@ using System.Threading.Tasks;
 
 namespace ISIParkAPI.Data.Repositories
 {
+    /// <summary>
+    /// This class contains all the functions that perform actions on the users and the type of vechicle
+    /// </summary>
     public class UserVechicleTypeRepository : IUserVechicleTypeRepository
     {
+        /// <summary>
+        /// An instance of class MySQLConfiguration
+        /// </summary>
         private MySQLConfiguration _connectionString;
 
+        /// <summary>
+        /// Initialize the instance containing the database connection information
+        /// </summary>
+        /// <param name="connectionString"></param>
         public UserVechicleTypeRepository(MySQLConfiguration connectionString)
         {
             _connectionString = connectionString;
         }
 
+        /// <summary>
+        /// Connects to database
+        /// </summary>
+        /// <returns></returns>
         protected MySqlConnection dbConnection()
         {
             return new MySqlConnection(_connectionString.ConnectionString);
         }
 
-
+        /// <summary>
+        /// This method gets all users/ Vechicle type from the database using a query
+        /// </summary>
+        /// <returns>gets all the data</returns>
         public async Task<IEnumerable<UserVechicleType>> GetAllUserVechicleTypey()
         {
             var db = dbConnection();
@@ -38,6 +55,12 @@ namespace ISIParkAPI.Data.Repositories
                         FROM utilizador_Tipo_veiculos";
             return await db.QueryAsync<UserVechicleType>(sql, new { });
         }
+
+        /// <summary>
+        /// This method obtains a user's vehicle types from the database
+        /// </summary>
+        /// <param name="utilizadorid"></param>
+        /// <returns></returns>
         public async Task<UserVechicleType> GetUserVechicleTypeID(int utilizadorid)
         {
             var db = dbConnection();
@@ -46,6 +69,12 @@ namespace ISIParkAPI.Data.Repositories
                         WHERE utilizadorid = @Utilizadorid";
             return await db.QueryFirstOrDefaultAsync<UserVechicleType>(sql, new { Utilizadorid = utilizadorid });
         }
+
+        /// <summary>
+        /// This method inserts a user's vehicle type and the car's license plate into the database
+        /// </summary>
+        /// <param name="userVechicleType"></param>
+        /// <returns>True inserted or false</returns>
         public async Task<bool> InsertUserVechicleType(UserVechicleType userVechicleType)
         {
             var db = dbConnection();
@@ -62,6 +91,11 @@ namespace ISIParkAPI.Data.Repositories
             return result > 0;
         }
 
+        /// <summary>
+        /// Este método altera os dados de uma placa de matrícula do utilizador
+        /// </summary>
+        /// <param name="userVechicleType"></param>
+        /// <returns>True Updated or false</returns>
         public async Task<bool> UpdateUserVechicleType(UserVechicleType userVechicleType)
         {
             var db = dbConnection();
@@ -78,6 +112,12 @@ namespace ISIParkAPI.Data.Repositories
 
             return result > 0;
         }
+
+        /// <summary>
+        /// This method delete a licence plate the user of database 
+        /// </summary>
+        /// <param name="userVechicleType"></param>
+        /// <returns>True deleted or false</returns>
         public async Task<bool> DeleteUserVechicleType(UserVechicleType userVechicleType)
         {
             var db = dbConnection();
