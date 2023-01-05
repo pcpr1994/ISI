@@ -399,6 +399,28 @@
             <param name="id">Id of the sector that we want to delete</param>
             <returns>Nothing</returns>
         </member>
+        <member name="T:ISIParkAPI.Controllers.UserVechicleTypeController">
+            <summary>
+            Class controller of UserVechicleType, this class have all routes of UserVechicleTypeRepository methods's
+            </summary>
+        </member>
+        <member name="F:ISIParkAPI.Controllers.UserVechicleTypeController._userVechicleTypeRepository">
+            <summary>
+            Create a instance of Interface UserVechicleType
+            </summary>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserVechicleTypeController.#ctor(ISIParkAPI.Data.Repositories.Interfaces.IUserVechicleTypeRepository)">
+            <summary>
+            Give a value to the instance
+            </summary>
+            <param name="userVechicleTypeRepository"></param>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserVechicleTypeController.GetAllUserVechicleTypey">
+            <summary>
+            Route to give all User vehicle type from database, this method uses a http get
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:ISIParkAPI.Controllers.VehicleTypeController">
             <summary>
             Class controller of VehicleType, this class have all routes of VehicleTypeRepository methods's

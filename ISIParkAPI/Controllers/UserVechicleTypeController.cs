@@ -15,18 +15,32 @@ using System.Threading.Tasks;
 
 namespace ISIParkAPI.Controllers
 {
+    /// <summary>
+    /// Class controller of UserVechicleType, this class have all routes of UserVechicleTypeRepository methods's
+    /// </summary>
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UserVechicleTypeController : ControllerBase
     {
-       private readonly IUserVechicleTypeRepository _userVechicleTypeRepository;
+        /// <summary>
+        /// Create a instance of Interface UserVechicleType
+        /// </summary>
+        private readonly IUserVechicleTypeRepository _userVechicleTypeRepository;
 
+        /// <summary>
+        /// Give a value to the instance
+        /// </summary>
+        /// <param name="userVechicleTypeRepository"></param>
         public UserVechicleTypeController(IUserVechicleTypeRepository userVechicleTypeRepository)
         {
             _userVechicleTypeRepository = userVechicleTypeRepository;
         }
 
+        /// <summary>
+        /// Route to give all User vehicle type from database, this method uses a http get
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("getAll")]
         public async Task<IActionResult> GetAllUserVechicleTypey()
@@ -34,6 +48,7 @@ namespace ISIParkAPI.Controllers
             return Ok(await _userVechicleTypeRepository.GetAllUserVechicleTypey());
         }
 
+        
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUserVechicleTypeID(int id)
         {
