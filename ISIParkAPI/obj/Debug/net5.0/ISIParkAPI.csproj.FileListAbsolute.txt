@@ -205,3 +205,12 @@ C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\bin\Debug\net5.0\System.IdentityMo
 C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\obj\Debug\net5.0\ISIParkAPI.csproj.ResolveComReference.cache
 C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\obj\Debug\net5.0\ISIParkAPI.xml
 >>>>>>> cd39060c077a96444d2b535168aa9c18f56d5b48
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\bin\Debug\net5.0\Scrutor.dll
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\obj\Debug\net5.0\staticwebassets\ISIParkAPI.StaticWebAssets.Pack.cache
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\obj\Debug\net5.0\staticwebassets\msbuild.ISIParkAPI.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\obj\Debug\net5.0\staticwebassets\msbuild.build.ISIParkAPI.props
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.ISIParkAPI.props
+C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.ISIParkAPI.props

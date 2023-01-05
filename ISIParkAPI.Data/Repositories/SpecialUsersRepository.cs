@@ -17,19 +17,38 @@ using System.Threading.Tasks;
 
 namespace ISIParkAPI.Data.Repositories
 {
+    /// <summary>
+    /// This class contains all the functions that perform actions on the special user
+    /// </summary>
     public class SpecialUsersRepository : ISpecialUsersRepository
     {
-
+        /// <summary>
+        /// An instance of class MySQLConfiguration
+        /// </summary>
         private MySQLConfiguration _connectionString;
 
+        /// <summary>
+        /// Initialize the instance containing the database connection information
+        /// </summary>
+        /// <param name="connectionString"></param>
         public SpecialUsersRepository(MySQLConfiguration connectionString)
         {
             _connectionString = connectionString;
         }
+
+        /// <summary>
+        /// Connects to database
+        /// </summary>
+        /// <returns></returns>
         protected MySqlConnection dbConnection()
         {
             return new MySqlConnection(_connectionString.ConnectionString);
         }
+
+        /// <summary>
+        /// This method gets all special users from database using a query
+        /// </summary>
+        /// <returns></returns>
         public async Task<IEnumerable<SpecialUser>> GetAllSpecialUser()
         {
             var db = dbConnection();
@@ -37,6 +56,12 @@ namespace ISIParkAPI.Data.Repositories
                         FROM perfil_especial";
             return await db.QueryAsync<SpecialUser>(sql, new { });
         }
+
+        /// <summary>
+        /// This method get one special userfrom database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<SpecialUser> GetSpecialUserByID(int id)
         {
             var db = dbConnection();
@@ -46,6 +71,12 @@ namespace ISIParkAPI.Data.Repositories
 
             return await db.QueryFirstOrDefaultAsync<SpecialUser>(sql, new { ID = id });
         }
+
+        /// <summary>
+        /// This method insert a new spceial user on database
+        /// </summary>
+        /// <param name="specialUser"></param>
+        /// <returns>True inserted or false</returns>
         public async Task<bool> InsertSpecialUser(SpecialUser specialUser)
         {
             var db = dbConnection();
@@ -64,6 +95,12 @@ namespace ISIParkAPI.Data.Repositories
 
             return result > 0;
         }
+
+        /// <summary>
+        /// This method changes data of an special user
+        /// </summary>
+        /// <param name="specialUser"></param>
+        /// <returns>True Updated or false</returns>
         public async Task<bool> UpdateSpecialUser(SpecialUser specialUser)
         {
             var db = dbConnection();
@@ -83,6 +120,12 @@ namespace ISIParkAPI.Data.Repositories
 
             return result > 0;
         }
+
+        /// <summary>
+        /// This method delete an special user of database
+        /// </summary>
+        /// <param name="specialUser"></param>
+        /// <returns>True deleted or false</returns>
         public async Task<bool> DeleteSpecialUser(SpecialUser specialUser)
         {
             var db = dbConnection();

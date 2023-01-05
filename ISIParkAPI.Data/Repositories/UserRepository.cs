@@ -18,19 +18,39 @@ using System.Threading.Tasks;
 
 namespace ISIParkAPI.Data.Repositories
 {
+    /// <summary>
+    /// This class contains all the functions that perform actions on the utilizador
+    /// </summary>
     public class UserRepository: IUserRepository
     {
+        /// <summary>
+        /// An instance of class MySQLConfiguration
+        /// </summary>
         private MySQLConfiguration _connectionString;
+
+        /// <summary>
+        /// Initialize the instance containing the database connection information
+        /// </summary>
+        /// <param name="connectionString"></param>
         public UserRepository(MySQLConfiguration connectionString)
         {
             _connectionString = connectionString;
         }
 
+        /// <summary>
+        /// Connects to database
+        /// </summary>
+        /// <returns></returns>
         protected MySqlConnection dbConnection()
         {
             return new MySqlConnection(_connectionString.ConnectionString);
         }
 
+        /// <summary>
+        /// This method gets an e-mail from the database using a query
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
         public bool GetUserByEm(string email)
         {
             var db = dbConnection();
@@ -45,6 +65,12 @@ namespace ISIParkAPI.Data.Repositories
             else
                 return true;
         }
+
+        /// <summary>
+        /// This method gets the passwordHash of a given email from the database using a query
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
         public byte[] GetUserByPasswordh(string email)
         {
             var db = dbConnection();
@@ -55,6 +81,8 @@ namespace ISIParkAPI.Data.Repositories
             var ph = x.Result;
             return ph.PasswordHash;
         }
+
+        //This method gets the passwordSalt of a given email from the database using a query
         public byte[] GetUserByPasswords(string email)
         {
             var db = dbConnection();
@@ -66,6 +94,11 @@ namespace ISIParkAPI.Data.Repositories
 
             return ps.PasswordSalt;
         }
+
+        /// <summary>
+        /// This method gets all user from database using a query
+        /// </summary>
+        /// <returns></returns>
         public async Task<IEnumerable<UserDTO>> GetAllUser()
         {
             var db = dbConnection();
@@ -73,6 +106,12 @@ namespace ISIParkAPI.Data.Repositories
                         FROM utilizador";
             return await db.QueryAsync<UserDTO>(sql, new { });
         }
+
+        /// <summary>
+        /// Method that searches a user's data via email, in the database
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
         public async Task<UserDTO> GetUserByEmail(string email)
         {
             var db = dbConnection();
@@ -81,6 +120,12 @@ namespace ISIParkAPI.Data.Repositories
                         WHERE email = @Email";
             return await db.QueryFirstOrDefaultAsync<UserDTO>(sql, new { Email = email });
         }
+
+        /// <summary>
+        /// Method that searches a user's data via number, in the database
+        /// </summary>
+        /// <param name="numero"></param>
+        /// <returns></returns>
         public async Task<UserDTO> GetUserById(int numero)
         {
             var db = dbConnection();
@@ -89,6 +134,12 @@ namespace ISIParkAPI.Data.Repositories
                         WHERE id = @Id";
             return await db.QueryFirstOrDefaultAsync<UserDTO>(sql, new { Id = numero });
         }
+
+        /// <summary>
+        /// This method insert a new user on database
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns>True inserted or false</returns>
         public async Task<bool> InsertUser(UserDTO user)
         {
             var db = dbConnection();
@@ -114,6 +165,11 @@ namespace ISIParkAPI.Data.Repositories
             return result > 0;
         }
 
+        /// <summary>
+        /// This method changes data of an user
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns>True Updated or false</returns>
         public async Task<bool> UpdateUser(UserDTO user)
         {
             var db = dbConnection();
@@ -137,6 +193,13 @@ namespace ISIParkAPI.Data.Repositories
 
             return result > 0;
         }
+
+        /// <summary>
+        /// This method changes data of an user
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="token"></param>
+        /// <returns></returns>
         public async Task<bool> UpdateUserToken(UserDTO user, string token)
         {
             var db = dbConnection();
@@ -160,6 +223,12 @@ namespace ISIParkAPI.Data.Repositories
 
             return result > 0;
         }
+
+        /// <summary>
+        /// This method delete an user of database 
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns>True deleted or false</returns>
         public async Task<bool> DeleteUser(UserDTO user)
         {
             var db = dbConnection();

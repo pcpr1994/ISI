@@ -35,9 +35,9 @@ namespace ISIParkAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetUserHistoryID(int utilizadorid)
+        public async Task<IActionResult> GetUserHistoryID(int id)
         {
-            return Ok(await _userHistoryRepository.GetUserHistoryID(utilizadorid));
+            return Ok(await _userHistoryRepository.GetUserHistoryID(id));
         }
 
         [HttpPost]

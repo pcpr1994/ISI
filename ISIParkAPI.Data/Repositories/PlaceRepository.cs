@@ -16,20 +16,38 @@ using System.Threading.Tasks;
 
 namespace ISIParkAPI.Data.Repositories
 {
+    /// <summary>
+    /// This class contains all the functions that perform actions of the parking spaces
+    /// </summary>
     public class PlaceRepository : IPlaceRepository
     {
+        /// <summary>
+        /// An instance of class MySQLConfiguration
+        /// </summary>
         private MySQLConfiguration _connectionString;
 
+        /// <summary>
+        /// Initialize the instance containing the database connection information
+        /// </summary>
+        /// <param name="connectionString"></param>
         public PlaceRepository(MySQLConfiguration connectionString)
         {
             _connectionString = connectionString;
         }
 
+        /// <summary>
+        /// Connects to database
+        /// </summary>
+        /// <returns></returns>
         protected MySqlConnection dbConnection()
         {
             return new MySqlConnection(_connectionString.ConnectionString);
         }
 
+        /// <summary>
+        /// This method gets all parking spaces from database using a query
+        /// </summary>
+        /// <returns></returns>
         public async Task<IEnumerable<Place>> GetAllPlace()
         {
             var db = dbConnection();
@@ -38,6 +56,11 @@ namespace ISIParkAPI.Data.Repositories
             return await db.QueryAsync<Place>(sql, new { });
         }
 
+        /// <summary>
+        /// This method get one place from database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<Place> GetPlaceById(int id)
         {
             var db = dbConnection();
@@ -48,6 +71,11 @@ namespace ISIParkAPI.Data.Repositories
             return await db.QueryFirstOrDefaultAsync<Place>(sql, new { ID = id });
         }
 
+        /// <summary>
+        /// This method insert a new place on database
+        /// </summary>
+        /// <param name="place"></param>
+        /// <returns>True inserted or false</returns>
         public async Task<bool> InsertPlace(Place place)
         {
             var db = dbConnection();
@@ -65,6 +93,11 @@ namespace ISIParkAPI.Data.Repositories
             return result > 0;
         }
 
+        /// <summary>
+        /// This method changes data of an place
+        /// </summary>
+        /// <param name="place"></param>
+        /// <returns>True Updated or false</returns>
         public async Task<bool> UpdatePlace(Place place)
         {
             var db = dbConnection();
@@ -87,6 +120,11 @@ namespace ISIParkAPI.Data.Repositories
             return result > 0;
         }
 
+        /// <summary>
+        /// This method delete an place of database 
+        /// </summary>
+        /// <param name="place"></param>
+        /// <returns>True deleted or false</returns>
         public async Task<bool> DeletePlace(Place place)
         {
             var db = dbConnection();

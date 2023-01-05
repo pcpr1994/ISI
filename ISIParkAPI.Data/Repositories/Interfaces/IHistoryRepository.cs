@@ -13,6 +13,9 @@ using System.Threading.Tasks;
 
 namespace ISIParkAPI.Data.Repositories.Interfaces
 {
+    /// <summary>
+    /// This interface it will be consumed by the class HistoryRepository
+    /// </summary>
     public interface IHistoryRepository
     {
         Task<IEnumerable<History>> GetAllHistory();
