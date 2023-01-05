@@ -16,19 +16,38 @@ using System.Threading.Tasks;
 
 namespace ISIParkAPI.Data.Repositories
 {
+    /// <summary>
+    /// This class contains all the functions that perform actions on the  license plate car sensor
+    /// </summary>
     public class LicensePlateSensorRepository : ILicensePlateSensorRepository
     {
+        /// <summary>
+        /// An instance of class MySQLConfiguration
+        /// </summary>
         private MySQLConfiguration _connectionString;
+
+        /// <summary>
+        /// Initialize the instance containing the database connection information
+        /// </summary>
+        /// <param name="connectionString"></param>
         public LicensePlateSensorRepository(MySQLConfiguration connectionString)
         {
             _connectionString = connectionString;
         }
 
+        /// <summary>
+        /// Connects to database
+        /// </summary>
+        /// <returns></returns>
         protected MySqlConnection dbConnection()
         {
             return new MySqlConnection(_connectionString.ConnectionString);
         }
 
+        /// <summary>
+        /// This method gets all sensor license plate car from database using a query
+        /// </summary>
+        /// <returns></returns>
         public async Task<IEnumerable<LicensePlateSensor>> GetAllPlateSensor()
         {
             var db = dbConnection();
@@ -36,6 +55,12 @@ namespace ISIParkAPI.Data.Repositories
                         FROM sensor_matricula";
             return await db.QueryAsync<LicensePlateSensor>(sql, new { });
         }
+
+        /// <summary>
+        /// This method obtains a car's data through the nif from a database using a query
+        /// </summary>
+        /// <param name="nif"></param>
+        /// <returns></returns>
         public async Task<LicensePlateSensor> GetPlateSensorDetails(int nif)
         {
             var db = dbConnection();
@@ -44,6 +69,12 @@ namespace ISIParkAPI.Data.Repositories
                         WHERE nif = @NIF";
             return await db.QueryFirstOrDefaultAsync<LicensePlateSensor>(sql, new { NIF = nif });
         }
+
+        /// <summary>
+        /// This method insert a sensor license plate on database
+        /// </summary>
+        /// <param name="licensePlateSensor"></param>
+        /// <returns>True inserted or false</returns>
         public async Task<bool> InsertVehicleSensor(LicensePlateSensor licensePlateSensor)
         {
             var db = dbConnection();
@@ -62,6 +93,11 @@ namespace ISIParkAPI.Data.Repositories
             return result > 0;
         }
 
+        /// <summary>
+        /// This method changes the data of a license plate on a parking sensor
+        /// </summary>
+        /// <param name="licensePlateSensor"></param>
+        /// <returns>True Updated or false</returns>
         public async Task<bool> UpdateVehicleSensor(LicensePlateSensor licensePlateSensor)
         {
             var db = dbConnection();
@@ -80,6 +116,12 @@ namespace ISIParkAPI.Data.Repositories
 
             return result > 0;
         }
+
+        /// <summary>
+        /// This method eliminates a license plate of a car from a car license plate sensor from a database
+        /// </summary>
+        /// <param name="licensePlateSensor"></param>
+        /// <returns>True deleted or false</returns>
         public async Task<bool> DeleteVehicleSensor(LicensePlateSensor licensePlateSensor)
         {
             var db = dbConnection();
