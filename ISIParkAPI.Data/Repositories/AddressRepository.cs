@@ -98,7 +98,7 @@ namespace ISIParkAPI.Data.Repositories
         /// This method changes data of an address
         /// </summary>
         /// <param name="address">Instance of Address</param>
-        /// <returns>True Updated or false</returns>
+        /// <returns></returns>
         public async Task<bool> UpdateAddress(Address address)
         {
             var db = dbConnection();

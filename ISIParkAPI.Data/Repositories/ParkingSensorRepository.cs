@@ -16,19 +16,38 @@ using System.Threading.Tasks;
 
 namespace ISIParkAPI.Data.Repositories
 {
+    /// <summary>
+    /// This class contains all the functions that perform actions on the car registration sensors, in a given place in the car park
+    /// </summary>
     public class ParkingSensorRepository : IParkingSensorRepository
     {
+        /// <summary>
+        /// An instance of class MySQLConfiguration
+        /// </summary>
         private MySQLConfiguration _connectionString;
+
+        /// <summary>
+        /// Initialize the instance containing the database connection information
+        /// </summary>
+        /// <param name="connectionString"></param>
         public ParkingSensorRepository(MySQLConfiguration connectionString)
         {
             _connectionString = connectionString;
         }
 
+        /// <summary>
+        /// Connects to database
+        /// </summary>
+        /// <returns></returns>
         protected MySqlConnection dbConnection()
         {
             return new MySqlConnection(_connectionString.ConnectionString);
         }
 
+        /// <summary>
+        /// This method gets all cars parked everywhere in the database park using a query
+        /// </summary>
+        /// <returns></returns>
         public async Task<IEnumerable<ParkingSensor>> GetAllParkingSensor()
         {
             var db = dbConnection();
@@ -36,6 +55,12 @@ namespace ISIParkAPI.Data.Repositories
                         FROM sensor_estacionamento";
             return await db.QueryAsync<ParkingSensor>(sql, new { });
         }
+
+        /// <summary>
+        /// Method that returns the data of the car parked in a place
+        /// </summary>
+        /// <param name="lugar"></param>
+        /// <returns></returns>
         public async Task<ParkingSensor> GetParkingSensorDetails(int lugar)
         {
             var db = dbConnection();
@@ -44,6 +69,12 @@ namespace ISIParkAPI.Data.Repositories
                         WHERE lugar = @Lugar";
             return await db.QueryFirstOrDefaultAsync<ParkingSensor>(sql, new { Lugar = lugar });
         }
+
+        /// <summary>
+        /// Method that inserts a car into a parking lot place
+        /// </summary>
+        /// <param name="parkingSensor"></param>
+        /// <returns>True inserted or false</returns>
         public async Task<bool> InsertParkingSensor(ParkingSensor parkingSensor)
         {
             var db = dbConnection();
@@ -69,6 +100,11 @@ namespace ISIParkAPI.Data.Repositories
             return result > 0;
         }
 
+        /// <summary>
+        /// Method that updates a car's data in a parking place
+        /// </summary>
+        /// <param name="parkingSensor"></param>
+        /// <returns></returns>
         public async Task<bool> UpdateParkingSensor(ParkingSensor parkingSensor)
         {
             var db = dbConnection();
@@ -93,6 +129,12 @@ namespace ISIParkAPI.Data.Repositories
 
             return result > 0;
         }
+
+        /// <summary>
+        /// Method that eliminates a car from ula parking place
+        /// </summary>
+        /// <param name="parkingSensor"></param>
+        /// <returns></returns>
         public async Task<bool> DeleteParkingSensor(ParkingSensor parkingSensor)
         {
             var db = dbConnection();
