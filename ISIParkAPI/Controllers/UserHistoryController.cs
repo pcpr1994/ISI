@@ -53,18 +53,18 @@ namespace ISIParkAPI.Controllers
             return Created("created", inserted);
         }
 
-        [HttpPut]
-        [Route("update")]
-        public async Task<IActionResult> UpdateUserHistory([FromBody] UserHistory userHistory)
-        {
-            if (userHistory == null)
-                return BadRequest();
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+        //[HttpPut]
+        //[Route("update")]
+        //public async Task<IActionResult> UpdateUserHistory([FromBody] UserHistory userHistory)
+        //{
+        //    if (userHistory == null)
+        //        return BadRequest();
+        //    if (!ModelState.IsValid)
+        //        return BadRequest(ModelState);
 
-            await _userHistoryRepository.UpdateUserHistory(userHistory);
-            return NoContent();
-        }
+        //    await _userHistoryRepository.UpdateUserHistory(userHistory);
+        //    return NoContent();
+        //}
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUserHistory(int id)

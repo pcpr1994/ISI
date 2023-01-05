@@ -214,3 +214,15 @@ C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\obj\Debug\net5.0\staticwebassets\m
 C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\obj\Debug\net5.0\staticwebassets\msbuild.build.ISIParkAPI.props
 C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.ISIParkAPI.props
 C:\Users\paula\Desktop\TP2_ISI\ISI\ISIParkAPI\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.ISIParkAPI.props
+C:\Users\Sérgio\Desktop\LESI\3_Ano\1_semestre\ISI\TP2\ISI\ISIParkAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Sérgio\Desktop\LESI\3_Ano\1_semestre\ISI\TP2\ISI\ISIParkAPI\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Sérgio\Desktop\LESI\3_Ano\1_semestre\ISI\TP2\ISI\ISIParkAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Sérgio\Desktop\LESI\3_Ano\1_semestre\ISI\TP2\ISI\ISIParkAPI\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Sérgio\Desktop\LESI\3_Ano\1_semestre\ISI\TP2\ISI\ISIParkAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Sérgio\Desktop\LESI\3_Ano\1_semestre\ISI\TP2\ISI\ISIParkAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Sérgio\Desktop\LESI\3_Ano\1_semestre\ISI\TP2\ISI\ISIParkAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Sérgio\Desktop\LESI\3_Ano\1_semestre\ISI\TP2\ISI\ISIParkAPI\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Sérgio\Desktop\LESI\3_Ano\1_semestre\ISI\TP2\ISI\ISIParkAPI\bin\Debug\net5.0\Scrutor.dll
+C:\Users\Sérgio\Desktop\LESI\3_Ano\1_semestre\ISI\TP2\ISI\ISIParkAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\Sérgio\Desktop\LESI\3_Ano\1_semestre\ISI\TP2\ISI\ISIParkAPI\bin\Debug\net5.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+C:\Users\Sérgio\Desktop\LESI\3_Ano\1_semestre\ISI\TP2\ISI\ISIParkAPI\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll

@@ -97,21 +97,21 @@ namespace ISIParkAPI.Data.Repositories
         /// </summary>
         /// <param name="userHistory"></param>
         /// <returns>True Updated or false</returns>
-        public async Task<bool> UpdateUserHistory(UserHistory userHistory)
-        {
-            var db = dbConnection();
-            var sql = @"UPDATE utilizador_Historico
-                        SET Historicoid = @Historicoid
-                        WHERE Utilizadorid = @utilizadorid";
+        //public async Task<bool> UpdateUserHistory(UserHistory userHistory)
+        //{
+        //    var db = dbConnection();
+        //    var sql = @"UPDATE utilizador_Historico
+        //                SET Historicoid = @Historicoid
+        //                WHERE Utilizadorid = @utilizadorid";
 
-            var result = await db.ExecuteAsync(sql, new
-            {
-                userHistory.Utilizadorid,
-                userHistory.Historicoid
-            });
+        //    var result = await db.ExecuteAsync(sql, new
+        //    {
+        //        userHistory.Utilizadorid,
+        //        userHistory.Historicoid
+        //    });
 
-            return result > 0;
-        }
+        //    return result > 0;
+        //}
 
         /// <summary>
         /// This method deletes a user's history in the database

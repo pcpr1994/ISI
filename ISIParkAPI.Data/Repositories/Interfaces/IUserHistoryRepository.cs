@@ -21,7 +21,7 @@ namespace ISIParkAPI.Data.Repositories.Interfaces
         Task<IEnumerable<UserHistory>> GetAllUserHistory();
         Task<UserHistory> GetUserHistoryID(int utilizadorid);
         Task<bool> InsertUserHistory(UserHistory userHistory);
-        Task<bool> UpdateUserHistory(UserHistory userHistory);
+        //Task<bool> UpdateUserHistory(UserHistory userHistory);
         Task<bool> DeleteUserHistory(UserHistory userHistory);
     }
 }
