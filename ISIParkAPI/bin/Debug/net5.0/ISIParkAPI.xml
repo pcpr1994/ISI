@@ -172,17 +172,6 @@
             <param name="passwordSalt"></param>
             <returns></returns>
         </member>
-        <member name="F:ISIParkAPI.Controllers.BankController._bankRepository">
-            <summary>
-            Create an instance of BankRepository
-            </summary>
-        </member>
-        <member name="M:ISIParkAPI.Controllers.BankController.#ctor(ISIParkAPI.Data.Repositories.Interfaces.IBankRepository)">
-            <summary>
-            Give a value to the instance
-            </summary>
-            <param name="bankRepository"></param>
-        </member>
         <member name="T:ISIParkAPI.Controllers.ContactTypeController">
             <summary>
             Class controller of ContactType, this class have all routes of ContactTypeRepository methods's
@@ -527,6 +516,17 @@
             </summary>
             <param name="id">Id of the type that we want to delete</param>
             <returns>Nothing</returns>
+        </member>
+        <member name="F:ISIParkAPI.Controllers.QRCodeController._qrCodeRepository">
+            <summary>
+            Create an instance of QRRepository
+            </summary>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.QRCodeController.#ctor(ISIParkAPI.Data.Repositories.Interfaces.IQRCodeRepository)">
+            <summary>
+            Give a value to the instance
+            </summary>
+            <param name="qrCodeRepository"></param>
         </member>
         <member name="T:ISIParkAPI.Controllers.ReportController">
             <summary>
