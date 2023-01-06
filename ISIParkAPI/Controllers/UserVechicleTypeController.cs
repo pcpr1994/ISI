@@ -48,13 +48,22 @@ namespace ISIParkAPI.Controllers
             return Ok(await _userVechicleTypeRepository.GetAllUserVechicleTypey());
         }
 
-        
+        /// <summary>
+        /// Route to give only the vehicles of a database user, this method uses an http get
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUserVechicleTypeID(int id)
         {
             return Ok(await _userVechicleTypeRepository.GetUserVechicleTypeID(id));
         }
 
+        /// <summary>
+        /// Route to insert a new vehicle for user from the database, this method uses an http put
+        /// </summary>
+        /// <param name="userVechicleType"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("insert")]
         public async Task<IActionResult> InsertUserVechicleType([FromBody] UserVechicleType userVechicleType)
@@ -68,6 +77,11 @@ namespace ISIParkAPI.Controllers
             return Created("created", inserted);
         }
 
+        /// <summary>
+        /// Route to update a user's vehicle from the database, this method uses an http put
+        /// </summary>
+        /// <param name="userVechicleType"></param>
+        /// <returns></returns>
         [HttpPut]
         [Route("update")]
         public async Task<IActionResult> UpdateUserVechicleType([FromBody] UserVechicleType userVechicleType)
@@ -81,6 +95,11 @@ namespace ISIParkAPI.Controllers
             return NoContent();
         }
 
+        /// <summary>
+        /// Route to delete a vehicle from a database user, this method uses an http delete
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUserVechicleType(int id)
         {

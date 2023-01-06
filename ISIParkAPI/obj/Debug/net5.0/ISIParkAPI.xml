@@ -104,6 +104,74 @@
             <param name="id">Id of the message that we want to delete</param>
             <returns>Nothing</returns>
         </member>
+        <member name="T:ISIParkAPI.Controllers.AuthController">
+            <summary>
+            Authentication controller, this class is responsible for creating user and their login, with the tokens
+            </summary>
+        </member>
+        <member name="F:ISIParkAPI.Controllers.AuthController._configuration">
+            <summary>
+            Create a instance of Interface Configuration
+            </summary>
+        </member>
+        <member name="F:ISIParkAPI.Controllers.AuthController._userRepository">
+            <summary>
+            Create a instance of Interface User
+            </summary>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.AuthController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,ISIParkAPI.Data.Repositories.Interfaces.IUserRepository,ISIParkAPI.Data.MySQLConfiguration)">
+            <summary>
+            Give a value to the instance
+            </summary>
+            <param name="configuration"></param>
+            <param name="userRepository"></param>
+            <param name="connectionString"></param>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.AuthController.InsertUser(ISIParkAPI.Model.UserDTO)">
+            <summary>
+            Methods that inserts a new user
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.AuthController.Login(ISIParkAPI.Model.UserLogin)">
+            <summary>
+            Methods for a user to log in and return the respective token
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.AuthController.CreateTokenAdmin(ISIParkAPI.Model.UserDTO)">
+            <summary>
+            Private method for creating the admin token
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.AuthController.CreateToken(ISIParkAPI.Model.UserDTO)">
+            <summary>
+            Private method for creating a user's token
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.AuthController.CreatePasswordHash(System.String,System.Byte[]@,System.Byte[]@)">
+            <summary>
+            Auxiliary method for the creation of the PasswordHash
+            </summary>
+            <param name="password"></param>
+            <param name="passwordHash"></param>
+            <param name="passwordSalt"></param>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.AuthController.VerifyPasswordHash(System.String,System.Byte[],System.Byte[])">
+            <summary>
+            Auxiliary method for the verification of the PasswordHash
+            </summary>
+            <param name="password"></param>
+            <param name="passwordHash"></param>
+            <param name="passwordSalt"></param>
+            <returns></returns>
+        </member>
         <member name="T:ISIParkAPI.Controllers.ContactTypeController">
             <summary>
             Class controller of ContactType, this class have all routes of ContactTypeRepository methods's
@@ -419,6 +487,34 @@
             <summary>
             Route to give all User vehicle type from database, this method uses a http get
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserVechicleTypeController.GetUserVechicleTypeID(System.Int32)">
+            <summary>
+            Route to give only the vehicles of a database user, this method uses an http get
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserVechicleTypeController.InsertUserVechicleType(ISIParkAPI.Model.UserVechicleType)">
+            <summary>
+            Route to insert a new vehicle for user from the database, this method uses an http put
+            </summary>
+            <param name="userVechicleType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserVechicleTypeController.UpdateUserVechicleType(ISIParkAPI.Model.UserVechicleType)">
+            <summary>
+            Route to update a user's vehicle from the database, this method uses an http put
+            </summary>
+            <param name="userVechicleType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserVechicleTypeController.DeleteUserVechicleType(System.Int32)">
+            <summary>
+            Route to delete a vehicle from a database user, this method uses an http delete
+            </summary>
+            <param name="id"></param>
             <returns></returns>
         </member>
         <member name="T:ISIParkAPI.Controllers.VehicleTypeController">

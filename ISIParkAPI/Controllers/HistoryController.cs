@@ -15,18 +15,32 @@ using System.Threading.Tasks;
 
 namespace ISIParkAPI.Controllers
 {
+    /// <summary>
+    /// Class controller of History, this class have all routes of HistoryRepository methods
+    /// </summary>
     [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class HistoryController : ControllerBase
     {
+        /// <summary>
+        /// Create a instance of Interface History
+        /// </summary>
         private readonly IHistoryRepository _historyRepository;
 
+        /// <summary>
+        /// Give a value to the instance
+        /// </summary>
+        /// <param name="historyRepository"></param>
         public HistoryController(IHistoryRepository historyRepository)
         {
             _historyRepository = historyRepository;
         }
 
+        /// <summary>
+        /// Route to give all Historic from database, this method uses a http get
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("getAll")]
         public async Task<IActionResult> GetAllHistory()
@@ -34,12 +48,22 @@ namespace ISIParkAPI.Controllers
             return Ok(await _historyRepository.GetAllHistory());
         }
 
+        /// <summary>
+        /// Route to give only one historic from database, this method uses a http get
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetPersonalDataDetails(int id)
+        public async Task<IActionResult> GetHistoryDetails(int id)
         {
             return Ok(await _historyRepository.GetHistoryDetails(id));
         }
 
+        /// <summary>
+        /// Route to insert a new histric of place, this method uses a http post
+        /// </summary>
+        /// <param name="history"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("insert")]
         public async Task<IActionResult> InsertHistory([FromBody] History history)
@@ -53,6 +77,11 @@ namespace ISIParkAPI.Controllers
             return Created("created", inserted);
         }
 
+        /// <summary>
+        /// Route to update a historic, this method uses a http post
+        /// </summary>
+        /// <param name="history"></param>
+        /// <returns></returns>
         [HttpPut]
         [Route("update")]
         public async Task<IActionResult> UpdateHistory([FromBody] History history)
@@ -66,6 +95,11 @@ namespace ISIParkAPI.Controllers
             return NoContent();
         }
 
+        /// <summary>
+        /// Route to delete a historic from database, this method uses a http delete
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePersonalData(int id)
         {

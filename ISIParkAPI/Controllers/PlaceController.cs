@@ -15,18 +15,32 @@ using System.Threading.Tasks;
 
 namespace ISIParkAPI.Controllers
 {
+    /// <summary>
+    /// Class controller of Place, this class have all routes of PlaceRepository methods
+    /// </summary>
     [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class PlaceController : ControllerBase
     {
+        /// <summary>
+        /// Create a instance of Interface Place
+        /// </summary>
         private readonly IPlaceRepository _placeRepository;
 
+        /// <summary>
+        /// Give a value to the instance
+        /// </summary>
+        /// <param name="placeRepository"></param>
         public PlaceController(IPlaceRepository placeRepository)
         {
             _placeRepository = placeRepository;
         }
 
+        /// <summary>
+        /// Route to give all places from database, this method uses a http get
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("getAll")]
         public async Task<IActionResult> GetAllPlace()
@@ -34,12 +48,22 @@ namespace ISIParkAPI.Controllers
             return Ok(await _placeRepository.GetAllPlace());
         }
 
+        /// <summary>
+        /// Route to give only one place from database, this method uses a http get
+        /// </summary>
+        /// <param name="numero"></param>
+        /// <returns></returns>
         [HttpGet("{numero}")]
         public async Task<IActionResult> GetPlaceById(int numero)
         {
             return Ok(await _placeRepository.GetPlaceById(numero));
         }
 
+        /// <summary>
+        /// Route to insert a new place, this method uses a http post
+        /// </summary>
+        /// <param name="place"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("insert")]
         public async Task<IActionResult> InsertPlace([FromBody] Place place)
@@ -53,6 +77,11 @@ namespace ISIParkAPI.Controllers
             return Created("created", inserted);
         }
 
+        /// <summary>
+        /// Route to update a place, this method uses a http put
+        /// </summary>
+        /// <param name="place"></param>
+        /// <returns></returns>
         [HttpPut]
         [Route("update")]
         public async Task<IActionResult> UpdatePlace([FromBody] Place place)
@@ -66,6 +95,11 @@ namespace ISIParkAPI.Controllers
             return NoContent();
         }
 
+        /// <summary>
+        /// Route to delete a place from database, this method uses a http delete
+        /// </summary>
+        /// <param name="numero"></param>
+        /// <returns></returns>
         [HttpDelete("{numero}")]
         public async Task<IActionResult> DeletePlace(int numero)
         {

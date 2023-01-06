@@ -16,15 +16,33 @@ using System.Threading.Tasks;
 
 namespace ISIParkAPI.Controllers
 {
+    /// <summary>
+    /// Authentication controller, this class is responsible for creating user and their login, with the tokens
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class AuthController : ControllerBase
     {
+        /// <summary>
+        /// Create a instance of Interface Configuration
+        /// </summary>
         private readonly IConfiguration _configuration;
+
+        /// <summary>
+        /// Create a instance of Interface User
+        /// </summary>
         private readonly IUserRepository _userRepository;
         private MySQLConfiguration _connectionString;
+
+       
         static UserDTO user = new UserDTO();
 
+        /// <summary>
+        /// Give a value to the instance
+        /// </summary>
+        /// <param name="configuration"></param>
+        /// <param name="userRepository"></param>
+        /// <param name="connectionString"></param>
         public AuthController(IConfiguration configuration, IUserRepository userRepository, MySQLConfiguration connectionString)
         {
             _configuration = configuration;
@@ -36,6 +54,11 @@ namespace ISIParkAPI.Controllers
             return new MySqlConnection(_connectionString.ConnectionString);
         }
 
+        /// <summary>
+        /// Methods that inserts a new user
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpPost("register")]
         public async Task<ActionResult> InsertUser([FromBody]UserDTO request)
         {
@@ -52,6 +75,11 @@ namespace ISIParkAPI.Controllers
             return Created("created", inserted);
         }
 
+        /// <summary>
+        /// Methods for a user to log in and return the respective token
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpPost("login")]
         public async Task<ActionResult> Login(UserLogin request)
         {
@@ -76,6 +104,12 @@ namespace ISIParkAPI.Controllers
             string token = CreateToken(user);
             return Ok(token);
         }
+
+        /// <summary>
+        /// Private method for creating the admin token
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         private string CreateTokenAdmin(UserDTO user)
         {
             List<Claim> claims = new List<Claim>
@@ -97,6 +131,12 @@ namespace ISIParkAPI.Controllers
             var jwt = new JwtSecurityTokenHandler().WriteToken(token);
             return jwt;
         }
+
+        /// <summary>
+        /// Private method for creating a user's token
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         private string CreateToken(UserDTO user)
         {
             List<Claim> claims = new List<Claim>
@@ -118,6 +158,13 @@ namespace ISIParkAPI.Controllers
             var jwt = new JwtSecurityTokenHandler().WriteToken(token);
             return jwt;
         }
+
+        /// <summary>
+        /// Auxiliary method for the creation of the PasswordHash
+        /// </summary>
+        /// <param name="password"></param>
+        /// <param name="passwordHash"></param>
+        /// <param name="passwordSalt"></param>
         private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
             using (var hmac = new HMACSHA512())
@@ -126,6 +173,14 @@ namespace ISIParkAPI.Controllers
                 passwordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
             }
         }
+
+        /// <summary>
+        /// Auxiliary method for the verification of the PasswordHash
+        /// </summary>
+        /// <param name="password"></param>
+        /// <param name="passwordHash"></param>
+        /// <param name="passwordSalt"></param>
+        /// <returns></returns>
         private bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)
         {
             using (var hmac = new HMACSHA512(passwordSalt))
