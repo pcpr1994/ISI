@@ -1,0 +1,40 @@
+﻿using ISIParkAPI.Data.Repositories;
+using ISIParkAPI.Data.Repositories.Interfaces;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
+
+namespace ISIParkAPI.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    [Authorize]
+    public class BankController : ControllerBase
+    {
+        /// <summary>
+        /// Create an instance of BankRepository
+        /// </summary>
+        private readonly IBankRepository _bankRepository;
+
+        /// <summary>
+        /// Give a value to the instance
+        /// </summary>
+        /// <param name="bankRepository"></param>
+        public BankController(IBankRepository bankRepository)
+        {
+            _bankRepository = bankRepository;
+        }
+
+        [HttpGet]
+        [Route("getAPIValues")]
+        /// <summary>
+        /// Route to give all values from API, this method uses a http get
+        /// </summary>
+        /// <returns>All values</returns>
+        public async Task<IActionResult> Get()
+        {
+            return Ok(await _bankRepository.Get());
+        }
+    }
+}
+

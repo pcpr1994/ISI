@@ -73,7 +73,7 @@ namespace ISIParkAPI.Data.Repositories
         }
 
         /// <summary>
-        /// This method insert a new spceial user on database
+        /// This method insert a new special user on database
         /// </summary>
         /// <param name="specialUser"></param>
         /// <returns>True inserted or false</returns>
