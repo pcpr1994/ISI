@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dFKQS0pfcIt98vIgGqnYFeDlCBMRhOM8u48PVxwXI4cB4ndErbTWbJC4Liwycw045XxjEAurRmlNbOsysuN8Bw==",
+  "dgSpecHash": "MFPCDuXa9sWCpbUmwmSaAZ0JlxQcRXwYsSw/VwzNvPBXXjZQO89+ONfim2OHBZ+DYKZ7FI8e7ixXfWn2NvrMsQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Sérgio\\Desktop\\LESI\\3_Ano\\1_semestre\\ISI\\TP2\\ISI_\\ISIParkAPI\\ISIParkAPI.csproj",
+  "projectFilePath": "C:\\Users\\Sérgio\\Desktop\\LESI\\3_Ano\\1_semestre\\ISI\\TP2\\ISI\\ISIParkAPI\\ISIParkAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Sérgio\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\Sérgio\\.nuget\\packages\\google.protobuf\\3.19.4\\google.protobuf.3.19.4.nupkg.sha512",
