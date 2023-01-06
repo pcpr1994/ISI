@@ -77,6 +77,7 @@ namespace ISIParkAPI
             services.AddScoped<IParkingSensorRepository, ParkingSensorRepository>();
             services.AddScoped<ILicensePlateSensorRepository, LicensePlateSensorRepository>();
             services.AddScoped<IQRCodeRepository, QRCodeRepository>();
+            services.AddScoped<IBankRepository, BankRepository>();
    
             services.AddControllers();
             services.AddSwaggerGen(c =>

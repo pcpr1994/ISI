@@ -14,8 +14,12 @@ using System.Threading.Tasks;
 
 namespace ISIParkAPI.Data.Repositories
 {
-    public class QRCodeRepository : IQRCodeRepository
-    { 
+    public class BankRepository : IBankRepository
+    {
+        /// <summary>
+        /// Variable that has the URL for External API
+        /// </summary>
+        static string _address = "http://api.worldbank.org/countries?format=json";
         /// <summary>
         /// This method gets values from the exetrnal API
         /// </summary>
@@ -32,7 +36,6 @@ namespace ISIParkAPI.Data.Repositories
         /// <returns>Result from get request</returns>
         public async Task<string> GetExternalResponse()
         {
-            string _address = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=admin";
             var client = new HttpClient();
             HttpResponseMessage response = await client.GetAsync(_address);
             response.EnsureSuccessStatusCode();
