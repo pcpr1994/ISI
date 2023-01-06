@@ -10,19 +10,19 @@
 using ISIParkAPI.Data;
 using ISIParkAPI.Data.Repositories;
 using ISIParkAPI.Data.Repositories.Interfaces;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.Filters;
 using System;
 using System.IO;
 using System.Reflection;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using Swashbuckle.AspNetCore.Filters;
 
 namespace ISIParkAPI
 {
@@ -76,7 +76,7 @@ namespace ISIParkAPI
             services.AddScoped<ISpecialUsersRepository, SpecialUsersRepository>();
             services.AddScoped<IParkingSensorRepository, ParkingSensorRepository>();
             services.AddScoped<ILicensePlateSensorRepository, LicensePlateSensorRepository>();
-
+   
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

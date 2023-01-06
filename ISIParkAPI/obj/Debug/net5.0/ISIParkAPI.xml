@@ -222,6 +222,56 @@
             <param name="id">Id of the type that we want to delete</param>
             <returns>Nothing</returns>
         </member>
+        <member name="T:ISIParkAPI.Controllers.HistoryController">
+            <summary>
+            Class controller of History, this class have all routes of HistoryRepository methods
+            </summary>
+        </member>
+        <member name="F:ISIParkAPI.Controllers.HistoryController._historyRepository">
+            <summary>
+            Create a instance of Interface History
+            </summary>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.HistoryController.#ctor(ISIParkAPI.Data.Repositories.Interfaces.IHistoryRepository)">
+            <summary>
+            Give a value to the instance
+            </summary>
+            <param name="historyRepository"></param>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.HistoryController.GetAllHistory">
+            <summary>
+            Route to give all Historic from database, this method uses a http get
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.HistoryController.GetHistoryDetails(System.Int32)">
+            <summary>
+            Route to give only one historic from database, this method uses a http get
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.HistoryController.InsertHistory(ISIParkAPI.Model.History)">
+            <summary>
+            Route to insert a new histric of place, this method uses a http post
+            </summary>
+            <param name="history"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.HistoryController.UpdateHistory(ISIParkAPI.Model.History)">
+            <summary>
+            Route to update a historic, this method uses a http post
+            </summary>
+            <param name="history"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.HistoryController.DeletePersonalData(System.Int32)">
+            <summary>
+            Route to delete a historic from database, this method uses a http delete
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="T:ISIParkAPI.Controllers.LicensePlateSensorController">
             <summary>
             Class controller of LicensePlateSensor, this class have all routes of LicensePlateSensorRepository methods
@@ -316,6 +366,106 @@
             </summary>
             <param name="lugar">Parking Sensor that we want to delete</param>
             <returns>Nothing</returns>
+        </member>
+        <member name="T:ISIParkAPI.Controllers.PersonalDataController">
+            <summary>
+            Class controller of PersonalData, this class have all routes of PersonalDataRepository methods's
+            </summary>
+        </member>
+        <member name="F:ISIParkAPI.Controllers.PersonalDataController._personalDataRepository">
+            <summary>
+            Create a instance of Interface PersonalData
+            </summary>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.PersonalDataController.#ctor(ISIParkAPI.Data.Repositories.Interfaces.IPersonalDataRepository)">
+            <summary>
+            Give a value to the instance
+            </summary>
+            <param name="personalDataRepository"></param>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.PersonalDataController.GetAllPersonalData">
+            <summary>
+            Route to give all personal data from database, this method uses a http get
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.PersonalDataController.GetPersonalDataDetails(System.Int32)">
+            <summary>
+            Route to give one personal data from database, this method uses a http get
+            </summary>
+            <param name="numero"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.PersonalDataController.InsertPersonalData(ISIParkAPI.Model.PersonalData)">
+            <summary>
+            Route to insert a new user, this method uses a http post
+            </summary>
+            <param name="personalData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.PersonalDataController.UpdatePersonalData(ISIParkAPI.Model.PersonalData)">
+            <summary>
+            Route to update one personal data , this method uses a http post
+            </summary>
+            <param name="personalData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.PersonalDataController.DeletePersonalData(System.Int32)">
+            <summary>
+            Route to delete one personal data from database, this method uses a http delete
+            </summary>
+            <param name="numero"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ISIParkAPI.Controllers.PlaceController">
+            <summary>
+            Class controller of Place, this class have all routes of PlaceRepository methods
+            </summary>
+        </member>
+        <member name="F:ISIParkAPI.Controllers.PlaceController._placeRepository">
+            <summary>
+            Create a instance of Interface Place
+            </summary>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.PlaceController.#ctor(ISIParkAPI.Data.Repositories.Interfaces.IPlaceRepository)">
+            <summary>
+            Give a value to the instance
+            </summary>
+            <param name="placeRepository"></param>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.PlaceController.GetAllPlace">
+            <summary>
+            Route to give all places from database, this method uses a http get
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.PlaceController.GetPlaceById(System.Int32)">
+            <summary>
+            Route to give only one place from database, this method uses a http get
+            </summary>
+            <param name="numero"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.PlaceController.InsertPlace(ISIParkAPI.Model.Place)">
+            <summary>
+            Route to insert a new place, this method uses a http post
+            </summary>
+            <param name="place"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.PlaceController.UpdatePlace(ISIParkAPI.Model.Place)">
+            <summary>
+            Route to update a place, this method uses a http put
+            </summary>
+            <param name="place"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.PlaceController.DeletePlace(System.Int32)">
+            <summary>
+            Route to delete a place from database, this method uses a http delete
+            </summary>
+            <param name="numero"></param>
+            <returns></returns>
         </member>
         <member name="T:ISIParkAPI.Controllers.PlaceTypeController">
             <summary>
@@ -466,6 +616,292 @@
             </summary>
             <param name="id">Id of the sector that we want to delete</param>
             <returns>Nothing</returns>
+        </member>
+        <member name="T:ISIParkAPI.Controllers.SpecialUsersController">
+            <summary>
+            Class controller of SpecialUser, this class have all routes of SpecialUserRepository methods
+            </summary>
+        </member>
+        <member name="F:ISIParkAPI.Controllers.SpecialUsersController._specialUsersRepository">
+            <summary>
+            Create a instance of Interface SpecialUser
+            </summary>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.SpecialUsersController.#ctor(ISIParkAPI.Data.Repositories.Interfaces.ISpecialUsersRepository)">
+            <summary>
+            Give a value to the instance
+            </summary>
+            <param name="specialUsersRepository"></param>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.SpecialUsersController.GetAllSpecialUser">
+            <summary>
+            Route to give all Special user from database, this method uses a http get
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.SpecialUsersController.GetSpecialUserByID(System.Int32)">
+            <summary>
+            Route to give only one special user from database, this method uses a http get
+            </summary>
+            <param name="numero"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.SpecialUsersController.InsertSpecialUser(ISIParkAPI.Model.SpecialUser)">
+            <summary>
+            Route to insert a new special user, this method uses a http post
+            </summary>
+            <param name="specialUser"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.SpecialUsersController.UpdateSpecialUser(ISIParkAPI.Model.SpecialUser)">
+            <summary>
+            Route to update a special user, this method uses a http post
+            </summary>
+            <param name="specialUser"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.SpecialUsersController.DeleteSpecialUser(System.Int32)">
+            <summary>
+            Route to delete a special user from database, this method uses a http delete
+            </summary>
+            <param name="numero"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ISIParkAPI.Controllers.UserContactTypeController">
+            <summary>
+            Class controller of UserContactType, this class have all routes of UserContactTypeRepository methods's
+            </summary>
+        </member>
+        <member name="F:ISIParkAPI.Controllers.UserContactTypeController._userContactTypeRepository">
+            <summary>
+            Create a instance of Interface UserContactType
+            </summary>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserContactTypeController.#ctor(ISIParkAPI.Data.Repositories.Interfaces.IUserContactTypeRepository)">
+            <summary>
+            Give a value to the instance
+            </summary>
+            <param name="userContactTypeRepository"></param>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserContactTypeController.GetAllUserContactType">
+            <summary>
+            Route to give all contact type of user from database, this method uses a http get
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserContactTypeController.GetUserContactTypeID(System.Int32)">
+            <summary>
+            Route to give only a user's contact from the database, this method uses an http get
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserContactTypeController.InsertUserContactType(ISIParkAPI.Model.UserContactType)">
+            <summary>
+            Method to insert a contact to a user
+            </summary>
+            <param name="userContactType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserContactTypeController.UpdateUserContactType(ISIParkAPI.Model.UserContactType)">
+            <summary>
+            Route to update a contact the user from database, this method uses a http put
+            </summary>
+            <param name="userContactType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserContactTypeController.DeleteUserContactType(System.Int32)">
+            <summary>
+            Route to delete a contact the user from database, this method uses a http delete
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ISIParkAPI.Controllers.UserController">
+            <summary>
+            Class controller of User, this class have all routes of UserRepository methods
+            </summary>
+        </member>
+        <member name="F:ISIParkAPI.Controllers.UserController._userRepository">
+            <summary>
+            Create a instance of Interface User
+            </summary>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserController.#ctor(ISIParkAPI.Data.Repositories.Interfaces.IUserRepository)">
+            <summary>
+            Give a value to the instance
+            </summary>
+            <param name="userRepository"></param>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserController.GetAllUser">
+            <summary>
+            Route to give all user from database, this method uses a http get
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserController.GetUserById(System.Int32)">
+            <summary>
+            Route to give only one user from database, this method uses a http get
+            </summary>
+            <param name="numero"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserController.UpdateUser(ISIParkAPI.Model.UserDTO)">
+            <summary>
+            Route to update a user, this method uses a http post
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserController.DeleteUser(System.Int32)">
+            <summary>
+            Route to delete a user from database, this method uses a http delete
+            </summary>
+            <param name="numero"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ISIParkAPI.Controllers.UserHistoryController">
+            <summary>
+            Class controller of UserHistoric, this class have all routes of UserHistoricRepository methods's
+            </summary>
+        </member>
+        <member name="F:ISIParkAPI.Controllers.UserHistoryController._userHistoryRepository">
+            <summary>
+            Create a instance of Interface UserHistoric
+            </summary>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserHistoryController.#ctor(ISIParkAPI.Data.Repositories.Interfaces.IUserHistoryRepository)">
+            <summary>
+            Give a value to the instance
+            </summary>
+            <param name="userHistoryRepository"></param>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserHistoryController.GetAllUserHistory">
+            <summary>
+            Route to give all historic of user from database, this method uses a http get
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserHistoryController.GetUserHistoryID(System.Int32)">
+            <summary>
+            Route to give only one historic of user from database, this method uses a http get
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserHistoryController.InsertUserHistory(ISIParkAPI.Model.UserHistory)">
+            <summary>
+            Route to insert a new histric of user from database, this method uses a http post
+            </summary>
+            <param name="userHistory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserHistoryController.DeleteUserHistory(System.Int32)">
+            <summary>
+            Route to delete a historic of user from database, this method uses a http delete
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ISIParkAPI.Controllers.UserMessageController">
+            <summary>
+            Class controller of UserMessage, this class have all routes of UserMessageRepository methods's
+            </summary>
+        </member>
+        <member name="F:ISIParkAPI.Controllers.UserMessageController._userMessageRepository">
+            <summary>
+            Create a instance of Interface UserMessage
+            </summary>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserMessageController.#ctor(ISIParkAPI.Data.Repositories.Interfaces.IUserMessageRepository)">
+            <summary>
+            Give a value to the instance
+            </summary>
+            <param name="userMessageRepository"></param>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserMessageController.GetAllUserMessage">
+            <summary>
+            Route to give all message the user from database, this method uses a http get
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserMessageController.GetUserMessageID(System.Int32)">
+            <summary>
+            Route to give only one message the user from database, this method uses a http get
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserMessageController.InsertUserMessage(ISIParkAPI.Model.UserMessage)">
+            <summary>
+            Route to insert a new message the user from database, this method uses a http post
+            </summary>
+            <param name="userMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserMessageController.UpdateUserMessage(ISIParkAPI.Model.UserMessage)">
+            <summary>
+            Route to update a message the user from database, this method uses a http put
+            </summary>
+            <param name="userMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserMessageController.DeleteUserMessage(System.Int32)">
+            <summary>
+            Route to delete a message the user from database, this method uses a http delete
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ISIParkAPI.Controllers.UserTypeController">
+            <summary>
+            Class controller of UserTYpe, this class have all routes of UserTypeRepository methods's
+            </summary>
+        </member>
+        <member name="F:ISIParkAPI.Controllers.UserTypeController._userTypeRepository">
+            <summary>
+            Create a instance of Interface UserType
+            </summary>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserTypeController.#ctor(ISIParkAPI.Data.Repositories.Interfaces.IUserTypeRepository)">
+            <summary>
+            Give a value to the instance
+            </summary>
+            <param name="userTypeRepository"></param>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserTypeController.GetAllUserType">
+            <summary>
+            Route to give all type user from database, this method uses a http get
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserTypeController.GetUserTypeDetails(System.Int32)">
+            <summary>
+            Route to give only one type the user from database, this method uses a http get
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserTypeController.InsertUserType(ISIParkAPI.Model.UserType)">
+            <summary>
+            Route to insert a new type of user, from the database, this method uses a post http
+            </summary>
+            <param name="userType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserTypeController.UpdateUserType(ISIParkAPI.Model.UserType)">
+            <summary>
+            Route to update a type of user from database, this method uses a http put
+            </summary>
+            <param name="userType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISIParkAPI.Controllers.UserTypeController.DeleteUserType(System.Int32)">
+            <summary>
+            Route to delete a type of user from database, this method uses a http delete
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:ISIParkAPI.Controllers.UserVechicleTypeController">
             <summary>
