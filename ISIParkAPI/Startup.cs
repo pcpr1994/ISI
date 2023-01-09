@@ -41,6 +41,7 @@ namespace ISIParkAPI
             var mySQLConnectionConfig = new MySQLConfiguration(Configuration.GetConnectionString("MySqlConnection"));
             services.AddSingleton(mySQLConnectionConfig);
 
+             //Add Authentication Service with JWT
              services.AddAuthentication
                  (JwtBearerDefaults.AuthenticationScheme)
                  .AddJwtBearer(options =>
@@ -57,6 +58,7 @@ namespace ISIParkAPI
                      };
                  });
 
+            //Add Services created in Repository
             services.AddScoped<IPersonalDataRepository, PersonalDataRepository>();
             services.AddScoped<IHistoryRepository, HistoryRepository>();
             services.AddScoped<IUserTypeRepository, UserTypeRepository>();
@@ -80,6 +82,7 @@ namespace ISIParkAPI
             services.AddScoped<IBankRepository, BankRepository>();
    
             services.AddControllers();
+            //Add Swagger
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
@@ -89,11 +92,13 @@ namespace ISIParkAPI
                     Description = "ISIPark Swagger Documentation, this API it will be used by an Android application ISIPark",
                     Contact = new OpenApiContact() { Name = "Sérgio Rodrigues Pereira", Email = "isipark@gmail.com"},
                 });
-                    
+                
+                //Add Comments for each endpoint on swagger
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
 
+                //Add Security Definition with JWT to Swagger
                 c.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
                 {
                     Name = "Authorization",
