@@ -78,15 +78,16 @@ namespace ISIParkAPI.Data.Repositories
         public async Task<bool> InsertReport(Report report)
         {
             var db = dbConnection();
-            var sql = @"INSERT INTO Report (descricao, utilizadorid, data, imagem)
-                        VALUES (@Descricao, @UtilizadorID, @Data, @Imagem)";
+            var sql = @"INSERT INTO Report (descricao, utilizadorid, data, matricula, setor)
+                        VALUES (@Descricao, @UtilizadorID, @Data, @Matricula, @Setor)";
 
             var result = await db.ExecuteAsync(sql, new
             {
                 report.Descricao,
                 report.UtilizadorID,
                 report.Data,
-                report.Imagem        
+                report.Matricula,
+                report.Setor
             });
 
             return result > 0;
@@ -101,7 +102,7 @@ namespace ISIParkAPI.Data.Repositories
         {
             var db = dbConnection();
             var sql = @"UPDATE Report
-                        SET descricao = @Descricao, utilizadorid = @UtilizadorID, data = @Data, imagem = @Imagem
+                        SET descricao = @Descricao, utilizadorid = @UtilizadorID, data = @Data, matricula = @Matricula, setor=@Setor
                         WHERE @id_report = ID_Report";
 
             var result = await db.ExecuteAsync(sql, new
@@ -109,7 +110,8 @@ namespace ISIParkAPI.Data.Repositories
                 report.Descricao,
                 report.UtilizadorID,
                 report.Data,
-                report.Imagem
+                report.Matricula,
+                report.Setor
             });
 
             return result > 0;

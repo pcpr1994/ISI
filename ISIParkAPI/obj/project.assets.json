@@ -2166,19 +2166,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jocau\\.nuget\\packages\\": {}
+    "C:\\Users\\paula\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jocau\\ISI\\ISIParkAPI\\ISIParkAPI.csproj",
+      "projectUniqueName": "C:\\Users\\paula\\Desktop\\TP2_ISI\\ISI\\ISIParkAPI\\ISIParkAPI.csproj",
       "projectName": "ISIParkAPI",
-      "projectPath": "C:\\Users\\jocau\\ISI\\ISIParkAPI\\ISIParkAPI.csproj",
-      "packagesPath": "C:\\Users\\jocau\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jocau\\ISI\\ISIParkAPI\\obj\\",
+      "projectPath": "C:\\Users\\paula\\Desktop\\TP2_ISI\\ISI\\ISIParkAPI\\ISIParkAPI.csproj",
+      "packagesPath": "C:\\Users\\paula\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\paula\\Desktop\\TP2_ISI\\ISI\\ISIParkAPI\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\jocau\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\paula\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2186,17 +2191,18 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\jocau\\ISI\\ISIParkAPI.Data\\ISIParkAPI.Data.csproj": {
-              "projectPath": "C:\\Users\\jocau\\ISI\\ISIParkAPI.Data\\ISIParkAPI.Data.csproj"
+            "C:\\Users\\paula\\Desktop\\TP2_ISI\\ISI\\ISIParkAPI.Data\\ISIParkAPI.Data.csproj": {
+              "projectPath": "C:\\Users\\paula\\Desktop\\TP2_ISI\\ISI\\ISIParkAPI.Data\\ISIParkAPI.Data.csproj"
             },
-            "C:\\Users\\jocau\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj": {
-              "projectPath": "C:\\Users\\jocau\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj"
+            "C:\\Users\\paula\\Desktop\\TP2_ISI\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj": {
+              "projectPath": "C:\\Users\\paula\\Desktop\\TP2_ISI\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj"
             }
           }
         }
@@ -2263,7 +2269,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
