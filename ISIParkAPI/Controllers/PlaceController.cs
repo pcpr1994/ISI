@@ -114,5 +114,12 @@ namespace ISIParkAPI.Controllers
             return Ok(await _placeRepository.GetPlaceSectorType(Setor, TipoLugar));
 
         }
+
+        [HttpGet("Setor/{Userid}")]
+        public async Task<IActionResult> GetSetorUser(int Userid)
+        {
+            return Ok(await _placeRepository.GetSetorUser(Userid));
+
+        }
     }
 }
