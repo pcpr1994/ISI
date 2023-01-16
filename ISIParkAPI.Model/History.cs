@@ -23,7 +23,7 @@ namespace ISIParkAPI.Model
         /// <summary>
         /// Dia is a variable that saves the day
         /// </summary>
-        public DateTime Dia { get; set; }
+        //public DateTime Dia { get; set; }
         /// <summary>
         /// Hora_entrada is a variable that saves the clock in
         /// </summary>
