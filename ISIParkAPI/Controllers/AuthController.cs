@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using MySql.Data.MySqlClient;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -105,8 +104,8 @@ namespace ISIParkAPI.Controllers
             }
 
             string token = CreateToken(user);
-            //string jsonString = JsonSerializer.Serialize(token);
-            return Ok(token);
+            string jsonString = JsonSerializer.Serialize(token);
+            return Ok(jsonString);
         }
 
         /// <summary>
