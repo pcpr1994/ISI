@@ -121,6 +121,16 @@ namespace ISIParkAPI.Data.Repositories
             return await db.QueryFirstOrDefaultAsync<UserDTO>(sql, new { Email = email });
         }
 
+
+        public async Task<int> GetUserByEmailforID(string email)
+        {
+            var db = dbConnection();
+            var sql = @"SELECT id
+                        FROM utilizador
+                        WHERE email = @Email";
+            return await db.QueryFirstOrDefaultAsync<int>(sql, new { Email = email });
+        }
+
         /// <summary>
         /// Method that searches a user's data via number, in the database
         /// </summary>

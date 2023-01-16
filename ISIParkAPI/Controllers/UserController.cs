@@ -18,7 +18,7 @@ namespace ISIParkAPI.Controllers
     /// <summary>
     /// Class controller of User, this class have all routes of UserRepository methods
     /// </summary>
-    [Authorize(Roles = "Admin")]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
@@ -88,6 +88,22 @@ namespace ISIParkAPI.Controllers
             await _userRepository.DeleteUser(new UserDTO { Id = numero });
 
             return NoContent();
+        }
+
+        /// <summary>
+        /// Route to give only one user from database, this method uses a http get
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        [HttpGet("email/{email}")]
+        public async Task<IActionResult> GetUserByEmail(string email)
+        {
+            return Ok(await _userRepository.GetUserByEmail(email));
+        }
+        [HttpGet("emailID/{email}")]
+        public async Task<IActionResult> GetUserByEmailforID(string email)
+        {
+            return Ok(await _userRepository.GetUserByEmailforID(email));
         }
     }
 }

@@ -782,6 +782,13 @@
             <param name="numero"></param>
             <returns></returns>
         </member>
+        <member name="M:ISIParkAPI.Controllers.UserController.GetUserByEmail(System.String)">
+            <summary>
+            Route to give only one user from database, this method uses a http get
+            </summary>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
         <member name="T:ISIParkAPI.Controllers.UserHistoryController">
             <summary>
             Class controller of UserHistoric, this class have all routes of UserHistoricRepository methods's

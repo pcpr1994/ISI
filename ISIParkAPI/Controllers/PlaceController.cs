@@ -11,6 +11,8 @@ using ISIParkAPI.Data.Repositories.Interfaces;
 using ISIParkAPI.Model;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace ISIParkAPI.Controllers
@@ -112,6 +114,47 @@ namespace ISIParkAPI.Controllers
         public async Task<IActionResult> GetPlaceSectorType(string Setor, string TipoLugar)
         {
             return Ok(await _placeRepository.GetPlaceSectorType(Setor, TipoLugar));
+
+        }
+        [HttpGet("SetorType")]
+        public async Task<List<ShowSetor>> GetPlaceSectorType()
+        {
+            return await _placeRepository.GetPlaceSectorType();
+
+        }
+
+        [HttpGet("SetorTypeNormal")]
+        public async Task<List<ShowSetorNormal>> GetPlaceSectorTypeNormal()
+        {
+            return await _placeRepository.GetPlaceSectorTypeNormal();
+
+        }
+
+        [HttpGet("SetorTypeMoto")]
+        public async Task<List<ShowSetorMoto>> GetPlaceSectorTypeMoto()
+        {
+            return await _placeRepository.GetPlaceSectorTypeMoto();
+
+        }
+
+        [HttpGet("SetorTypeEletric")]
+        public async Task<List<ShowSetorEletric>> GetPlaceSectorTypeEletric()
+        {
+            return await _placeRepository.GetPlaceSectorTypeEletric();
+
+        }
+
+        [HttpGet("SetorTypeReduceMob")]
+        public async Task<List<ShowSetorReduceMob>> GetPlaceSectorTypeReduceMob()
+        {
+            return await _placeRepository.GetPlaceSectorTypeReduceMob();
+
+        }
+
+        [HttpGet("SetorString")]
+        public async Task<String> GetPlaceSectorTypeString()
+        {
+            return await _placeRepository.GetPlaceSectorTypeString();
 
         }
 

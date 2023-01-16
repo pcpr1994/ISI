@@ -55,6 +55,12 @@ namespace ISIParkAPI.Controllers
             return new MySqlConnection(_connectionString.ConnectionString);
         }
 
+        [HttpGet("emailID/{email}")]
+        public async Task<IActionResult> GetUserByEmailforID(string email)
+        {
+            return Ok(await _userRepository.GetUserByEmailforID(email));
+        }
+
         /// <summary>
         /// Methods that inserts a new user
         /// </summary>
@@ -104,8 +110,8 @@ namespace ISIParkAPI.Controllers
             }
 
             string token = CreateToken(user);
-            string jsonString = JsonSerializer.Serialize(token);
-            return Ok(jsonString);
+            //string jsonString = JsonSerializer.Serialize(token);
+            return Ok(token);
         }
 
         /// <summary>

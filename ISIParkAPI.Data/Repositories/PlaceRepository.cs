@@ -11,7 +11,10 @@ using Dapper;
 using ISIParkAPI.Data.Repositories.Interfaces;
 using ISIParkAPI.Model;
 using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace ISIParkAPI.Data.Repositories
@@ -151,6 +154,266 @@ namespace ISIParkAPI.Data.Repositories
 
 
             return result;
+        }
+        public async Task<List<ShowSetor>> GetPlaceSectorType()
+        {
+            var db = dbConnection();
+            var sql = @"SELECT setor, descricao, COUNT(l.estado) AS num 
+                        FROM lugar l
+                        INNER JOIN setor s 
+                        ON l.setorid_setor = s.id_setor 
+                        INNER JOIN tipo_lugar t
+                        ON t.n_tipo = l.tipo_lugarn_tipo 
+                        WHERE l.estado = 0
+                        GROUP BY setor, descricao";
+
+
+            IEnumerable<SetorType> result = await db.QueryAsync<SetorType>(sql, new { });
+
+            var db1 = dbConnection();
+            var sql1 = @"SELECT DISTINCT setor FROM setor ";
+
+            IEnumerable<string> listasetores = await db1.QueryAsync<string>(sql1);
+
+            List<ShowSetor> infosetores = new List<ShowSetor>();
+
+            foreach (string ls in listasetores)
+            {
+                ShowSetor aux = new ShowSetor();
+
+                aux.setor = "Setor: " + ls;
+
+                foreach (SetorType val in result)
+                {
+                    if (ls == val.setor)
+                    {
+                        aux.addInfo(val.descricao, val.num);
+                    }
+                }
+
+                infosetores.Add(aux);
+            }
+
+            Console.WriteLine("TEST");
+
+            return infosetores;
+        }
+
+        //public async Task<List<ShowSetor>> GetPlaceSectorType()
+        public async Task<String> GetPlaceSectorTypeString()
+        {
+            var db = dbConnection();
+            var sql = @"SELECT setor, descricao, COUNT(l.estado) AS num 
+                        FROM lugar l
+                        INNER JOIN setor s 
+                        ON l.setorid_setor = s.id_setor 
+                        INNER JOIN tipo_lugar t
+                        ON t.n_tipo = l.tipo_lugarn_tipo 
+                        WHERE l.estado = 0
+                        GROUP BY setor, descricao";
+
+            IEnumerable<SetorType> result = await db.QueryAsync<SetorType>(sql, new { });
+
+            var db1 = dbConnection();
+            var sql1 = @"SELECT DISTINCT setor FROM setor ";
+
+            IEnumerable<string> listasetores = await db1.QueryAsync<string>(sql1);
+
+            List<ShowSetor> infosetores = new List<ShowSetor>();
+
+            foreach (string ls in listasetores)
+            {
+                ShowSetor aux = new ShowSetor();
+
+                aux.setor = "Setor: " + ls;
+
+                foreach (SetorType val in result)
+                {
+                    if (ls == val.setor)
+                    {
+                        aux.addInfo(val.descricao, val.num);
+                    }
+                }
+
+                infosetores.Add(aux);
+            }
+
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append(infosetores[0].ToString());
+
+            for (int i = 1; i < infosetores.Count(); i++)
+            {
+                sb.Append(", ");
+                sb.Append(infosetores[i].ToString());
+            }
+
+            return sb.ToString();
+        }
+
+        public async Task<List<ShowSetorNormal>> GetPlaceSectorTypeNormal()
+        {
+            var db = dbConnection();
+            var sql = @"SELECT setor, descricao, COUNT(l.estado) AS num 
+                        FROM lugar l
+                        INNER JOIN setor s 
+                        ON l.setorid_setor = s.id_setor 
+                        INNER JOIN tipo_lugar t
+                        ON t.n_tipo = l.tipo_lugarn_tipo 
+                        WHERE l.estado = 0
+                        GROUP BY setor, descricao";
+
+            IEnumerable<SetorType> result = await db.QueryAsync<SetorType>(sql, new { });
+
+            var db1 = dbConnection();
+            var sql1 = @"SELECT DISTINCT setor FROM setor ";
+
+            IEnumerable<string> listasetores = await db1.QueryAsync<string>(sql1);
+
+            List<ShowSetorNormal> infosetores = new List<ShowSetorNormal>();
+
+            foreach (string ls in listasetores)
+            {
+                ShowSetorNormal aux = new ShowSetorNormal();
+
+                aux.setor = "Setor: " + ls;
+
+                foreach (SetorType val in result)
+                {
+                    if (ls == val.setor)
+                    {
+                        aux.addInfo(val.descricao, val.num);
+                    }
+                }
+
+                infosetores.Add(aux);
+            }
+
+            return infosetores;
+        }
+
+        public async Task<List<ShowSetorMoto>> GetPlaceSectorTypeMoto()
+        {
+            var db = dbConnection();
+            var sql = @"SELECT setor, descricao, COUNT(l.estado) AS num 
+                        FROM lugar l
+                        INNER JOIN setor s 
+                        ON l.setorid_setor = s.id_setor 
+                        INNER JOIN tipo_lugar t
+                        ON t.n_tipo = l.tipo_lugarn_tipo 
+                        WHERE l.estado = 0
+                        GROUP BY setor, descricao";
+
+            IEnumerable<SetorType> result = await db.QueryAsync<SetorType>(sql, new { });
+
+            var db1 = dbConnection();
+            var sql1 = @"SELECT DISTINCT setor FROM setor ";
+
+            IEnumerable<string> listasetores = await db1.QueryAsync<string>(sql1);
+
+            List<ShowSetorMoto> infosetores = new List<ShowSetorMoto>();
+
+            foreach (string ls in listasetores)
+            {
+                ShowSetorMoto aux = new ShowSetorMoto();
+
+                aux.setor = "Setor: " + ls;
+
+                foreach (SetorType val in result)
+                {
+                    if (ls == val.setor)
+                    {
+                        aux.addInfo(val.descricao, val.num);
+                    }
+                }
+
+                infosetores.Add(aux);
+            }
+
+            return infosetores;
+        }
+
+        public async Task<List<ShowSetorEletric>> GetPlaceSectorTypeEletric()
+        {
+            var db = dbConnection();
+            var sql = @"SELECT setor, descricao, COUNT(l.estado) AS num 
+                        FROM lugar l
+                        INNER JOIN setor s 
+                        ON l.setorid_setor = s.id_setor 
+                        INNER JOIN tipo_lugar t
+                        ON t.n_tipo = l.tipo_lugarn_tipo 
+                        WHERE l.estado = 0
+                        GROUP BY setor, descricao";
+
+            IEnumerable<SetorType> result = await db.QueryAsync<SetorType>(sql, new { });
+
+            var db1 = dbConnection();
+            var sql1 = @"SELECT DISTINCT setor FROM setor ";
+
+            IEnumerable<string> listasetores = await db1.QueryAsync<string>(sql1);
+
+            List<ShowSetorEletric> infosetores = new List<ShowSetorEletric>();
+
+            foreach (string ls in listasetores)
+            {
+                ShowSetorEletric aux = new ShowSetorEletric();
+
+                aux.setor = "Setor: " + ls;
+
+                foreach (SetorType val in result)
+                {
+                    if (ls == val.setor)
+                    {
+                        aux.addInfo(val.descricao, val.num);
+                    }
+                }
+
+                infosetores.Add(aux);
+            }
+
+            return infosetores;
+        }
+
+
+        public async Task<List<ShowSetorReduceMob>> GetPlaceSectorTypeReduceMob()
+        {
+            var db = dbConnection();
+            var sql = @"SELECT setor, descricao, COUNT(l.estado) AS num 
+                        FROM lugar l
+                        INNER JOIN setor s 
+                        ON l.setorid_setor = s.id_setor 
+                        INNER JOIN tipo_lugar t
+                        ON t.n_tipo = l.tipo_lugarn_tipo 
+                        WHERE l.estado = 0
+                        GROUP BY setor, descricao";
+
+            IEnumerable<SetorType> result = await db.QueryAsync<SetorType>(sql, new { });
+
+            var db1 = dbConnection();
+            var sql1 = @"SELECT DISTINCT setor FROM setor ";
+
+            IEnumerable<string> listasetores = await db1.QueryAsync<string>(sql1);
+
+            List<ShowSetorReduceMob> infosetores = new List<ShowSetorReduceMob>();
+
+            foreach (string ls in listasetores)
+            {
+                ShowSetorReduceMob aux = new ShowSetorReduceMob();
+
+                aux.setor = "Setor: " + ls;
+
+                foreach (SetorType val in result)
+                {
+                    if (ls == val.setor)
+                    {
+                        aux.addInfo(val.descricao, val.num);
+                    }
+                }
+
+                infosetores.Add(aux);
+            }
+
+            return infosetores;
         }
 
         public async Task<string> GetSetorUser(int Userid)
