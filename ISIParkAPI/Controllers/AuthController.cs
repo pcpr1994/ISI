@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using MySql.Data.MySqlClient;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -12,6 +13,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace ISIParkAPI.Controllers
@@ -98,11 +100,13 @@ namespace ISIParkAPI.Controllers
             if((user.Email == "admin@ipca.pt") && (user.Password == "admin"))
             {
                 string tokenA = CreateTokenAdmin(user);
-                return Ok(tokenA);
+                string jsonStringA = JsonSerializer.Serialize(tokenA); ;
+                return Ok(jsonStringA);
             }
 
             string token = CreateToken(user);
-            return Ok(token);
+            string jsonString = JsonSerializer.Serialize(token);
+            return Ok(jsonString);
         }
 
         /// <summary>
