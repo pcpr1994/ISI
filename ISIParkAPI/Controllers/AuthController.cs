@@ -105,8 +105,8 @@ namespace ISIParkAPI.Controllers
             }
 
             string token = CreateToken(user);
-            string jsonString = JsonSerializer.Serialize(token);
-            return Ok(jsonString);
+            //string jsonString = JsonSerializer.Serialize(token);
+            return Ok(token);
         }
 
         /// <summary>
