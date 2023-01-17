@@ -51,8 +51,10 @@ namespace ISIParkAPI.Data.Repositories
         public async Task<IEnumerable<AdminMessage>> GetAllAdminMessage()
         {
             var db = dbConnection();
-            var sql = @"SELECT *
-                        FROM Mensagem_admin";
+            var sql = @"SELECT utilizador.nome, Mensagem_admin.descricao, Mensagem_admin.data
+                        FROM Mensagem_admin JOIN utilizador_Mensagem 
+                        ON Mensagem_admin.id_mensagem=utilizador_Mensagem.Mensagemid_mensagem
+                        JOIN utilizador ON utilizador_Mensagem.utilizadorid=utilizador.id";
             return await db.QueryAsync<AdminMessage>(sql, new { });
         }
 

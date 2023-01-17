@@ -21,6 +21,8 @@ namespace ISIParkAPI.Model
         /// </summary>
         public int Id_Mensagem { get; set; }
 
+        public string Nome { get; set; }
+
         /// <summary>
         /// Descricao is a variable that saves the content of each message
         /// </summary>

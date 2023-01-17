@@ -105,8 +105,8 @@ namespace ISIParkAPI.Controllers
             if((user.Email == "admin@ipca.pt") && (user.Password == "admin"))
             {
                 string tokenA = CreateTokenAdmin(user);
-                string jsonStringA = JsonSerializer.Serialize(tokenA); ;
-                return Ok(jsonStringA);
+                //string jsonStringA = JsonSerializer.Serialize(tokenA); ;
+                return Ok(tokenA);
             }
 
             string token = CreateToken(user);

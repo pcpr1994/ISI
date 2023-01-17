@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\jocau\\.nuget\\packages\\": {}
+    "C:\\Users\\Sérgio\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jocau\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj",
+      "projectUniqueName": "C:\\Users\\Sérgio\\Desktop\\ISI_TP2\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj",
       "projectName": "ISIParkAPI.Model",
-      "projectPath": "C:\\Users\\jocau\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj",
-      "packagesPath": "C:\\Users\\jocau\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jocau\\ISI\\ISIParkAPI.Model\\obj\\",
+      "projectPath": "C:\\Users\\Sérgio\\Desktop\\ISI_TP2\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj",
+      "packagesPath": "C:\\Users\\Sérgio\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Sérgio\\Desktop\\ISI_TP2\\ISI\\ISIParkAPI.Model\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\jocau\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Sérgio\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -51,8 +51,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -61,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }
