@@ -61,13 +61,13 @@ namespace ISIParkAPI.Data.Repositories
         /// </summary>
         /// <param name="utilizadorid"></param>
         /// <returns></returns>
-        public async Task<UserVechicleType> GetUserVechicleTypeID(int utilizadorid)
+        public async Task<IEnumerable<UserVechicleType>> GetUserVechicleTypeID(int utilizadorid)
         {
             var db = dbConnection();
             var sql = @"SELECT utilizadorid, Tipo_veiculosid_veiculo, matricula
                         FROM utilizador_Tipo_veiculos
                         WHERE utilizadorid = @Utilizadorid";
-            return await db.QueryFirstOrDefaultAsync<UserVechicleType>(sql, new { Utilizadorid = utilizadorid });
+            return await db.QueryAsync<UserVechicleType>(sql, new { Utilizadorid = utilizadorid });
         }
 
         /// <summary>

@@ -61,13 +61,14 @@ namespace ISIParkAPI.Data.Repositories
         /// </summary>
         /// <param name="id">Id type entered</param>
         /// <returns>Get the type with the same id that id entered</returns>
-        public async Task<History> GetHistoryDetails(int id)
+        public async Task<IEnumerable<History>> GetHistoryDetails(int id)
         {
             var db = dbConnection();
-            var sql = @"SELECT id, dia, hora_entrada, hora_saida, lugarnumero_lugar
-                        FROM Historico
-                        WHERE id = @ID";
-            return await db.QueryFirstOrDefaultAsync<History>(sql, new { ID = id });
+            var sql = @"SELECT Historico.id, Historico.hora_entrada, Historico.hora_saida,
+                        Historico.lugarnumero_lugar, utilizador_Historico.Historicoid
+                        FROM Historico JOIN utilizador_Historico ON Historico.id = utilizador_Historico.Historicoid
+                        WHERE utilizador_Historico.utilizadorid = @ID";
+            return await db.QueryAsync<History>(sql, new { ID = id });
         }
 
         /// <summary>
@@ -78,7 +79,7 @@ namespace ISIParkAPI.Data.Repositories
         public async Task<bool> InsertHistory(History history)
         {
             var db = dbConnection();
-            var sql = @"INSERT INTO Historico (dia, hora_entrada, hora_saida, lugarnumero_lugar)
+            var sql = @"INSERT INTO Historico (hora_entrada, hora_saida, lugarnumero_lugar)
                         VALUES (@dia, @hora_entrada, @hora_saida, @lugarnumero_lugar)";
 
             var result = await db.ExecuteAsync(sql, new
@@ -101,13 +102,12 @@ namespace ISIParkAPI.Data.Repositories
         {
             var db = dbConnection();
             var sql = @"UPDATE Historico
-                        SET dia = @Dia, hora_entrada = @Hora_entrada, hora_saida = @Hora_saida, 
+                        SET hora_entrada = @Hora_entrada, hora_saida = @Hora_saida, 
                             lugarnumero_lugar = @Lugarnumero_lugar
                         WHERE @id = ID";
 
             var result = await db.ExecuteAsync(sql, new
             {
-                history.Dia,
                 history.Hora_entrada,
                 history.Hora_saida,         
                 history.ID
