@@ -23,5 +23,6 @@ namespace ISIParkAPI.Data.Repositories.Interfaces
         Task<bool> InsertHistory(History history);
         Task<bool> UpdateHistory(History history);
         Task<bool> DeleteHistory(History history);
+        Task<History> GetAllHistoryUser(int id);
     }
 }

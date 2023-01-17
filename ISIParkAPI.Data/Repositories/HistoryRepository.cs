@@ -44,12 +44,20 @@ namespace ISIParkAPI.Data.Repositories
             return new MySqlConnection(_connectionString.ConnectionString);
         }
 
-        /// <summary>
-        /// This method gets all history data from database using a query
-        /// </summary>
-        /// <returns>Get all types</returns>
-        public async Task<IEnumerable<History>> GetAllHistory()
+        public async Task<History> GetAllHistoryUser(int id)
         {
+            var db = dbConnection();
+            var sql = @"SELECT *
+                        FROM Historico
+                        WHERE id = @Id";
+            return await db.QueryFirstOrDefaultAsync<History>(sql, new { Id = id });
+        }
+            /// <summary>
+            /// This method gets all history data from database using a query
+            /// </summary>
+            /// <returns>Get all types</returns>
+            public async Task<IEnumerable<History>> GetAllHistory()
+            {
             var db = dbConnection();
             var sql = @"SELECT *
                         FROM Historico";

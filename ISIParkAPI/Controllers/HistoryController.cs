@@ -59,6 +59,12 @@ namespace ISIParkAPI.Controllers
             return Ok(await _historyRepository.GetHistoryDetails(id));
         }
 
+        [HttpGet("historyuser/{id}")]
+        public async Task<IActionResult> GetAllHistoryUser(int id)
+        {
+            return Ok(await _historyRepository.GetAllHistoryUser(id));        
+        }
+
         /// <summary>
         /// Route to insert a new histric of place, this method uses a http post
         /// </summary>
