@@ -158,10 +158,17 @@ namespace ISIParkAPI.Controllers
 
         }
 
-        [HttpGet("Setor/{Userid}")]
+        [HttpGet("Setor1/{Userid}")]
         public async Task<IActionResult> GetSetorUser(int Userid)
         {
             return Ok(await _placeRepository.GetSetorUser(Userid));
+
+        }
+
+        [HttpGet("Setor/{Userid}")]
+        public async Task<IActionResult> GetSetorUser2(int Userid)
+        {
+            return Ok(await _placeRepository.GetSetorUser2(Userid));
 
         }
     }

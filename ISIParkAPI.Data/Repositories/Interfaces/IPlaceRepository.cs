@@ -33,7 +33,7 @@ namespace ISIParkAPI.Data.Repositories.Interfaces
         Task<List<ShowSetorReduceMob>> GetPlaceSectorTypeReduceMob();
         Task<String> GetPlaceSectorTypeString();
 
-
+        Task<BetterSetor> GetSetorUser2(int Userid);
         Task<string> GetSetorUser(int User);
     }
 }
