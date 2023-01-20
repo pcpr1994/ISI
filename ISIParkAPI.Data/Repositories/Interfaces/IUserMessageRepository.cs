@@ -19,7 +19,7 @@ namespace ISIParkAPI.Data.Repositories.Interfaces
     /// </summary>
     public interface IUserMessageRepository
     {
-        Task<IEnumerable<UserMessage>> GetAllUserMessage();
+        Task<IEnumerable<AdminMessage>> GetAllUserMessage(int id);
         Task<UserMessage> GetUserMessageID(int utilizadorid);
         Task<bool> InsertUserMessage(UserMessage userMessage);
         Task<bool> UpdateUserMessage(UserMessage userMessage);

@@ -48,12 +48,16 @@ namespace ISIParkAPI.Data.Repositories
         /// This method gets all users/messages from the database using a query
         /// </summary>
         /// <returns>gets all the data</returns>
-        public async Task<IEnumerable<UserMessage>> GetAllUserMessage()
+        public async Task<IEnumerable<AdminMessage>> GetAllUserMessage(int utilizadorid)
         {
             var db = dbConnection();
-            var sql = @"SELECT *
-                        FROM utilizador_Mensagem";
-            return await db.QueryAsync<UserMessage>(sql, new { });
+            var sql = @"SELECT descricao, data
+                        FROM Mensagem_admin
+                        INNER JOIN utilizador_Mensagem 
+                        ON utilizador_Mensagem.Mensagemid_mensagem = Mensagem_admin.id_mensagem
+                        WHERE utilizadorid = @Utilizadorid
+                        GROUP BY utilizadorid";
+            return await db.QueryAsync<AdminMessage>(sql, new { Utilizadorid = utilizadorid});
         }
 
         /// <summary>

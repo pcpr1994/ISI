@@ -42,10 +42,10 @@ namespace ISIParkAPI.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [Route("getAll")]
-        public async Task<IActionResult> GetAllUserMessage()
+        [Route("getAll/{id}")]
+        public async Task<IActionResult> GetAllUserMessage(int id)
         {
-            return Ok(await _userMessageRepository.GetAllUserMessage());
+            return Ok(await _userMessageRepository.GetAllUserMessage(id));
         }
 
         /// <summary>
