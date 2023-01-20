@@ -19,9 +19,11 @@ namespace ISIParkAPI.Data.Repositories.Interfaces
     public interface IUserVechicleTypeRepository
     {
         Task<IEnumerable<UserVechicleType>> GetAllUserVechicleTypey();
-        Task<IEnumerable<UserVechicleType>> GetUserVechicleTypeID(int utilizadorid);
+        Task<IEnumerable<VehiclesByUsers>> GetUserVechicleTypeID(int utilizadorid);
         Task<bool> InsertUserVechicleType(UserVechicleType userVechicleType);
         Task<bool> UpdateUserVechicleType(UserVechicleType userVechicleType);
         Task<bool> DeleteUserVechicleType(UserVechicleType userVechicleType);
+
+        Task<bool> DeleteUserVechicleTypeByPlate(string plate);
     }
 }

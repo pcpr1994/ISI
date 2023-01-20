@@ -18,7 +18,7 @@ namespace ISIParkAPI.Controllers
     /// <summary>
     /// Class controller of UserVechicleType, this class have all routes of UserVechicleTypeRepository methods's
     /// </summary>
-    [Authorize]
+    
     [Route("api/[controller]")]
     [ApiController]
     public class UserVechicleTypeController : ControllerBase
@@ -41,7 +41,9 @@ namespace ISIParkAPI.Controllers
         /// Route to give all User vehicle type from database, this method uses a http get
         /// </summary>
         /// <returns></returns>
+        /// 
         [HttpGet]
+        [Authorize]
         [Route("getAll")]
         public async Task<IActionResult> GetAllUserVechicleTypey()
         {
@@ -53,6 +55,7 @@ namespace ISIParkAPI.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUserVechicleTypeID(int id)
         {
@@ -65,6 +68,7 @@ namespace ISIParkAPI.Controllers
         /// <param name="userVechicleType"></param>
         /// <returns></returns>
         [HttpPost]
+        [Authorize]
         [Route("insert")]
         public async Task<IActionResult> InsertUserVechicleType([FromBody] UserVechicleType userVechicleType)
         {
@@ -83,6 +87,7 @@ namespace ISIParkAPI.Controllers
         /// <param name="userVechicleType"></param>
         /// <returns></returns>
         [HttpPut]
+        [Authorize]
         [Route("update")]
         public async Task<IActionResult> UpdateUserVechicleType([FromBody] UserVechicleType userVechicleType)
         {
@@ -100,12 +105,20 @@ namespace ISIParkAPI.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUserVechicleType(int id)
         {
             await _userVechicleTypeRepository.DeleteUserVechicleType(new UserVechicleType { Utilizadorid = id });
 
             return NoContent();
+        }
+
+        [HttpDelete("plate/{plate}")]
+        public async Task<IActionResult> DeleteUserVechicleTypeByPlate(string plate)
+        {
+            return Ok(await _userVechicleTypeRepository.DeleteUserVechicleTypeByPlate(plate));
+
         }
 
     }

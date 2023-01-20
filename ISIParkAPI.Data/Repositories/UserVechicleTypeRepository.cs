@@ -61,13 +61,15 @@ namespace ISIParkAPI.Data.Repositories
         /// </summary>
         /// <param name="utilizadorid"></param>
         /// <returns></returns>
-        public async Task<IEnumerable<UserVechicleType>> GetUserVechicleTypeID(int utilizadorid)
+        public async Task<IEnumerable<VehiclesByUsers>> GetUserVechicleTypeID(int utilizadorid)
         {
             var db = dbConnection();
-            var sql = @"SELECT utilizadorid, Tipo_veiculosid_veiculo, matricula
-                        FROM utilizador_Tipo_veiculos
-                        WHERE utilizadorid = @Utilizadorid";
-            return await db.QueryAsync<UserVechicleType>(sql, new { Utilizadorid = utilizadorid });
+            var sql = @"SELECT tv.descricao, utv.matricula
+                        FROM utilizador_Tipo_veiculos utv
+                        INNER JOIN Tipo_veiculos tv 
+                        ON tv.id_veiculo = utv.Tipo_veiculosid_veiculo 
+                        WHERE utv.utilizadorid = @Utilizadorid";
+            return await db.QueryAsync<VehiclesByUsers>(sql, new { Utilizadorid = utilizadorid });
         }
 
         /// <summary>
@@ -125,6 +127,20 @@ namespace ISIParkAPI.Data.Repositories
                         FROM utilizador_Tipo_veiculos
                         WHERE utilizadorid = @Utilizadorid";
             var result = await db.ExecuteAsync(sql, new { Utilizadorid = userVechicleType.Utilizadorid });
+            return result > 0;
+        }
+
+        public async Task<bool> DeleteUserVechicleTypeByPlate(string plate)
+        {
+            var db = dbConnection();
+            var sql = @"UPDATE lugar 
+                        SET utilizador_Tipo_veiculosmatricula = null 
+                            , estado = 0
+                        WHERE utilizador_Tipo_veiculosmatricula = @plate;
+
+                        DELETE FROM utilizador_Tipo_veiculos 
+                        WHERE matricula = @plate;";
+            var result = await db.ExecuteAsync(sql, new { plate = plate });
             return result > 0;
         }
 
