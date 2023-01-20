@@ -2026,25 +2026,11 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
-    "C:\\Users\\jocau\\.nuget\\packages\\": {}
-=======
     "C:\\Users\\Sérgio\\.nuget\\packages\\": {}
->>>>>>> 0c38748b35b2fb61ecaf415e1568fcb8b44fae06
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\jocau\\ISI\\ISIParkAPI\\ISIParkAPI.csproj",
-      "projectName": "ISIParkAPI",
-      "projectPath": "C:\\Users\\jocau\\ISI\\ISIParkAPI\\ISIParkAPI.csproj",
-      "packagesPath": "C:\\Users\\jocau\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jocau\\ISI\\ISIParkAPI\\obj\\",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "C:\\Users\\jocau\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
       "projectUniqueName": "C:\\Users\\Sérgio\\Desktop\\ISI\\ISI\\ISIParkAPI\\ISIParkAPI.csproj",
       "projectName": "ISIParkAPI",
       "projectPath": "C:\\Users\\Sérgio\\Desktop\\ISI\\ISI\\ISIParkAPI\\ISIParkAPI.csproj",
@@ -2053,7 +2039,6 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Sérgio\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 0c38748b35b2fb61ecaf415e1568fcb8b44fae06
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2067,19 +2052,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-<<<<<<< HEAD
-            "C:\\Users\\jocau\\ISI\\ISIParkAPI.Data\\ISIParkAPI.Data.csproj": {
-              "projectPath": "C:\\Users\\jocau\\ISI\\ISIParkAPI.Data\\ISIParkAPI.Data.csproj"
-            },
-            "C:\\Users\\jocau\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj": {
-              "projectPath": "C:\\Users\\jocau\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj"
-=======
             "C:\\Users\\Sérgio\\Desktop\\ISI\\ISI\\ISIParkAPI.Data\\ISIParkAPI.Data.csproj": {
               "projectPath": "C:\\Users\\Sérgio\\Desktop\\ISI\\ISI\\ISIParkAPI.Data\\ISIParkAPI.Data.csproj"
             },
             "C:\\Users\\Sérgio\\Desktop\\ISI\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj": {
               "projectPath": "C:\\Users\\Sérgio\\Desktop\\ISI\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj"
->>>>>>> 0c38748b35b2fb61ecaf415e1568fcb8b44fae06
             }
           }
         }
@@ -2145,12 +2122,16 @@
             "privateAssets": "all"
           }
         },
-<<<<<<< HEAD
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
-=======
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
->>>>>>> 0c38748b35b2fb61ecaf415e1568fcb8b44fae06
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Sérgio\\Desktop\\ISI\\ISI\\ISIParkAPI\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
