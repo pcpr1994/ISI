@@ -26,6 +26,8 @@ namespace ISIParkAPI.Model
         /// </summary>
         public string Descricao { get; set; }
 
+        public string Nome { get; set; }
+
         /// <summary>
         /// UtilizadorID is a variable that saves the number of the user that sends the report
         /// </summary>

@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\jocau\\ISI\\ISIParkAPI.Data\\ISIParkAPI.Data.csproj": {}
   },
   "projects": {
@@ -15,6 +16,22 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jocau\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "C:\\Users\\Sérgio\\Desktop\\ISI\\ISI\\ISIParkAPI.Data\\ISIParkAPI.Data.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Sérgio\\Desktop\\ISI\\ISI\\ISIParkAPI.Data\\ISIParkAPI.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Sérgio\\Desktop\\ISI\\ISI\\ISIParkAPI.Data\\ISIParkAPI.Data.csproj",
+        "projectName": "ISIParkAPI.Data",
+        "projectPath": "C:\\Users\\Sérgio\\Desktop\\ISI\\ISI\\ISIParkAPI.Data\\ISIParkAPI.Data.csproj",
+        "packagesPath": "C:\\Users\\Sérgio\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Sérgio\\Desktop\\ISI\\ISI\\ISIParkAPI.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Sérgio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 0c38748b35b2fb61ecaf415e1568fcb8b44fae06
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +45,13 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+<<<<<<< HEAD
               "C:\\Users\\jocau\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj": {
                 "projectPath": "C:\\Users\\jocau\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj"
+=======
+              "C:\\Users\\Sérgio\\Desktop\\ISI\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj": {
+                "projectPath": "C:\\Users\\Sérgio\\Desktop\\ISI\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj"
+>>>>>>> 0c38748b35b2fb61ecaf415e1568fcb8b44fae06
               }
             }
           }
@@ -59,8 +81,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -69,6 +90,7 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
@@ -84,6 +106,23 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jocau\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Sérgio\\Desktop\\ISI\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Sérgio\\Desktop\\ISI\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj",
+        "projectName": "ISIParkAPI.Model",
+        "projectPath": "C:\\Users\\Sérgio\\Desktop\\ISI\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj",
+        "packagesPath": "C:\\Users\\Sérgio\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Sérgio\\Desktop\\ISI\\ISI\\ISIParkAPI.Model\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Sérgio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 0c38748b35b2fb61ecaf415e1568fcb8b44fae06
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -114,8 +153,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -124,7 +162,11 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+>>>>>>> 0c38748b35b2fb61ecaf415e1568fcb8b44fae06
         }
       }
     }
