@@ -51,8 +51,9 @@ namespace ISIParkAPI.Data.Repositories
         public async Task<IEnumerable<Report>> GetAllReport()
         {
             var db = dbConnection();
-            var sql = @"SELECT *
-                        FROM Report";
+            var sql = @"SELECT Report.descricao, utilizador.nome, Report.data, Report.matricula, Report.setor, utilizador.id
+                        FROM Report JOIN utilizador
+                        ON Report.utilizadorid = utilizador.id";
             return await db.QueryAsync<Report>(sql, new { });
         }
 

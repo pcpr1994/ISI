@@ -848,7 +848,7 @@
             </summary>
             <param name="userMessageRepository"></param>
         </member>
-        <member name="M:ISIParkAPI.Controllers.UserMessageController.GetAllUserMessage">
+        <member name="M:ISIParkAPI.Controllers.UserMessageController.GetAllUserMessage(System.Int32)">
             <summary>
             Route to give all message the user from database, this method uses a http get
             </summary>

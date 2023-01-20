@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "TC+KahqBEe7zG5gcnGbhX3gu8c0K9kyp+B4xrqbbHGwU6ShhV6/PaoaTSJya4eS6IFWFN+XV/0zkYKqIruJYmA==",
+  "dgSpecHash": "il8dq1SdgnlI6pAOV8bmd7G6j4eFnMOGuRu8ULhx6fTPcenDqDq8kIIxvzOPCVpY1OOJuAQ6NA12fxHexH3IGA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\paula\\Desktop\\TP2_ISI\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj",
+  "projectFilePath": "C:\\Users\\Sérgio\\Desktop\\ISI\\ISI\\ISIParkAPI.Model\\ISIParkAPI.Model.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Sérgio\\Desktop\\ISI\\ISI\\ISIParkAPI.Model\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
