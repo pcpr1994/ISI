@@ -130,6 +130,17 @@ namespace ISIParkAPI.Data.Repositories
             return result > 0;
         }
 
+        public async Task<IEnumerable<AdminNotification>> GetUserMessageAdminID(int utilizadorid)
+        {
+            var db = dbConnection();
+            var sql = @"SELECT ma.descricao, ma.data
+                        FROM utilizador_Mensagem um
+                        INNER JOIN Mensagem_admin ma 
+                        ON um.Mensagemid_mensagem = ma.id_mensagem 
+                        WHERE utilizadorid = @Utilizadorid";
+            return await db.QueryAsync<AdminNotification>(sql, new { Utilizadorid = utilizadorid });
+        }
+
 
     }
 }

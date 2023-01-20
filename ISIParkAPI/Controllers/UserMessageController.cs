@@ -108,6 +108,11 @@ namespace ISIParkAPI.Controllers
             return NoContent();
         }
 
+        [HttpGet("user/{id}")]
+        public async Task<IActionResult> GetUserMessageAdminID(int id)
+        {
+            return Ok(await _userMessageRepository.GetUserMessageAdminID(id));
+        }
 
 
 
