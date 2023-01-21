@@ -22,7 +22,7 @@ namespace ISIParkAPI.Model
         /// <summary>
         /// Sector is a variable that saves the name of each sector
         /// </summary>
-        public string SetorName { get; set; }
+        public string Setor { get; set; }
 
         /// <summary>
         /// Total_Lugares is a variable that saves the number of places of each sector
