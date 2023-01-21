@@ -48,6 +48,12 @@ namespace ISIParkAPI.Controllers
             return Ok(await _userRepository.GetAllUser());
         }
 
+        [HttpGet("userName/{nome}")]
+        public async Task<IActionResult> GetUserByName(string nome)
+        {
+            return Ok(await _userRepository.GetUserByName(nome));
+        }
+
         /// <summary>
         /// Route to give only one user from database, this method uses a http get
         /// </summary>

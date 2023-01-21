@@ -144,6 +144,14 @@ namespace ISIParkAPI.Data.Repositories
             return await db.QueryFirstOrDefaultAsync<UserDTO>(sql, new { Id = numero });
         }
 
+        public async Task<IEnumerable<UserDTO>> GetUserByName(string nome)
+        {
+            var db = dbConnection();
+            var sql = @"SELECT * FROM utilizador
+                        WHERE nome = @Nome";
+            return await db.QueryAsync<UserDTO>(sql, new { Nome = nome });
+        }
+
         /// <summary>
         /// This method insert a new user on database
         /// </summary>
