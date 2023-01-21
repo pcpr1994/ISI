@@ -98,7 +98,7 @@ namespace ISIParkAPI.Data.Repositories
         public async Task<Sector> GetIDBySector(string setor)
         {
             var db = dbConnection();
-            var sql = @"SELECT id_setor
+            var sql = @"SELECT *
                         FROM setor
                         WHERE setor = @Setor";
             return await db.QueryFirstOrDefaultAsync<Sector>(sql, new { Setor = setor });
