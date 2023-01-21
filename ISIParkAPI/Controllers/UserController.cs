@@ -59,19 +59,6 @@ namespace ISIParkAPI.Controllers
             return Ok(await _userRepository.GetUserById(numero));
         }
 
-
-        /// <summary>
-        /// Route to give only one user with the same name, this method uses a http get
-        /// </summary>
-        /// <param name="nome"></param>
-        /// <returns></returns>
-        [HttpGet("userName/{nome}")]
-        public async Task<IActionResult> GetUserByName(string nome)
-        {
-            return Ok(await _userRepository.GetUserByName(nome));
-        }
-
-
         /// <summary>
         /// Route to update a user, this method uses a http post
         /// </summary>
