@@ -53,7 +53,7 @@ namespace ISIParkAPI.Controllers
         /// </summary>
         /// <param name="sector">Name of the sector that we want</param>
         /// <returns>The sector that corresponds the id entered</returns>
-        [HttpGet("{sector}")]
+        [HttpGet("getid/{sector}")]
         public async Task<IActionResult> GetIDBySector(string sector)
         {
             return Ok(await _sectorRepository.GetIDBySector(sector));
