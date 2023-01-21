@@ -82,6 +82,7 @@ namespace ISIParkAPI.Data.Repositories
             return ph.PasswordHash;
         }
 
+
         //This method gets the passwordSalt of a given email from the database using a query
         public byte[] GetUserByPasswords(string email)
         {
@@ -121,6 +122,25 @@ namespace ISIParkAPI.Data.Repositories
             return await db.QueryFirstOrDefaultAsync<UserDTO>(sql, new { Email = email });
         }
 
+        /// <summary>
+        /// Method that give an user via name
+        /// </summary>
+        /// <param name="nome"></param>
+        /// <returns></returns>
+        public async Task<UserDTO> GetUserByName(string nome)
+        {
+            var db = dbConnection();
+            var sql = @"SELECT * FROM utilizador
+                        WHERE nome = @Nome";
+            return await db.QueryFirstOrDefaultAsync<UserDTO>(sql, new { Nome = nome });
+        }
+
+
+        /// <summary>
+        /// Method that give an id via email
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
         public async Task<int> GetUserByEmailforID(string email)
         {
             var db = dbConnection();
