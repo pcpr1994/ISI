@@ -84,7 +84,7 @@ namespace ISIParkAPI.Data.Repositories
 
             var result = await db.ExecuteAsync(sql, new
             {
-                setor.SetorName,
+                setor.Setor,
                 setor.Total_Lugares
             });
             return result > 0;
@@ -95,13 +95,13 @@ namespace ISIParkAPI.Data.Repositories
         /// </summary>
         /// <param name="sector"></param>
         /// <returns></returns>
-        public async Task<Sector> GetIDBySector(string setorName)
+        public async Task<Sector> GetIDBySector(string setor)
         {
             var db = dbConnection();
             var sql = @"SELECT id_setor
                         FROM setor
-                        WHERE setorName = @SetorName";
-            return await db.QueryFirstOrDefaultAsync<Sector>(sql, new { SetorName = setorName });
+                        WHERE setor = @Setor";
+            return await db.QueryFirstOrDefaultAsync<Sector>(sql, new { Setor = setor });
         }
 
         /// <summary>
@@ -113,12 +113,12 @@ namespace ISIParkAPI.Data.Repositories
         {
             var db = dbConnection();
             var sql = @"UPDATE setor
-                        SET setorName = @SetorName, total_lugares = @Total_Lugares
+                        SET setor = @Setor, total_lugares = @Total_Lugares
                         WHERE @ID_Setor = id_setor";
 
             var result = await db.ExecuteAsync(sql, new
             {
-                setor.SetorName,
+                setor.Setor,
                 setor.Total_Lugares,
                 setor.ID_Setor
             });
