@@ -775,6 +775,13 @@
             <param name="numero"></param>
             <returns></returns>
         </member>
+        <member name="M:ISIParkAPI.Controllers.UserController.GetUserByName(System.String)">
+            <summary>
+            Route to give only one user with the same name, this method uses a http get
+            </summary>
+            <param name="nome"></param>
+            <returns></returns>
+        </member>
         <member name="M:ISIParkAPI.Controllers.UserController.UpdateUser(ISIParkAPI.Model.UserDTO)">
             <summary>
             Route to update a user, this method uses a http post
