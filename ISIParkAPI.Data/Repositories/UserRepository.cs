@@ -127,12 +127,12 @@ namespace ISIParkAPI.Data.Repositories
         /// </summary>
         /// <param name="nome"></param>
         /// <returns></returns>
-        public async Task<UserDTO> GetUserByName(string nome)
+        public async Task<IEnumerable<UserDTO>> GetUserByName(string nome)
         {
             var db = dbConnection();
             var sql = @"SELECT * FROM utilizador
                         WHERE nome = @Nome";
-            return await db.QueryFirstOrDefaultAsync<UserDTO>(sql, new { Nome = nome });
+            return await db.QueryAsync<UserDTO>(sql, new { Nome = nome });
         }
 
 

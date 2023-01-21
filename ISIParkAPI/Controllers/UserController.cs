@@ -65,7 +65,7 @@ namespace ISIParkAPI.Controllers
         /// </summary>
         /// <param name="nome"></param>
         /// <returns></returns>
-        [HttpGet("/userName/{nome}")]
+        [HttpGet("userName/{nome}")]
         public async Task<IActionResult> GetUserByName(string nome)
         {
             return Ok(await _userRepository.GetUserByName(nome));
