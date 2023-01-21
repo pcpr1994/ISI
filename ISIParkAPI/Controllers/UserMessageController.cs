@@ -113,9 +113,5 @@ namespace ISIParkAPI.Controllers
         {
             return Ok(await _userMessageRepository.GetUserMessageAdminID(id));
         }
-
-
-
-
     }
 }

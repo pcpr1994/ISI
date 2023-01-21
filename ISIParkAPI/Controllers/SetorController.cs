@@ -51,9 +51,20 @@ namespace ISIParkAPI.Controllers
         /// <summary>
         /// Route to give only one sector from database, this method uses a http get
         /// </summary>
+        /// <param name="sector">Name of the sector that we want</param>
+        /// <returns>The sector that corresponds the id entered</returns>
+        [HttpGet("{sector}")]
+        public async Task<IActionResult> GetIDBySector(string sector)
+        {
+            return Ok(await _sectorRepository.GetIDBySector(sector));
+        }
+
+        /// <summary>
+        /// Route to give only one sector from database, this method uses a http get
+        /// </summary>
         /// <param name="id">Id of the sector that we want</param>
         /// <returns>The sector that corresponds the id entered</returns>
-        [HttpGet("{id}")]
+        [HttpGet("details/{id}")]
         public async Task<IActionResult> GetSectorDetails(int id)
         {
             return Ok(await _sectorRepository.GetSectorDetails(id));
@@ -73,8 +84,7 @@ namespace ISIParkAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var inserted = await _sectorRepository.InsertSector(sector);
-            return Created("created", inserted);
+            return Ok(await _sectorRepository.InsertSector(sector));
         }
 
         /// <summary>
@@ -94,6 +104,8 @@ namespace ISIParkAPI.Controllers
             await _sectorRepository.UpdateSector(sector);
             return NoContent();
         }
+
+  
 
         /// <summary>
         /// Route to delete a sector from database, this method uses a http delete

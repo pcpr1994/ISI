@@ -140,7 +140,5 @@ namespace ISIParkAPI.Data.Repositories
                         WHERE utilizadorid = @Utilizadorid";
             return await db.QueryAsync<AdminNotification>(sql, new { Utilizadorid = utilizadorid });
         }
-
-
     }
 }
