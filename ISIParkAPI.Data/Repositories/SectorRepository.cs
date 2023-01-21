@@ -79,16 +79,29 @@ namespace ISIParkAPI.Data.Repositories
         public async Task<bool> InsertSector(Sector setor)
         {
             var db = dbConnection();
-            var sql = @"INSERT INTO setor (setor, total_lugares)
-                        VALUES (@setor, @total_lugares)";
+            var sql = @"INSERT INTO setor (setorName, total_lugares)
+                        VALUES (@setorName, @total_lugares)";
 
             var result = await db.ExecuteAsync(sql, new
             {
-                setor.Setor,
+                setor.SetorName,
                 setor.Total_Lugares
             });
-
             return result > 0;
+        }
+
+        /// <summary>
+        /// Method that searches a user's data via email, in the database
+        /// </summary>
+        /// <param name="sector"></param>
+        /// <returns></returns>
+        public async Task<Sector> GetIDBySector(string setorName)
+        {
+            var db = dbConnection();
+            var sql = @"SELECT id_setor
+                        FROM setor
+                        WHERE setorName = @SetorName";
+            return await db.QueryFirstOrDefaultAsync<Sector>(sql, new { SetorName = setorName });
         }
 
         /// <summary>
@@ -100,12 +113,12 @@ namespace ISIParkAPI.Data.Repositories
         {
             var db = dbConnection();
             var sql = @"UPDATE setor
-                        SET setor = @Setor, total_lugares = @Total_Lugares
+                        SET setorName = @SetorName, total_lugares = @Total_Lugares
                         WHERE @ID_Setor = id_setor";
 
             var result = await db.ExecuteAsync(sql, new
             {
-                setor.Setor,
+                setor.SetorName,
                 setor.Total_Lugares,
                 setor.ID_Setor
             });

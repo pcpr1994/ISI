@@ -120,7 +120,6 @@ namespace ISIParkAPI.Controllers
         public async Task<List<ShowSetor>> GetPlaceSectorType()
         {
             return await _placeRepository.GetPlaceSectorType();
-
         }
 
         [HttpGet("SetorTypeNormal")]

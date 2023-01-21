@@ -611,6 +611,13 @@
             </summary>
             <returns>All sectors</returns>
         </member>
+        <member name="M:ISIParkAPI.Controllers.SetorController.GetIDBySector(System.String)">
+            <summary>
+            Route to give only one sector from database, this method uses a http get
+            </summary>
+            <param name="sector">Name of the sector that we want</param>
+            <returns>The sector that corresponds the id entered</returns>
+        </member>
         <member name="M:ISIParkAPI.Controllers.SetorController.GetSectorDetails(System.Int32)">
             <summary>
             Route to give only one sector from database, this method uses a http get

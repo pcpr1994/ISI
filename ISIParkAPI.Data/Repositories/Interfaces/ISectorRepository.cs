@@ -23,5 +23,6 @@ namespace ISIParkAPI.Data.Repositories.Interfaces
         Task<bool> InsertSector(Sector sector);
         Task<bool> UpdateSector(Sector sector);
         Task<bool> DeleteSector(Sector sector);
+        Task<Sector> GetIDBySector(string sector);
     }
 }

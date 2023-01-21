@@ -121,7 +121,6 @@ namespace ISIParkAPI.Data.Repositories
             return await db.QueryFirstOrDefaultAsync<UserDTO>(sql, new { Email = email });
         }
 
-
         public async Task<int> GetUserByEmailforID(string email)
         {
             var db = dbConnection();
