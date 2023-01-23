@@ -73,6 +73,20 @@ namespace ISIParkAPI.Data.Repositories
         }
 
         /// <summary>
+        /// This method get one personal data from database
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        public async Task<PersonalData> GetPersonalByEmail(string email)
+        {
+            var db = dbConnection();
+            var sql = @"SELECT *
+                        FROM dados_pessoais
+                        WHERE email = @Email";
+            return await db.QueryFirstOrDefaultAsync<PersonalData>(sql, new { Email = email });
+        }
+
+        /// <summary>
         /// This method insert a new people on database
         /// </summary>
         /// <param name="personalData"></param>

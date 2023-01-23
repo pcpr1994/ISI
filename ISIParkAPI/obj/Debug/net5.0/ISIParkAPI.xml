@@ -407,6 +407,13 @@
             <param name="numero"></param>
             <returns></returns>
         </member>
+        <member name="M:ISIParkAPI.Controllers.PersonalDataController.GetPersonalByEmail(System.String)">
+            <summary>
+            Route to give one personal data from database, this method uses a http get
+            </summary>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
         <member name="M:ISIParkAPI.Controllers.PersonalDataController.InsertPersonalData(ISIParkAPI.Model.PersonalData)">
             <summary>
             Route to insert a new user, this method uses a http post

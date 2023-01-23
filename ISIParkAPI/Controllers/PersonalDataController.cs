@@ -18,7 +18,7 @@ namespace ISIParkAPI.Controllers
     /// <summary>
     /// Class controller of PersonalData, this class have all routes of PersonalDataRepository methods's
     /// </summary>
-    [Authorize]
+
     [Route("api/[controller]")]
     [ApiController]
     public class PersonalDataController : ControllerBase
@@ -58,6 +58,18 @@ namespace ISIParkAPI.Controllers
         {
             return Ok(await _personalDataRepository.GetPersonalDataDetails(numero));
         }
+
+        /// <summary>
+        /// Route to give one personal data from database, this method uses a http get
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        [HttpGet("email/{email}")]
+        public async Task<IActionResult> GetPersonalByEmail(string email)
+        {
+            return Ok(await _personalDataRepository.GetPersonalByEmail(email));
+        }
+
 
         /// <summary>
         /// Route to insert a new user, this method uses a http post

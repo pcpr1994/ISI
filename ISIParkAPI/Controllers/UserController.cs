@@ -106,6 +106,7 @@ namespace ISIParkAPI.Controllers
         {
             return Ok(await _userRepository.GetUserByEmail(email));
         }
+
         [HttpGet("emailID/{email}")]
         public async Task<IActionResult> GetUserByEmailforID(string email)
         {

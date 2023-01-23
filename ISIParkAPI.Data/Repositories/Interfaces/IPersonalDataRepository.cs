@@ -23,5 +23,6 @@ namespace ISIParkAPI.Data.Repositories.Interfaces
         Task<bool> InsertPersonalData(PersonalData personalData);
         Task<bool> UpdatePersonalData(PersonalData personalData);
         Task<bool> DeletePersonalData(PersonalData personalData);
+        Task<PersonalData> GetPersonalByEmail(string email);
     }
 }
