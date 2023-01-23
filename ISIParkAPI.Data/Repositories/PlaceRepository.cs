@@ -148,6 +148,7 @@ namespace ISIParkAPI.Data.Repositories
                         INNER JOIN tipo_lugar t
                             ON t.n_tipo = l.tipo_lugarn_tipo 
                         WHERE l.estado = 0
+                            AND s.hide = 0
                             AND s.setor = @Setor
                             AND t.descricao = @TipoLugar";
             int result = await db.QueryFirstOrDefaultAsync<int>(sql, new { Setor = Setor, TipoLugar = TipoLugar });
@@ -165,13 +166,15 @@ namespace ISIParkAPI.Data.Repositories
                         INNER JOIN tipo_lugar t
                         ON t.n_tipo = l.tipo_lugarn_tipo 
                         WHERE l.estado = 0
+                        AND s.hide = 0
                         GROUP BY setor, descricao";
 
 
             IEnumerable<SetorType> result = await db.QueryAsync<SetorType>(sql, new { });
 
             var db1 = dbConnection();
-            var sql1 = @"SELECT DISTINCT setor FROM setor ";
+            var sql1 = @"SELECT DISTINCT setor FROM setor 
+                         WHERE hide = 0";
 
             IEnumerable<string> listasetores = await db1.QueryAsync<string>(sql1);
 
@@ -210,12 +213,14 @@ namespace ISIParkAPI.Data.Repositories
                         INNER JOIN tipo_lugar t
                         ON t.n_tipo = l.tipo_lugarn_tipo 
                         WHERE l.estado = 0
+                        AND s.hide = 0
                         GROUP BY setor, descricao";
 
             IEnumerable<SetorType> result = await db.QueryAsync<SetorType>(sql, new { });
 
             var db1 = dbConnection();
-            var sql1 = @"SELECT DISTINCT setor FROM setor ";
+            var sql1 = @"SELECT DISTINCT setor FROM setor 
+                         WHERE hide = 0";
 
             IEnumerable<string> listasetores = await db1.QueryAsync<string>(sql1);
 
@@ -261,12 +266,14 @@ namespace ISIParkAPI.Data.Repositories
                         INNER JOIN tipo_lugar t
                         ON t.n_tipo = l.tipo_lugarn_tipo 
                         WHERE l.estado = 0
+                        AND s.hide = 0
                         GROUP BY setor, descricao";
 
             IEnumerable<SetorType> result = await db.QueryAsync<SetorType>(sql, new { });
 
             var db1 = dbConnection();
-            var sql1 = @"SELECT DISTINCT setor FROM setor ";
+            var sql1 = @"SELECT DISTINCT setor FROM setor 
+                        WHERE hide = 0";
 
             IEnumerable<string> listasetores = await db1.QueryAsync<string>(sql1);
 
@@ -302,12 +309,14 @@ namespace ISIParkAPI.Data.Repositories
                         INNER JOIN tipo_lugar t
                         ON t.n_tipo = l.tipo_lugarn_tipo 
                         WHERE l.estado = 0
+                        AND s.hide = 0
                         GROUP BY setor, descricao";
 
             IEnumerable<SetorType> result = await db.QueryAsync<SetorType>(sql, new { });
 
             var db1 = dbConnection();
-            var sql1 = @"SELECT DISTINCT setor FROM setor ";
+            var sql1 = @"SELECT DISTINCT setor FROM setor
+                         WHERE hide = 0";
 
             IEnumerable<string> listasetores = await db1.QueryAsync<string>(sql1);
 
@@ -343,12 +352,14 @@ namespace ISIParkAPI.Data.Repositories
                         INNER JOIN tipo_lugar t
                         ON t.n_tipo = l.tipo_lugarn_tipo 
                         WHERE l.estado = 0
+                        AND s.hide = 0
                         GROUP BY setor, descricao";
 
             IEnumerable<SetorType> result = await db.QueryAsync<SetorType>(sql, new { });
 
             var db1 = dbConnection();
-            var sql1 = @"SELECT DISTINCT setor FROM setor ";
+            var sql1 = @"SELECT DISTINCT setor FROM setor 
+                        WHERE hide = 0";
 
             IEnumerable<string> listasetores = await db1.QueryAsync<string>(sql1);
 
@@ -385,12 +396,14 @@ namespace ISIParkAPI.Data.Repositories
                         INNER JOIN tipo_lugar t
                         ON t.n_tipo = l.tipo_lugarn_tipo 
                         WHERE l.estado = 0
+                        AND s.hide = 0
                         GROUP BY setor, descricao";
 
             IEnumerable<SetorType> result = await db.QueryAsync<SetorType>(sql, new { });
 
             var db1 = dbConnection();
-            var sql1 = @"SELECT DISTINCT setor FROM setor ";
+            var sql1 = @"SELECT DISTINCT setor FROM setor
+                        WHERE hide = 0";
 
             IEnumerable<string> listasetores = await db1.QueryAsync<string>(sql1);
 

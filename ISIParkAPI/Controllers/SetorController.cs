@@ -18,7 +18,6 @@ namespace ISIParkAPI.Controllers
     /// <summary>
     /// Class controller of Sector, this class have all routes of SectorRepository methods
     /// </summary>
-    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class SetorController : ControllerBase
@@ -42,6 +41,7 @@ namespace ISIParkAPI.Controllers
         /// </summary>
         /// <returns>All sectors</returns>
         [HttpGet]
+        [Authorize]
         [Route("getAll")]
         public async Task<IActionResult> GetAllSector()
         {
@@ -54,6 +54,7 @@ namespace ISIParkAPI.Controllers
         /// <param name="sector">Name of the sector that we want</param>
         /// <returns>The sector that corresponds the id entered</returns>
         [HttpGet("getid/{sector}")]
+        [Authorize]
         public async Task<IActionResult> GetIDBySector(string sector)
         {
             return Ok(await _sectorRepository.GetIDBySector(sector));
@@ -65,6 +66,7 @@ namespace ISIParkAPI.Controllers
         /// <param name="id">Id of the sector that we want</param>
         /// <returns>The sector that corresponds the id entered</returns>
         [HttpGet("details/{id}")]
+        [Authorize]
         public async Task<IActionResult> GetSectorDetails(int id)
         {
             return Ok(await _sectorRepository.GetSectorDetails(id));
@@ -76,6 +78,7 @@ namespace ISIParkAPI.Controllers
         /// <param name="sector">An object to represent Sector</param>
         /// <returns>Bad or not result depending on the result</returns>
         [HttpPost]
+        [Authorize]
         [Route("insert")]
         public async Task<IActionResult> InsertSector([FromBody] Sector sector)
         {
@@ -93,6 +96,7 @@ namespace ISIParkAPI.Controllers
         /// <param name="sector">An object to represent Sector</param>
         /// <returns>Bad or not result depending on the result</returns>
         [HttpPut]
+        [Authorize]
         [Route("update")]
         public async Task<IActionResult> UpdateSector([FromBody] Sector sector)
         {

@@ -53,7 +53,8 @@ namespace ISIParkAPI.Data.Repositories
         {
             var db = dbConnection();
             var sql = @"SELECT *
-                        FROM setor";
+                        FROM setor
+                        WHERE hide = 0";
             return await db.QueryAsync<Sector>(sql, new { });
         }
 
@@ -67,7 +68,7 @@ namespace ISIParkAPI.Data.Repositories
             var db = dbConnection();
             var sql = @"SELECT *
                         FROM setor
-                        WHERE id_setor = @ID_Setor";
+                        WHERE id_setor = @ID_Setor AND hide = 0";
             return await db.QueryFirstOrDefaultAsync<Sector>(sql, new { ID_Setor = id });
         }
 
@@ -100,7 +101,7 @@ namespace ISIParkAPI.Data.Repositories
             var db = dbConnection();
             var sql = @"SELECT *
                         FROM setor
-                        WHERE setor = @Setor";
+                        WHERE setor = @Setor AND hide = 0";
             return await db.QueryFirstOrDefaultAsync<Sector>(sql, new { Setor = setor });
         }
 
@@ -134,8 +135,8 @@ namespace ISIParkAPI.Data.Repositories
         public async Task<bool> DeleteSector(Sector setor)
         {
             var db = dbConnection();
-            var sql = @"DELETE
-                        FROM setor
+            var sql = @"UPDATE setor
+                        SET hide = 1
                         WHERE id_setor = @ID_Setor";
             var result = await db.ExecuteAsync(sql, new { ID_Setor = setor.ID_Setor });
             return result > 0;

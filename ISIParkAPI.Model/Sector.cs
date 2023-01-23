@@ -29,5 +29,7 @@ namespace ISIParkAPI.Model
         /// </summary>
         public int Total_Lugares { get; set; }
 
+        public int Hide { get; set; }
+
     }
 }
